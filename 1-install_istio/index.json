@@ -1,0 +1,12 @@
+{
+  "title": "Install Istio",
+  "description": "Install Istion on a Kubernetes Cluster",
+  "details": {
+  },
+  "environment": {
+    "uilayout": "terminal"
+  },
+  "backend": {
+    "imageid": "openshift"
+  }
+}
