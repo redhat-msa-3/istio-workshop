@@ -1,17 +1,17 @@
 {
   "title": "Install Istio",
   "description": "Install Istion on a Kubernetes Cluster",
-  "difficulty": "Intermediate"
-  "time": "20 minutes"
+  "difficulty": "Intermediate",
+  "time": "20 minutes",
   "details": {
     "intro": {
           "text": "intro.md",
-          "credits": "http://developers.redhat.com",
+          "credits": "http://developers.redhat.com"
         },
     "steps": [
           {
             "title": "Log in in OpenShift as Admin",
-            "text": "loging-openshift.md",
+            "text": "loging-openshift.md"
           }
         ]
   },
