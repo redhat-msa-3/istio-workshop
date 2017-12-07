@@ -16,9 +16,14 @@
         ]
   },
   "environment": {
-    "uilayout": "terminal"
+    "icon": "fa-openshift",
+    "showdashboard": true,
+    "dashboard": "Dashboard",
+    "uilayout": "terminal-iframe",
+    "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\u001b[m\r\n"
   },
   "backend": {
-    "imageid": "openshift"
+    "imageid": "openshift",
+    "port": 8443
   }
 }
