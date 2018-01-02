@@ -7,11 +7,11 @@
     "intro": {
           "text": "intro.md",
           "credits": "http://developers.redhat.com",
-          "courseData": "setup-istio.sh",
-          "code": "setup-istio.sh"
+          "code": "set-env.sh"
         },
     "steps": [
           {
+            "courseData": "setup-istio.sh",
             "title": "Log in in OpenShift as Admin",
             "text": "loging-openshift.md"
           }
@@ -22,7 +22,7 @@
     "showdashboard": true,
     "dashboard": "Web Console",
     "uilayout": "terminal-iframe",
-    "uimessage1": "\u001b[32m2 Your Interactive Bash Terminal.\u001b[m\r\n"
+    "uimessage1": "\u001b[32m1 Your Interactive Bash Terminal.\u001b[m\r\n"
   },
   "backend": {
     "imageid": "openshift-3-7",
