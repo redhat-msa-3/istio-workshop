@@ -11,7 +11,7 @@
           "code": "set-env.sh"
         },
     "assets": {
-              "host01": [{"file": "test.txt", "target": "/root/"}]
+          "host01": [{"file": "test.txt", "target": "/root/"}]
         },    
     "steps": [
           {
