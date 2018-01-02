@@ -1,3 +1,4 @@
+ssh root@host01 "oc login -u system:admin"
 ssh root@host01 "oc adm policy add-cluster-role-to-user admin developer "
 ssh root@host01 "oc adm policy add-scc-to-user anyuid -z istio-ingress-service-account -n istio-system"
 ssh root@host01 "oc adm policy add-scc-to-user anyuid -z istio-egress-service-account -n istio-system"
