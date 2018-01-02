@@ -1,5 +1,5 @@
-ssh root@host01 "oc adm policy add-cluster-role-to-user admin developer "
 ssh root@host01 "oc login -u system:admin"
+ssh root@host01 "oc adm policy add-cluster-role-to-user admin developer "
 ssh root@host01 "oc adm policy add-scc-to-user anyuid -z istio-ingress-service-account -n istio-system"
 ssh root@host01 "oc adm policy add-scc-to-user anyuid -z istio-egress-service-account -n istio-system"
 ssh root@host01 "oc adm policy add-scc-to-user anyuid -z default -n istio-system"
@@ -20,5 +20,3 @@ ssh root@host01 "oc expose svc grafana"
 ssh root@host01 "oc expose svc prometheus"
 
 ssh root@host01 "oc process -f https://raw.githubusercontent.com/jaegertracing/jaeger-openshift/master/all-in-one/jaeger-all-in-one-template.yml | oc create -f -"
-
-echo "Istio installed"
