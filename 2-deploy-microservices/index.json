@@ -2,7 +2,7 @@
   "title": "Deploy microservices",
   "description": "Deploy microserices on a Kubernetes Cluster",
   "difficulty": "Basic",
-  "time": "5-10 minutes",
+  "time": "20 minutes",
   "details": {
     "intro": {
           "courseData": "env-init.sh",

@@ -14,7 +14,7 @@ To build a docker image type: `docker build -t example/customer .`{{execute}}
 
 You can check the image that was create by typing `docker images | grep customer`{{execute}}
 
-Note: Your very first docker build will take a bit of time as it downloads all the layers. Subsequent rebuilds of the docker image, updating only the jar/app layer will be very fast.
+* **Note**: Your very first docker build will take a bit of time as it downloads all the layers. Subsequent rebuilds of the docker image, updating only the jar/app layer will be very fast.*
 
 ## Injecting the sidecar proxy.
 
@@ -36,10 +36,7 @@ Check the route: `oc get route`{{execute}}
 
 To watch the creation of the pods, execute `oc get pods -w`{{execute}}
 
-Once that they are `Running`, you hit `CTRL+C`. 
+Once that the customer pod `Running`, you can hit `CTRL+C`. 
 
 
 This concludes this deployment.
-
-
-
