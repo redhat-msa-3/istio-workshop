@@ -37,3 +37,7 @@ Let's apply these defintions to the cluster by executing `oc apply -f istio-0.4.
 
 After the execution, Istio objects will be created.
 
+To watch the creation of the pods, execute `oc get pods -w -n istio-system`{{execute}}
+
+Once that they are all `Running`, you hit `CTRL+C`. This concludes this scenario.
+
