@@ -1,0 +1,38 @@
+{
+  "title": "Introduction",
+  "description": "Understand the problem that Istio solves",
+  "difficulty": "Basic",
+  "time": "20 minutes",
+  "details": {
+    "intro": {
+          "text": "intro.md",
+          "credits": "http://developers.redhat.com",
+          "code": "set-env.sh"
+        },
+    "steps": [
+          {
+            "title": "What is Service Mesh and why we need it?",
+            "text": "1what-is-service-mesh.md"
+          },
+          {
+            "title": "Terms: Mixer, Pilot, Proxy/Sidecar",
+            "text": "2terms.md"
+          },
+          {
+            "title": "Istio installation",
+            "text": "3installation.md"
+          }          
+        ]
+  },
+  "environment": {
+    "icon": "fa-openshift",
+    "showdashboard": true,
+    "dashboard": "Web Console",
+    "uilayout": "terminal-iframe",
+    "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\u001b[m\r\n"
+  },
+  "backend": {
+    "imageid": "openshift-3-7",
+    "port": 8443
+  }
+}
