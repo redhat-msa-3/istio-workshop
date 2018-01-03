@@ -18,6 +18,10 @@
           {
             "title": "Clone the Exemple project",
             "text": "2clone-project.md"
+          },
+          {
+            "title": "Deploy Customer microservice",
+            "text": "3deploy-customer.md"
           }
         ]
   },

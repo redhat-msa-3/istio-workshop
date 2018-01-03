@@ -1,6 +1,6 @@
 {
-  "title": "Deploy microservices",
-  "description": "Deploy microserices on a Kubernetes Cluster",
+  "title": "Exemple scenario (Don't use it)",
+  "description": "Base scenario",
   "difficulty": "Basic",
   "time": "5-10 minutes",
   "details": {

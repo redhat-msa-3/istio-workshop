@@ -41,3 +41,5 @@ To watch the creation of the pods, execute `oc get pods -w -n istio-system`{{exe
 
 Once that they are all `Running`, you hit `CTRL+C`. This concludes this scenario.
 
+## Add Istio to the path
+
