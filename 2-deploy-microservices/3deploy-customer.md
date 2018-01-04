@@ -22,6 +22,8 @@ Currently using the "manual" way of injecting the Envoy sidecar.
 
 Check the version of `istioctl`. Execute `istioctl version`{{execute}}.
 
+Also, make sure that you are using `springistio` project. Execute `oc project springistio`{{execute}}
+
 Now let's deploy the customer pod with its sidecar.
 
 Execute: `oc apply -f <(istioctl kube-inject -f src/main/kubernetes/Deployment.yml) -n springistio`{{execute}}
@@ -36,6 +38,12 @@ Check the route: `oc get route`{{execute}}
 
 To watch the creation of the pods, execute `oc get pods -w`{{execute}}
 
-Once that the customer pod `Running`, you can hit `CTRL+C`. 
+Once that the customer pod is `Running`, you can hit `CTRL+C`. 
+
+Try the microservice by typing `curl http://customer-springistio.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com`{{execute}}
+
+You should see the following error because preferences is not yet deployed, so you only get a partial response of "C100" plus the error message
+
+`C100 *I/O error on GET request for "http://preferences:8080/"`
 
 This concludes the deployment of `customer` microservice.
