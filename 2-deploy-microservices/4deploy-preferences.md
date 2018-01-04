@@ -1,4 +1,4 @@
-Go to the source folder of `customer` microservice.
+Go to the source folder of `preferences` microservice.
 
 Execute: `cd ~/istio_tutorial/preferences/`{{execute}}
 

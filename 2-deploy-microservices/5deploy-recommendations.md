@@ -1,8 +1,8 @@
-Go to the source folder of `customer` microservice.
+Go to the source folder of `recommendations` microservice.
 
-Execute: `cd ~/istio_tutorial/preferences/`{{execute}}
+Execute: `cd ~/istio_tutorial/recommendations/`{{execute}}
 
-Now execute `mvn package`{{execute}} to create the `preferences-0.0.1-SNAPSHOT.jar` file.
+Now execute `mvn package`{{execute}} to create the `recommendations-0.0.1-SNAPSHOT.jar` file.
 
 ## Create the recommendations docker image.
 
