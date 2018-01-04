@@ -26,6 +26,10 @@
           {
             "title": "Deploy Preferences microservice",
             "text": "4deploy-preferences.md"
+          },
+          {
+            "title": "Deploy Recommendations microservice",
+            "text": "5deploy-recommendations.md"
           }
         ]
   },

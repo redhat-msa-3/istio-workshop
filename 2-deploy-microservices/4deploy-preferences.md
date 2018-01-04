@@ -8,9 +8,9 @@ Now execute `mvn package`{{execute}} to create the `preferences-0.0.1-SNAPSHOT.j
 
 We will now use the provided [`Dockerfile`](https://github.com/redhat-developer-demos/istio_tutorial/blob/master/preferences/Dockerfile) to create a docker image.
 
-This image will be called `preferences/customer`.
+This image will be called `example/preferences`.
 
-To build a docker image type: `docker build -t preferences/customer .`{{execute}}
+To build a docker image type: `docker build -t example/preferences .`{{execute}}
 
 You can check the image that was create by typing `docker images | grep preferences`{{execute}}
 
