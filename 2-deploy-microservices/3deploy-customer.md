@@ -6,7 +6,7 @@ Now execute `mvn package`{{execute}} to create the `customer-0.0.1-SNAPSHOT.jar`
 
 ## Create the customer docker image.
 
-We will now use the provided `Dockerfile` to create a docker image.
+We will now use the provided [`Dockerfile`](https://github.com/redhat-developer-demos/istio_tutorial/blob/master/customer/Dockerfile) to create a docker image.
 
 This image will be called `example/customer`.
 
@@ -14,7 +14,7 @@ To build a docker image type: `docker build -t example/customer .`{{execute}}
 
 You can check the image that was create by typing `docker images | grep customer`{{execute}}
 
-***Note**: Your very first docker build will take a bit of time as it downloads all the layers. Subsequent rebuilds of the docker image, updating only the jar/app layer will be very fast.*
+**Note**: Your very first docker build will take a bit of time as it downloads all the layers. Subsequent rebuilds of the docker image, updating only the jar/app layer will be very fast.
 
 ## Injecting the sidecar proxy.
 
@@ -38,5 +38,4 @@ To watch the creation of the pods, execute `oc get pods -w`{{execute}}
 
 Once that the customer pod `Running`, you can hit `CTRL+C`. 
 
-
-This concludes this deployment.
+This concludes the deployment of `customer` microservice.

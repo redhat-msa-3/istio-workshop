@@ -22,6 +22,10 @@
           {
             "title": "Deploy Customer microservice",
             "text": "3deploy-customer.md"
+          },
+          {
+            "title": "Deploy Preferences microservice",
+            "text": "4deploy-preferences.md"
           }
         ]
   },
