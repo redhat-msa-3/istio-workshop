@@ -38,7 +38,7 @@ Check the route: `oc get route`{{execute}}
 
 To watch the creation of the pods, execute `oc get pods -w`{{execute}}
 
-Once that the customer pod is `Running`, you can hit `CTRL+C`. 
+Once that the customer pod READY column is 2/2, you can hit `CTRL+C`. 
 
 Try the microservice by typing `curl http://customer-springistio.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com`{{execute}}
 
