@@ -34,9 +34,9 @@ ssh root@host01 "docker build -q -t example/customer /root/istio_tutorial/custom
 ssh root@host01 "docker build -q -t example/preferences /root/istio_tutorial/preferences/"
 ssh root@host01 "docker build -q -t example/recommendations:v1 /root/istio_tutorial/recommendations/"
 
-ssh root@host01 "oc apply -f <(istioctl kube-inject -f /root/istio_tutorial/customer/src/main/kubernetes/Deployment.yml) -n springistio"
-ssh root@host01 "oc apply -f <(istioctl kube-inject -f /root/istio_tutorial/preferences/src/main/kubernetes/Deployment.yml) -n springistio"
-ssh root@host01 "oc apply -f <(istioctl kube-inject -f /root/istio_tutorial/recommendations/src/main/kubernetes/Deployment.yml) -n springistio"
+ssh root@host01 "oc apply -f <(/root/istio-0.4.0/bin/istioctl kube-inject -f /root/istio_tutorial/customer/src/main/kubernetes/Deployment.yml) -n springistio"
+ssh root@host01 "oc apply -f <(/root/istio-0.4.0/bin/istioctl kube-inject -f /root/istio_tutorial/preferences/src/main/kubernetes/Deployment.yml) -n springistio"
+ssh root@host01 "oc apply -f <(/root/istio-0.4.0/bin/istioctl kube-inject -f /root/istio_tutorial/recommendations/src/main/kubernetes/Deployment.yml) -n springistio"
 
 ssh root@host01 "oc create -f /root/istio_tutorial/customer/src/main/kubernetes/Service.yml"
 ssh root@host01 "oc create -f /root/istio_tutorial/preferences/src/main/kubernetes/Service.yml"
