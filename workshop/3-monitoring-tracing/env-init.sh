@@ -30,9 +30,9 @@ ssh root@host01 "mvn package -f ~/istio_tutorial/customer/ -DskipTests"
 ssh root@host01 "mvn package -f ~/istio_tutorial/recommendation/ -DskipTests"
 ssh root@host01 "mvn package -f ~/istio_tutorial/preferences/ -DskipTests"
 
-ssh root@host01 "docker build -t example/customer ~/istio_tutorial/customer/"
-ssh root@host01 "docker build -t example/preferences ~/istio_tutorial/preferences/"
-ssh root@host01 "docker build -t example/recommendations:v1 ~/istio_tutorial/recommendations/"
+ssh root@host01 "docker build -q -t example/customer ~/istio_tutorial/customer/"
+ssh root@host01 "docker build -q -t example/preferences ~/istio_tutorial/preferences/"
+ssh root@host01 "docker build -q -t example/recommendations:v1 ~/istio_tutorial/recommendations/"
 
 ssh root@host01 "oc apply -f <(istioctl kube-inject -f ~/istio_tutorial/customer/src/main/kubernetes/Deployment.yml) -n springistio"
 ssh root@host01 "oc apply -f <(istioctl kube-inject -f ~/istio_tutorial/preferences/src/main/kubernetes/Deployment.yml) -n springistio"
