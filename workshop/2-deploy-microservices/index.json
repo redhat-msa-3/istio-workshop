@@ -1,5 +1,4 @@
 {
-  "pathwayTitle": "Istio Workshop",
   "title": "Deploy microservices",
   "description": "Deploy microserices on a Kubernetes Cluster",
   "difficulty": "Basic",
