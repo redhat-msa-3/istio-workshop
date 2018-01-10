@@ -8,9 +8,9 @@ Now execute `mvn package`{{execute}} to create the `recommendations-0.0.1-SNAPSH
 
 We will now use the provided [`Dockerfile`](https://github.com/redhat-developer-demos/istio_tutorial/blob/master/recommendations/Dockerfile) to create a docker image.
 
-This image will be called `example/recommendations`.
+This image will be called `example/recommendations:v1`.
 
-To build a docker image type: `docker build -t example/recommendations .`{{execute}}
+To build a docker image type: `docker build -t example/recommendations:v1 .`{{execute}}
 
 You can check the image that was create by typing `docker images | grep recommendations`{{execute}}
 
@@ -28,7 +28,7 @@ Once that the preference pod READY column is 2/2,, you can hit `CTRL+C`.
 
 Try the microservice by typing `curl http://customer-springistio.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com`{{execute}}
 
-Tt returns:
+It returns:
 
 `C100 *{"P1":"Red", "P2":"Big"} && Clifford v1 1 *`
 
