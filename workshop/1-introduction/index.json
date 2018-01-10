@@ -21,8 +21,7 @@
           },
           {
             "title": "Istio installation",
-            "text": "3installation.md",
-            "verify": "3installation-verify.sh"
+            "text": "3installation.md"
           }          
         ]
   },
