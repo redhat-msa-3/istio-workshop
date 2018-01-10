@@ -27,7 +27,7 @@ ssh root@host01 "oc adm policy add-scc-to-user privileged -z default -n springis
 ssh root@host01 "git clone https://github.com/redhat-developer-demos/istio_tutorial /root/istio_tutorial"
 
 ssh root@host01 "mvn package -f /root/istio_tutorial/customer/ -DskipTests"
-ssh root@host01 "mvn package -f /root/istio_tutorial/recommendation/ -DskipTests"
+ssh root@host01 "mvn package -f /root/istio_tutorial/recommendations/ -DskipTests"
 ssh root@host01 "mvn package -f /root/istio_tutorial/preferences/ -DskipTests"
 
 ssh root@host01 "docker build -q -t example/customer /root/istio_tutorial/customer/"
