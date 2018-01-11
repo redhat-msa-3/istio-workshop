@@ -28,7 +28,11 @@ Now, let's wait until `servicegraph` pod is up and running.
 
 Execute `oc get pods -w -n istio-system`{{execute}} and wait until `servicegraph` pod STATUS is `Running`.
 
-Now open http://servicegraph-istio-system.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com/dotviz
+Check `Servicegraph` route by typing `oc get routes -n istio-system`{{execute}}
+
+Now that you know the URL of `Servicegraph`, access it at  
+
+http://servicegraph-istio-system.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com/dotviz
 
 You should see a visual representation of the microservices just like the following picture
 
