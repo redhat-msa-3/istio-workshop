@@ -9,7 +9,7 @@ ssh root@host01 "tar -zxvf /root/istio-0.4.0-linux.tar.gz -C /root"
 
 ssh root@host01 "oc apply -f /root/istio-0.4.0/install/kubernetes/istio.yaml"
 
-ssh root@host01 "oc expose svc istio-ingress"
+ssh root@host01 "oc expose svc istio-ingress -n istio-system"
 ssh root@host01 "oc login -u developer -p developer"
 
 ssh root@host01 "yum install java-1.8.0-openjdk-devel tree -y"
