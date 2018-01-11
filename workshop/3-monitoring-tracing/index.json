@@ -3,7 +3,7 @@
   "title": "Monitoring and Tracing",
   "description": "Shows out-of-box monitoring and tracing",
   "difficulty": "Intermediate",
-  "time": "40 minutes",
+  "time": "1 hour",
   "environment": {
       "icon": "fa-openshift",
       "showdashboard": true,
