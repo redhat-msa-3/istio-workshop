@@ -5,12 +5,22 @@
   "difficulty": "Basic",
   "time": "20 minutes",
   "details": {
+    "assets": {
+        "host01": [{
+            "file": "apache-maven-3.3.9-bin.tar.gz"
+            "target": "/usr/src/"
+        },
+        {
+            "file": "istio-0.4.0-linux.tar.gz"
+            "target": "/root/"
+        }]
+    },
     "intro": {
           "courseData": "env-init.sh",
           "text": "intro.md",
           "credits": "http://developers.redhat.com",
           "code": "set-env.sh"
-        },
+    },
     "steps": [
           {
             "title": "Create the Exemple project",
