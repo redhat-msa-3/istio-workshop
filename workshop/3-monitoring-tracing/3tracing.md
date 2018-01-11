@@ -18,6 +18,6 @@ Hit `CTRL+C` and run several requests through the system: `curl http://customer-
 
 Now open Jaeger console at https://jaeger-query-istio-system.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com 
 
-Select `customer` from the list of services and Find Traces
+Select `customer` from the list of services and click on `Find Traces`
 
 ![](../../assets/monitoring/jaegerUI.png)
