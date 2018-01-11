@@ -26,7 +26,7 @@
     ],
     "assets": {
         "host01": [
-          { "file": "istio-0.4.0-linux.tar.gz", "target": "~/" }
+          { "file": "teste.txt", "target": "~/" }
         ]
     }
   }
