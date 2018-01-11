@@ -23,7 +23,7 @@
     },
     "steps": [
         { "title": "Monitoring", "text": "1monitoring.md" },
-        { "title": "Tracing", "text": "1tracing.md" }
+        { "title": "Tracing", "text": "2tracing.md" }
     ]
   }
 }
