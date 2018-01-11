@@ -23,7 +23,8 @@
     },
     "steps": [
         { "title": "Monitoring", "text": "1monitoring.md" },
-        { "title": "Tracing", "text": "2tracing.md" }
+        { "title": "Custom Metric", "text": "2custom-metric.md" },
+        { "title": "Tracing", "text": "3tracing.md" }
     ]
   }
 }

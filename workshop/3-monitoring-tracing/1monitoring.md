@@ -8,6 +8,8 @@ Let's go to the istio installation folder.
 
 Execute `cd ~/istio-0.4.0/`{{execute}}
 
+**NOTE**: If you see the following message *-bash: cd: /root/istio-0.4.0/: No such file or directory*, wait a little bit and try again. This happens because the files still being prepared in your environment in the background.
+
 Now we need to apply the following file to the OpenShift instance:
 
 `oc apply -f install/kubernetes/addons/prometheus.yaml -n istio-system`{{execute}}
@@ -47,32 +49,4 @@ Return to http://grafana-istio-system.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].en
 Note that you can now visualize request information for each microservice
 
 ![](../../assets/monitoring/grafana-services.png)
-
-## Custon metrics in Prometheus
-
-Istio also allows you to specify custom metrics which can be seen inside of the Prometheus dashboard
-
-Look at the file https://github.com/redhat-developer-demos/istio_tutorial/blob/master/istiofiles/recommendations_requestcount.yml
-
-It specifies an istio rule that invokes the `recommendationsrequestcounthandler` for every invocation to `recommendations.springistio.svc.cluster.local`
-
-**TODO** Needs more exaplanation about this file
-
-Go to the `istio_tutorial` folder. Execute: `cd ~/istio_tutorial`{{execute}}
-
-Now, add the custom metric and rule.
-
-Execute `oc apply -f istiofiles/recommendations_requestcount.yml -n istio-system`{{execute}}
-
-Open the Prometheus Dashboard at http://prometheus-istio-system.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com and add the following metric
-
-`round(increase(istio_recommendations_request_count{destination="recommendations.springistio.svc.cluster.local" }[60m]))`
-
-and select `Execute`.
-
-
-![](../../assets/monitoring/prometheus_custom_metric.png)
-
-Then run several requests through the system: `curl http://customer-springistio.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com`{{execute}}
-
 
