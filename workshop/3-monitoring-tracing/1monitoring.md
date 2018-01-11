@@ -26,6 +26,10 @@ At Grafana console, select the Istio Dashboard.
 
 ![](../../assets/monitoring/grafana.png)
 
-Now let's perform some calls to the `customer` microservice.
+Now let's wait also for the microservices to get deployed.
+
+Execute: `oc get pods -w -n springistio`{{execute}}.
+
+Wait until all microservices READY column show 2/2. Then click `CTRL+C` and perform some calls to the `customer` microservice.
 
 Execute: `curl http://customer-springistio.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com`{{execute}}
