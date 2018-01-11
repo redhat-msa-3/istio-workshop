@@ -7,11 +7,11 @@
   "details": {
     "assets": {
         "host01": [{
-            "file": "apache-maven-3.3.9-bin.tar.gz"
+            "file": "apache-maven-3.3.9-bin.tar.gz",
             "target": "/usr/src/"
         },
         {
-            "file": "istio-0.4.0-linux.tar.gz"
+            "file": "istio-0.4.0-linux.tar.gz",
             "target": "/root/"
         }]
     },
