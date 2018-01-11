@@ -14,12 +14,12 @@ Execute `oc apply -f istiofiles/recommendations_requestcount.yml -n istio-system
 
 Run several requests through the system: `curl http://customer-springistio.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com`{{execute}}
 
-Open the Prometheus Dashboard at http://prometheus-istio-system.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com and add the following metric
+Open the Prometheus Dashboard at http://prometheus-istio-system.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com/graph?g0.range_input=1m&g0.stacked=1&g0.expr=&g0.tab=0 and add the following metric
 
-`round(increase(istio_recommendations_request_count{destination="recommendations.springistio.svc.cluster.local" }[1m]))`
+`round(increase(istio_recommendations_request_count{destination="recommendations.springistio.svc.cluster.local" }[60m]))`
 
 and select `Execute`.
 
 ![](../../assets/monitoring/prometheus_custom_metric.png)
 
-Make sure to have the `Graph` tab selected.
+Run more requests through the system: `curl http://customer-springistio.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com`{{execute}} and hit `Execute` again in the Prometheus Dashboard

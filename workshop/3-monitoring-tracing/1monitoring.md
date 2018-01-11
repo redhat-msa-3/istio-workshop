@@ -10,7 +10,7 @@ Execute `cd ~/istio-0.4.0/`{{execute}}
 
 **NOTE**: If you see the following message *-bash: cd: /root/istio-0.4.0/: No such file or directory*, wait a little bit and try again. This happens because the files still being prepared in your environment in the background.
 
-Now we need to apply the following file to the OpenShift instance:
+Now we need to apply the following files to the OpenShift instance:
 
 `oc apply -f install/kubernetes/addons/prometheus.yaml -n istio-system`{{execute}}
 
@@ -24,9 +24,9 @@ and
 
 `oc expose svc grafana -n istio-system`{{execute}}
 
-Now, let's wait until `grafana` and `prometheus`pod are up and running.
+Now, let's wait until `grafana` pod is up and running.
 
-Execute `oc get pods -w -n istio-system`{{execute}} and wait until grafana pod STATUS is `Running`.
+Execute `oc get pods -w -n istio-system`{{execute}} and wait until `grafana` pod STATUS is `Running`.
 
 Once it's Running, click `CTRL+C` and access Grafana console that is running at http://grafana-istio-system.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com
 
