@@ -14,8 +14,18 @@ Now we need to apply the following file to the OpenShift instance:
 
 After the installation of these Istio add-ons, we need to expose the services.
 
-Execute: `oc expose svc servicegraph -n istio-system`{{execute}}
+Execute: `oc expose svc grafana -n istio-system`{{execute}}
 
-and 
+Now, let's wait until `grafana` pod is up and running.
 
-`oc expose svc grafana -n istio-system`{{execute}}
+Execute `oc get pods -w -n istio-system`{{execute}} and wait until grafana pod STATUS is `Running`.
+
+Once it's running, access Grafana console that is running at [http://grafana-istio-system.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com](http://grafana-istio-system.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com)
+
+At Grafana console, select the Istio Dashboard.
+
+![](../../assets/monitoring/grafana.png)
+
+Now let's perform some calls to the `customer` microservice.
+
+Execute: `curl http://customer-springistio.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com`{{execute}}

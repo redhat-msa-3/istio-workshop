@@ -41,3 +41,5 @@ ssh root@host01 "oc apply -f <(/root/istio-0.4.0/bin/istioctl kube-inject -f /ro
 ssh root@host01 "oc create -f /root/istio_tutorial/customer/src/main/kubernetes/Service.yml"
 ssh root@host01 "oc create -f /root/istio_tutorial/preferences/src/main/kubernetes/Service.yml"
 ssh root@host01 "oc create -f /root/istio_tutorial/recommendations/src/main/kubernetes/Service.yml"
+
+ssh root@host01 "oc expose service customer -n springistio"
