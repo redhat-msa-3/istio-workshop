@@ -23,11 +23,6 @@
     },
     "steps": [
         { "title": "Monitoring", "text": "1monitoring.md" }
-    ],
-    "assets": {
-        "host01": [
-          { "file": "istio-0.4.0-linux.tar.gz", "target": "~/" }
-        ]
-    }
+    ]
   }
 }

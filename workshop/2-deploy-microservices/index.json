@@ -27,12 +27,6 @@
         { "title": "Deploy Customer microservice", "text": "3deploy-customer.md" },
         { "title": "Deploy Preferences microservice", "text": "4deploy-preferences.md" },
         { "title": "Deploy Recommendations microservice", "text": "5deploy-recommendations.md" }
-    ],
-    "assets": {
-        "host01": [
-          { "file": "istio-0.4.0-linux.tar.gz", "target": "/root/" }
-          { "file": "apache-maven-3.3.9-bin.tar.gz", "target": "/usr/src/" },
-        ]
-    } 
+    ]
   }
 }
