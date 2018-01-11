@@ -4,46 +4,6 @@
   "description": "Deploy microserices on a Kubernetes Cluster",
   "difficulty": "Basic",
   "time": "20 minutes",
-  "details": {
-    "assets": {
-        "host01": [{
-            "file": "apache-maven-3.3.9-bin.tar.gz",
-            "target": "/usr/src/"
-        },
-        {
-            "file": "istio-0.4.0-linux.tar.gz",
-            "target": "/root/"
-        }]
-    },
-    "intro": {
-          "courseData": "env-init.sh",
-          "text": "intro.md",
-          "credits": "http://developers.redhat.com",
-          "code": "set-env.sh"
-    },
-    "steps": [
-          {
-            "title": "Create the Exemple project",
-            "text": "1create-project.md"
-          },
-          {
-            "title": "Clone the Exemple project",
-            "text": "2clone-project.md"
-          },
-          {
-            "title": "Deploy Customer microservice",
-            "text": "3deploy-customer.md"
-          },
-          {
-            "title": "Deploy Preferences microservice",
-            "text": "4deploy-preferences.md"
-          },
-          {
-            "title": "Deploy Recommendations microservice",
-            "text": "5deploy-recommendations.md"
-          }
-        ]
-  },
   "environment": {
     "icon": "fa-openshift",
     "showdashboard": true,
@@ -54,5 +14,26 @@
   "backend": {
     "imageid": "openshift-3-7",
     "port": 8443
+  },
+  "details": {
+    "intro": {
+        "courseData": "env-init.sh",
+        "text": "intro.md",
+        "credits": "http://developers.redhat.com",
+        "code": "set-env.sh"
+    },
+    "steps": [
+        { "title": "Create the Exemple project", "text": "1create-project.md" },
+        { "title": "Clone the Exemple project", "text": "2clone-project.md" },
+        { "title": "Deploy Customer microservice", "text": "3deploy-customer.md" },
+        { "title": "Deploy Preferences microservice", "text": "4deploy-preferences.md" },
+        { "title": "Deploy Recommendations microservice", "text": "5deploy-recommendations.md" }
+    ],
+    "assets": {
+        "host01": [
+          { "file": "apache-maven-3.3.9-bin.tar.gz", "target": "/usr/src/" },
+          { "file": "istio-0.4.0-linux.tar.gz", "target": "/root/" }
+        ]
+    } 
   }
 }
