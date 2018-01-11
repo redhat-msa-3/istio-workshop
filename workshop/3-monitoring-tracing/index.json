@@ -5,15 +5,14 @@
   "difficulty": "Basic",
   "time": "20 minutes",
   "environment": {
-    "icon": "fa-openshift",
-    "showdashboard": true,
-    "dashboard": "Web Console",
-    "uilayout": "terminal-iframe",
-    "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\u001b[m\r\n"
+      "icon": "fa-openshift",
+      "showdashboard": true,
+      "dashboard": "Web Console",
+      "uilayout": "terminal-iframe",
+      "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\u001b[m\r\n"
   },
   "backend": {
-    "imageid": "openshift-3-7",
-    "port": 8443
+    "imageid": "openshift-3-7", "port": 8443
   },
   "details": {
     "intro": {
@@ -27,7 +26,6 @@
     ],
     "assets": {
         "host01": [
-          { "file": "apache-maven-3.3.9-bin.tar.gz", "target": "/usr/src/" },
           { "file": "istio-0.4.0-linux.tar.gz", "target": "/root/" }
         ]
     }
