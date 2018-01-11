@@ -2,8 +2,8 @@
   "pathwayTitle": "Istio Workshop",
   "title": "Monitoring and Tracing",
   "description": "Shows out-of-box monitoring and tracing",
-  "difficulty": "Basic",
-  "time": "20 minutes",
+  "difficulty": "Intermediate",
+  "time": "40 minutes",
   "environment": {
       "icon": "fa-openshift",
       "showdashboard": true,
