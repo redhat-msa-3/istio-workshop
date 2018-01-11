@@ -13,7 +13,7 @@
         },
     "steps": [
           {
-            "title": "Deploy Recommendations microservice",
+            "title": "Monitoring",
             "text": "1monitoring.md"
           }
         ]

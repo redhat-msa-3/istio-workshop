@@ -20,7 +20,7 @@ Now, let's wait until `grafana` pod is up and running.
 
 Execute `oc get pods -w -n istio-system`{{execute}} and wait until grafana pod STATUS is `Running`.
 
-Once it's running, access Grafana console that is running at [http://grafana-istio-system.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com](http://grafana-istio-system.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com)
+Once it's Running, click `CTRL+C` and access Grafana console that is running at http://grafana-istio-system.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com
 
 At Grafana console, select the Istio Dashboard.
 
