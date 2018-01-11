@@ -20,4 +20,4 @@ Now open Jaeger console at https://jaeger-query-istio-system.[[HOST_SUBDOMAIN]]-
 
 Select `customer` from the list of services and Find Traces
 
-![](../../assets/monitoring/jargerUI.png)
+![](../../assets/monitoring/jaegerUI.png)
