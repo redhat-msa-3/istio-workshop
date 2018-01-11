@@ -10,4 +10,8 @@ https://github.com/redhat-developer-demos/istio_tutorial/blob/master/customer/sr
 
 Jaeger allow you to trace the invocation.
 
-Install Jaeger console by executing: `oc process -f https://raw.githubusercontent.com/jaegertracing/jaeger-openshift/master/all-in-one/jaeger-all-in-one-template.yml | oc create -f -`{{execute}}
+Install Jaeger console by executing: `oc process -f https://raw.githubusercontent.com/jaegertracing/jaeger-openshift/master/all-in-one/jaeger-all-in-one-template.yml | oc create -n istio-system -f -`{{execute}}
+
+Execute `oc get pods -w` and wait until `jaeger` pod READY column is 1/1.
+
+Hit `CTRL+C` and 
