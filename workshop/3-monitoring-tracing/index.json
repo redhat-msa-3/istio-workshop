@@ -22,7 +22,8 @@
       "code": "set-env.sh"
     },
     "steps": [
-        { "title": "Monitoring", "text": "1monitoring.md" }
+        { "title": "Monitoring", "text": "1monitoring.md" },
+        { "title": "Tracing", "text": "1tracing.md" }
     ]
   }
 }
