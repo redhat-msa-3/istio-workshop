@@ -23,3 +23,13 @@ Now we need to apply the following file to the OpenShift instance:
 after the installation of `servicegraph` Istio add-ons we need to expose the services.
 
 Execute: `oc expose svc servicegraph -n istio-system`{{execute}}
+
+Now, let's wait until `servicegraph` pod is up and running.
+
+Execute `oc get pods -w -n istio-system`{{execute}} and wait until `servicegraph` pod STATUS is `Running`.
+
+Now open http://servicegraph-istio-system.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com/dotviz
+
+You should see a visual representation of the microservices just like the following picture
+
+![](../../assets/monitoring/servicegraph.png)
