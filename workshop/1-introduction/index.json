@@ -13,7 +13,7 @@
   },
   "backend": {
     "imageid": "openshift-3-7", "port": 8443
-  }
+  },
   "details": {
     "intro": {
         "text": "intro.md",
