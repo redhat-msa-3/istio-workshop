@@ -1,12 +1,12 @@
 Go to the source folder of `recommendations` microservice.
 
-Execute: `cd ~/istio_tutorial/recommendations/`{{execute}}
+Execute: `cd ~/istio-tutorial/recommendations/`{{execute}}
 
 Now execute `mvn package`{{execute}} to create the `recommendations-0.0.1-SNAPSHOT.jar` file.
 
 ## Create the recommendations docker image.
 
-We will now use the provided [`Dockerfile`](https://github.com/redhat-developer-demos/istio_tutorial/blob/master/recommendations/Dockerfile) to create a docker image.
+We will now use the provided [`Dockerfile`](https://github.com/redhat-developer-demos/istio-tutorial/blob/master/recommendations/Dockerfile) to create a docker image.
 
 This image will be called `example/recommendations:v1`.
 

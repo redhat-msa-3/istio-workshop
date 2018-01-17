@@ -1,12 +1,12 @@
 Istio also allows you to specify custom metrics which can be seen inside of the Prometheus dashboard
 
-Look at the file https://github.com/redhat-developer-demos/istio_tutorial/blob/master/istiofiles/recommendations_requestcount.yml
+Look at the file https://github.com/redhat-developer-demos/istio-tutorial/blob/master/istiofiles/recommendations_requestcount.yml
 
 It specifies an istio rule that invokes the `recommendationsrequestcounthandler` for every invocation to `recommendations.springistio.svc.cluster.local`
 
 **TODO** Needs more exaplanation about this file
 
-Go to the `istio_tutorial` folder. `cd ~/istio_tutorial`{{execute}}
+Go to the `istio-tutorial` folder. `cd ~/istio-tutorial`{{execute}}
 
 Now, add the custom metric and rule.
 

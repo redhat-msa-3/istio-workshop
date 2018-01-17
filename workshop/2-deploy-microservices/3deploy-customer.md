@@ -1,6 +1,6 @@
 Go to the source folder of `customer` microservice.
 
-Execute: `cd ~/istio_tutorial/customer/`{{execute}}
+Execute: `cd ~/istio-tutorial/customer/`{{execute}}
 
 Now execute `mvn package`{{execute}} to create the `customer-0.0.1-SNAPSHOT.jar` file.
 
@@ -9,7 +9,7 @@ Now execute `mvn package`{{execute}} to create the `customer-0.0.1-SNAPSHOT.jar`
 
 ## Create the customer docker image.
 
-We will now use the provided [`Dockerfile`](https://github.com/redhat-developer-demos/istio_tutorial/blob/master/customer/Dockerfile) to create a docker image.
+We will now use the provided [`Dockerfile`](https://github.com/redhat-developer-demos/istio-tutorial/blob/master/customer/Dockerfile) to create a docker image.
 
 This image will be called `example/customer`.
 

@@ -1,12 +1,12 @@
 Go to the source folder of `preferences` microservice.
 
-Execute: `cd ~/istio_tutorial/preferences/`{{execute}}
+Execute: `cd ~/istio-tutorial/preferences/`{{execute}}
 
 Now execute `mvn package`{{execute}} to create the `preferences-0.0.1-SNAPSHOT.jar` file.
 
 ## Create the preferences docker image.
 
-We will now use the provided [`Dockerfile`](https://github.com/redhat-developer-demos/istio_tutorial/blob/master/preferences/Dockerfile) to create a docker image.
+We will now use the provided [`Dockerfile`](https://github.com/redhat-developer-demos/istio-tutorial/blob/master/preferences/Dockerfile) to create a docker image.
 
 This image will be called `example/preferences`.
 
