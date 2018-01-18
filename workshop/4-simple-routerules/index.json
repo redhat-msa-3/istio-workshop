@@ -17,7 +17,7 @@
     "imageid": "openshift-3-7", "port": 8443
   },
   "files": [
-    "RecommendationsController.java"
+    
   ],
   "details": {
     "intro": {
