@@ -9,11 +9,12 @@
       "showdashboard": true,
       "dashboard": "Web Console",
       "uilayout": "editor-terminal",
+      "uieditorpath": "/root/istio-tutorial/recommendations/src/main/java/com/example/recommendations/RecommendationsController.java",
       "uisettings": "java",
       "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\u001b[m\r\n"
   },
   "files": [
-      "/root/istio-tutorial/recommendations/src/main/java/com/example/recommendations/RecommendationsController.java"
+
   ],
   "backend": {
     "imageid": "openshift-3-7", "port": 8443
