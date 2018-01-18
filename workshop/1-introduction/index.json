@@ -7,7 +7,7 @@
   "environment": {
       "icon": "fa-openshift",
       "showdashboard": true,
-      "dashboards": [{"name":"OpenShift Console","port":8443}],
+      "dashboard": "Web Console",
       "uilayout": "terminal-iframe",
       "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\u001b[m\r\n"
   },
