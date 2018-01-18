@@ -27,7 +27,8 @@
       "code": "set-env.sh"
     },
     "steps": [
-        { "title": "Modify Recommendations source code", "text": "1modify-recommendations.md" }
+        { "title": "Modify Recommendations source code", "text": "1modify-recommendations.md" },
+        { "title": "All users to recommendations:v2", "text": "2all-usersv2.md" }
     ]
   }
 }

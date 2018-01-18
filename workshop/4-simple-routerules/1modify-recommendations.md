@@ -4,7 +4,7 @@ Open `RecommendationsController.java` in the editor, and make the following modi
 
 **Note**: The file shold appear in the file explorer in some seconds.
 
-<pre class="file" data-filename="/root/istio-tutorial/recommendations/src/main/java/com/example/recommendations/RecommendationsController.java">
+<pre>
     System.out.println("Big Red Dog v2 " + cnt);
      
     return "Clifford v2 " + cnt;
@@ -17,6 +17,8 @@ Now go to the recommendations folder `cd ~/istio-tutorial/recommendations/`{{exe
 Compile the project with the modifications that you did.
 
 `mvn package`{{execute}}
+
+**NOTE**: If you see the following message *-bash: mvn: command not found*, wait a little bit and try again. This happens because `Maven` still being prepared in your environment in the background.
 
 ## Create the recommendations:v2 docker image.
 
@@ -36,15 +38,8 @@ To watch the creation of the pods, execute `oc get pods -w`{{execute}}
 
 Once that the recommendations pod READY column is 2/2, you can hit `CTRL+C`. 
 
-Try the microservice by typing `curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com`{{execute}}
+Try the microservice several times by typing `curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com`{{execute}}
 
 You likely see "Clifford v1 5", where the 5 is basically the number of times you hit the endpoint.
 
-Try again the microservice by typing `curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com`{{execute}}
-
-you likely see "Clifford v2 1" as by default you get random load-balancing when there is more than one Pod behind a Service
-
-
-
-
-
+you likely see "Clifford v2 1" as by default you get random load-balancing when there is more than one Pod behind a Service.
