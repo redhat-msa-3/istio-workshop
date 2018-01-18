@@ -13,9 +13,6 @@
       "uisettings": "java",
       "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\u001b[m\r\n"
   },
-  "files": [
-      
-  ],
   "backend": {
     "imageid": "openshift-3-7", "port": 8443
   },
@@ -27,7 +24,7 @@
       "code": "set-env.sh"
     },
     "steps": [
-        { "title": "Monitoring", "text": "1modify-recommendations.md" }
+        { "title": "Modify Recommendations source code", "text": "1modify-recommendations.md" }
     ]
   }
 }
