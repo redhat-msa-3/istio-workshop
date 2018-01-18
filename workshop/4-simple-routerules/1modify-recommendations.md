@@ -1,6 +1,8 @@
 We can experiment with Istio routing rules by making a change to RecommendationsController.java.
 
-Open `RecommendationsController.java` and make the following modifications
+Open `RecommendationsController.java` in the editor, and make the following modifications.
+
+**Note**: The file shold appear in the file explorer in some seconds.
 
 <pre class="file" data-filename="/root/istio-tutorial/recommendations/src/main/java/com/example/recommendations/RecommendationsController.java">
     System.out.println("Big Red Dog v2 " + cnt);
@@ -20,7 +22,7 @@ Compile the project with the modifications that you did.
 
 We will now create a new image using `v2`. The `v2`tag during the docker build is significant.
 
-Execute `docker build -t example/recommendations:v2 .`
+Execute `docker build -t example/recommendations:v2 .`{{execute}}
 
 You can check the image that was create by typing `docker images | grep recommendations`{{execute}}
 

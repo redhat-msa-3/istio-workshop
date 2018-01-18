@@ -29,13 +29,16 @@ ssh root@host01 "mv /usr/src/apache-maven-3.3.9/ /usr/local/maven/"
 ssh root@host01 "alternatives --install /usr/bin/mvn mvn /usr/local/maven/apache-maven-3.3.9/bin/mvn 1"
 
 
-ssh root@host01 "mvn package -f /root/istio-tutorial/customer/ -DskipTests"
-ssh root@host01 "mvn package -f /root/istio-tutorial/recommendations/ -DskipTests"
-ssh root@host01 "mvn package -f /root/istio-tutorial/preferences/ -DskipTests"
+ssh root@host01 "git clone https://github.com/redhat-developer-demos/istio-tutorial /root/istio-tutorial-orig"
+ssh root@host01 "mvn package -f /root/istio-tutorial-orig/customer/ -DskipTests"
+ssh root@host01 "mvn package -f /root/istio-tutorial-orig/recommendations/ -DskipTests"
+ssh root@host01 "mvn package -f /root/istio-tutorial-orig/preferences/ -DskipTests"
 
-ssh root@host01 "docker build -q -t example/customer /root/istio-tutorial/customer/"
-ssh root@host01 "docker build -q -t example/preferences /root/istio-tutorial/preferences/"
-ssh root@host01 "docker build -q -t example/recommendations:v1 /root/istio-tutorial/recommendations/"
+ssh root@host01 "docker build -q -t example/customer /root/istio-tutorial-orig/customer/"
+ssh root@host01 "docker build -q -t example/preferences /root/istio-tutorial-orig/preferences/"
+ssh root@host01 "docker build -q -t example/recommendations:v1 /root/istio-tutorial-orig/recommendations/"
+
+ssh root@host01 "rm -rf /root/istio-tutorial-orig/recommendations/"
 
 ssh root@host01 "oc apply -f <(/root/istio-0.4.0/bin/istioctl kube-inject -f /root/istio-tutorial/customer/src/main/kubernetes/Deployment.yml) -n tutorial"
 ssh root@host01 "oc apply -f <(/root/istio-0.4.0/bin/istioctl kube-inject -f /root/istio-tutorial/preferences/src/main/kubernetes/Deployment.yml) -n tutorial"
