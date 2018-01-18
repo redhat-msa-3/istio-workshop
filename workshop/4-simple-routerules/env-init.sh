@@ -3,7 +3,7 @@ ssh root@host01 "oc login -u system:admin"
 ssh root@host01 "oc new-project tutorial"
 ssh root@host01 "oc adm policy add-scc-to-user privileged -z default -n tutorial"
 ssh root@host01 "git clone https://github.com/redhat-developer-demos/istio-tutorial /root/tmp"
-ssh root@host01 "unalias mv && mv -Rf /root/tmp/* istio-tutorial/"
+ssh root@host01 "unalias cp ; cp -Rf /root/tmp/* /root/istio-tutorial/"
 ssh root@host01 "rm -rf /root/tmp"
 
 ssh root@host01 "oc adm policy add-cluster-role-to-user cluster-admin developer"
