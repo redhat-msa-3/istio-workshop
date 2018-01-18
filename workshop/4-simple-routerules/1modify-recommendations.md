@@ -1,7 +1,3 @@
-We can experiment with Istio routing rules by making a change to RecommendationsController.java like
-
-## recommendations:v2
-
 We can experiment with Istio routing rules by making a change to RecommendationsController.java.
 
 Open `RecommendationsController.java` and make the following modifications
@@ -20,7 +16,7 @@ Compile the project with the modifications that you did.
 
 `mvn package`{{execute}}
 
-## Create the recommendations docker image.
+## Create the recommendations:v2 docker image.
 
 We will now create a new image using `v2`. The `v2`tag during the docker build is significant.
 
