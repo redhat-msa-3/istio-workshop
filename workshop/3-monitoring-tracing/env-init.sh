@@ -20,8 +20,8 @@ ssh root@host01 "mkdir /usr/local/maven"
 ssh root@host01 "mv /usr/src/apache-maven-3.3.9/ /usr/local/maven/"
 ssh root@host01 "alternatives --install /usr/bin/mvn mvn /usr/local/maven/apache-maven-3.3.9/bin/mvn 1"
 
-ssh root@host01 "oc new-project springistio"
-ssh root@host01 "oc adm policy add-scc-to-user privileged -z default -n springistio"
+ssh root@host01 "oc new-project tutorial"
+ssh root@host01 "oc adm policy add-scc-to-user privileged -z default -n tutorial"
 ssh root@host01 "git clone https://github.com/redhat-developer-demos/istio-tutorial /root/istio-tutorial"
 
 ssh root@host01 "mvn package -f /root/istio-tutorial/customer/ -DskipTests"
@@ -32,12 +32,12 @@ ssh root@host01 "docker build -q -t example/customer /root/istio-tutorial/custom
 ssh root@host01 "docker build -q -t example/preferences /root/istio-tutorial/preferences/"
 ssh root@host01 "docker build -q -t example/recommendations:v1 /root/istio-tutorial/recommendations/"
 
-ssh root@host01 "oc apply -f <(/root/istio-0.4.0/bin/istioctl kube-inject -f /root/istio-tutorial/customer/src/main/kubernetes/Deployment.yml) -n springistio"
-ssh root@host01 "oc apply -f <(/root/istio-0.4.0/bin/istioctl kube-inject -f /root/istio-tutorial/preferences/src/main/kubernetes/Deployment.yml) -n springistio"
-ssh root@host01 "oc apply -f <(/root/istio-0.4.0/bin/istioctl kube-inject -f /root/istio-tutorial/recommendations/src/main/kubernetes/Deployment.yml) -n springistio"
+ssh root@host01 "oc apply -f <(/root/istio-0.4.0/bin/istioctl kube-inject -f /root/istio-tutorial/customer/src/main/kubernetes/Deployment.yml) -n tutorial"
+ssh root@host01 "oc apply -f <(/root/istio-0.4.0/bin/istioctl kube-inject -f /root/istio-tutorial/preferences/src/main/kubernetes/Deployment.yml) -n tutorial"
+ssh root@host01 "oc apply -f <(/root/istio-0.4.0/bin/istioctl kube-inject -f /root/istio-tutorial/recommendations/src/main/kubernetes/Deployment.yml) -n tutorial"
 
 ssh root@host01 "oc create -f /root/istio-tutorial/customer/src/main/kubernetes/Service.yml"
 ssh root@host01 "oc create -f /root/istio-tutorial/preferences/src/main/kubernetes/Service.yml"
 ssh root@host01 "oc create -f /root/istio-tutorial/recommendations/src/main/kubernetes/Service.yml"
 
-ssh root@host01 "oc expose service customer -n springistio"
+ssh root@host01 "oc expose service customer -n tutorial"

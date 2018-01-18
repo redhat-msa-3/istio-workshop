@@ -14,7 +14,7 @@ Install Jaeger console by executing: `oc process -f https://raw.githubuserconten
 
 Execute `oc get pods -w -n istio-system`{{execute}} and wait until `jaeger` pod READY column is 1/1.
 
-Hit `CTRL+C` and run several requests through the system: `curl http://customer-springistio.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com`{{execute}}
+Hit `CTRL+C` and run several requests through the system: `curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com`{{execute}}
 
 Check `Jaeger` route by typing `oc get routes -n istio-system`{{execute}}
 

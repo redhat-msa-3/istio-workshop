@@ -18,7 +18,7 @@ You can check the image that was create by typing `docker images | grep recommen
 
 Now let's deploy the recommendations pod with its sidecar.
 
-Execute: `oc apply -f <(istioctl kube-inject -f src/main/kubernetes/Deployment.yml) -n springistio`{{execute}}
+Execute: `oc apply -f <(istioctl kube-inject -f src/main/kubernetes/Deployment.yml) -n tutorial`{{execute}}
 
 Also create a service: `oc create -f src/main/kubernetes/Service.yml`{{execute}}
 
@@ -26,7 +26,7 @@ To watch the creation of the pods, execute `oc get pods -w`{{execute}}
 
 Once that the preference pod READY column is 2/2,, you can hit `CTRL+C`. 
 
-Try the microservice by typing `curl http://customer-springistio.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com`{{execute}}
+Try the microservice by typing `curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com`{{execute}}
 
 It returns:
 
