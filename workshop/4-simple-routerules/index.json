@@ -1,0 +1,32 @@
+{
+  "pathwayTitle": "Istio Workshop",
+  "title": "Simple RouteRules",
+  "description": "Shows how Istio can be used to control route based on some simple rules",
+  "difficulty": "Intermediate",
+  "time": "1 hour",
+  "environment": {
+      "icon": "fa-openshift",
+      "showdashboard": true,
+      "dashboard": "Web Console",
+      "uilayout": "editor-terminal",
+      "uisettings": "java",
+      "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\u001b[m\r\n"
+  },
+  "files": [
+      "app.js"
+  ],
+  "backend": {
+    "imageid": "openshift-3-7", "port": 8443
+  },
+  "details": {
+    "intro": {
+      "courseData": "env-init.sh",
+      "text": "intro.md",
+      "credits": "http://developers.redhat.com",
+      "code": "set-env.sh"
+    },
+    "steps": [
+        { "title": "Monitoring", "text": "1modify-recommendations.md" }
+    ]
+  }
+}
