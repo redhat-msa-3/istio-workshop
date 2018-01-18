@@ -40,6 +40,7 @@ Once that the recommendations pod READY column is 2/2, you can hit `CTRL+C`.
 
 Try the microservice several times by typing `curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com`{{execute}}
 
+You likely see "Clifford v2 1" as by default you get random load-balancing when there is more than one Pod behind a Service.
+
 You likely see "Clifford v1 5", where the 5 is basically the number of times you hit the endpoint.
 
-you likely see "Clifford v2 1" as by default you get random load-balancing when there is more than one Pod behind a Service.
