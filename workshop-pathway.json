@@ -17,9 +17,14 @@
       "title": "Monitoring and Tracing"
     },
     {
-      "external_link": "https://www.katacoda.com/rafabene/courses/workshop/3-monitoring-tracing",
+      "external_link": "https://www.katacoda.com/rafabene/courses/workshop/4-simple-routerules",
       "course_id": "4-simple-routerules",
       "title": "Simple RouteRules"
+    },
+    {
+      "external_link": "https://www.katacoda.com/rafabene/courses/workshop/5-fault-injection",
+      "course_id": "5-fault-injection",
+      "title": "Fault Injection"
     }
   ]
 }
