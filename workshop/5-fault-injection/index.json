@@ -17,7 +17,7 @@
   "details": {
     "assets": {
       "host01": [
-          { "file": "recommendations.txt", "target": "/root/" }
+          { "file": "recommendations-v2.diff", "target": "/root/" }
       ]
     },
     "intro": {
