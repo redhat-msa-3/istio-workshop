@@ -14,9 +14,14 @@
   "backend": {
     "imageid": "openshift-3-7", "port": 8443
   },
-  "files": [
-    
-  ],
+  "assets": {
+    "host01": [
+        {
+          "file": "recommendations-v2.diff",
+          "target": "~/"
+        }
+    ]
+  },
   "details": {
     "intro": {
       "courseData": "env-init.sh",
@@ -25,7 +30,7 @@
       "code": "set-env.sh"
     },
     "steps": [
-        { "title": "1http-error-503", "text": "1http-error-503.md" }
+        { "title": "HTTP Error 503", "text": "1http-error-503.md" }
     ]
   }
 }

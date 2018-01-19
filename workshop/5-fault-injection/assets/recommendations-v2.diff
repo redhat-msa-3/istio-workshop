@@ -1,0 +1,29 @@
+diff --git a/recommendations-v2/src/main/java/com/example/recommendations/RecommendationsController.java b/recommendations-v2/src/main/java/com/example/recommendations/RecommendationsController.java
+index 3d90d32..adeae13 100644
+--- a/recommendations-v2/src/main/java/com/example/recommendations/RecommendationsController.java
++++ b/recommendations-v2/src/main/java/com/example/recommendations/RecommendationsController.java
+@@ -15,7 +15,7 @@ public class RecommendationsController {
+     public String getRecommendations() {
+
+         cnt ++;
+-        System.out.println("Big Red Dog v1 " + cnt);
++        System.out.println("Big Red Dog v2 " + cnt);
+
+         /* begin timeout and/or circuit-breaker example
+         try {
+@@ -32,7 +32,7 @@ public class RecommendationsController {
+             throw new ServiceUnavailableException();
+         }
+         // */
+-        return "Clifford v1 " + cnt;
++        return "Clifford v2 " + cnt;
+
+     }
+
+@@ -48,4 +48,4 @@ public class RecommendationsController {
+ @ResponseStatus(HttpStatus.SERVICE_UNAVAILABLE)
+ class ServiceUnavailableException extends RuntimeException {
+
+-}
+\ No newline at end of file
++}

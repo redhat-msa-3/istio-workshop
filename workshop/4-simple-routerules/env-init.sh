@@ -38,7 +38,7 @@ ssh root@host01 "docker build -q -t example/customer /root/istio-tutorial-orig/c
 ssh root@host01 "docker build -q -t example/preferences /root/istio-tutorial-orig/preferences/"
 ssh root@host01 "docker build -q -t example/recommendations:v1 /root/istio-tutorial-orig/recommendations/"
 
-ssh root@host01 "rm -rf /root/istio-tutorial-orig/recommendations/"
+ssh root@host01 "rm -rf /root/istio-tutorial-orig/"
 
 ssh root@host01 "oc apply -f <(/root/istio-0.4.0/bin/istioctl kube-inject -f /root/istio-tutorial/customer/src/main/kubernetes/Deployment.yml) -n tutorial"
 ssh root@host01 "oc apply -f <(/root/istio-0.4.0/bin/istioctl kube-inject -f /root/istio-tutorial/preferences/src/main/kubernetes/Deployment.yml) -n tutorial"

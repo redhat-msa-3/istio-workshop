@@ -1,7 +1,8 @@
 ssh root@host01 "oc login -u system:admin"
 
 ssh root@host01 "git clone https://github.com/redhat-developer-demos/istio-tutorial"
-
+ssh root@host01 "cp -Rvf istio-tutorial/recommendations/ istio-tutorial/recommendations-v2"
+ssh root@host01 "git apply recommendations-v2.diff --include /root/istio-tutorial"
 ssh root@host01 "oc new-project tutorial"
 ssh root@host01 "oc adm policy add-scc-to-user privileged -z default -n tutorial"
 
@@ -26,20 +27,20 @@ ssh root@host01 "mkdir /usr/local/maven"
 ssh root@host01 "mv /usr/src/apache-maven-3.3.9/ /usr/local/maven/"
 ssh root@host01 "alternatives --install /usr/bin/mvn mvn /usr/local/maven/apache-maven-3.3.9/bin/mvn 1"
 
-ssh root@host01 "git clone https://github.com/redhat-developer-demos/istio-tutorial /root/istio-tutorial-orig"
-ssh root@host01 "mvn package -f /root/istio-tutorial-orig/customer/ -DskipTests"
-ssh root@host01 "mvn package -f /root/istio-tutorial-orig/recommendations/ -DskipTests"
-ssh root@host01 "mvn package -f /root/istio-tutorial-orig/preferences/ -DskipTests"
+ssh root@host01 "mvn package -f /root/istio-tutorial/customer/ -DskipTests"
+ssh root@host01 "mvn package -f /root/istio-tutorial/recommendations/ -DskipTests"
+ssh root@host01 "mvn package -f /root/istio-tutorial/recommendations-v2/ -DskipTests"
+ssh root@host01 "mvn package -f /root/istio-tutorial/preferences/ -DskipTests"
 
-ssh root@host01 "docker build -q -t example/customer /root/istio-tutorial-orig/customer/"
-ssh root@host01 "docker build -q -t example/preferences /root/istio-tutorial-orig/preferences/"
-ssh root@host01 "docker build -q -t example/recommendations:v1 /root/istio-tutorial-orig/recommendations/"
-
-ssh root@host01 "rm -rf /root/istio-tutorial-orig/recommendations/"
+ssh root@host01 "docker build -q -t example/customer /root/istio-tutorial/customer/"
+ssh root@host01 "docker build -q -t example/preferences /root/istio-tutorial/preferences/"
+ssh root@host01 "docker build -q -t example/recommendations:v1 /root/istio-tutorial/recommendations/"
+ssh root@host01 "docker build -q -t example/recommendations:v2 /root/istio-tutorial/recommendations-v2/"
 
 ssh root@host01 "oc apply -f <(/root/istio-0.4.0/bin/istioctl kube-inject -f /root/istio-tutorial/customer/src/main/kubernetes/Deployment.yml) -n tutorial"
 ssh root@host01 "oc apply -f <(/root/istio-0.4.0/bin/istioctl kube-inject -f /root/istio-tutorial/preferences/src/main/kubernetes/Deployment.yml) -n tutorial"
 ssh root@host01 "oc apply -f <(/root/istio-0.4.0/bin/istioctl kube-inject -f /root/istio-tutorial/recommendations/src/main/kubernetes/Deployment.yml) -n tutorial"
+ssh root@host01 "oc apply -f <(/root/istio-0.4.0/bin/istioctl kube-inject -f /root/istio-tutorial/kubernetesfiles/recommendations_v2_deployment.yml) -n tutorial"
 
 ssh root@host01 "oc create -f /root/istio-tutorial/customer/src/main/kubernetes/Service.yml"
 ssh root@host01 "oc create -f /root/istio-tutorial/preferences/src/main/kubernetes/Service.yml"
