@@ -16,10 +16,7 @@
   },
   "assets": {
     "host01": [
-        {
-          "file": "recommendations.diff",
-          "target": "~/"
-        }
+        { "file": "recommendations.diff", "target": "/root/" }
     ]
   },
   "details": {
