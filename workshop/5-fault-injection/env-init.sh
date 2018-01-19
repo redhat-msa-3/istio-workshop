@@ -3,6 +3,7 @@ ssh root@host01 "oc login -u system:admin"
 ssh root@host01 "git clone https://github.com/redhat-developer-demos/istio-tutorial"
 ssh root@host01 "cp -Rvf istio-tutorial/recommendations/ istio-tutorial/recommendations-v2"
 ssh root@host01 "git apply /root/recommendations-v2.diff --include /root/istio-tutorial"
+ssh root@host01 "rm /root/recommendations-v2.diff"
 ssh root@host01 "oc new-project tutorial"
 ssh root@host01 "oc adm policy add-scc-to-user privileged -z default -n tutorial"
 
