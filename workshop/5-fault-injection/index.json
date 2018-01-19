@@ -17,7 +17,7 @@
   "assets": {
     "host01": [
         {
-          "file": "recommendations-v2.diff",
+          "file": "recommendations.diff",
           "target": "~/"
         }
     ]
