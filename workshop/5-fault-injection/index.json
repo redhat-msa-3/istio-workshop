@@ -27,7 +27,8 @@
       "code": "set-env.sh"
     },
     "steps": [
-        { "title": "HTTP Error 503", "text": "1http-error-503.md" }
+        { "title": "HTTP Error 503", "text": "1http-error-503.md" },
+        { "title": "Delay", "text": "2delay.md" }
     ]
   }
 }

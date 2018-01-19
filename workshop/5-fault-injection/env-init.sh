@@ -48,3 +48,5 @@ ssh root@host01 "oc create -f /root/istio-tutorial/preferences/src/main/kubernet
 ssh root@host01 "oc create -f /root/istio-tutorial/recommendations/src/main/kubernetes/Service.yml"
 
 ssh root@host01 "oc expose service customer -n tutorial"
+
+ssh root@host01 "wget https://raw.githubusercontent.com/johanhaleby/kubetail/master/kubetail -P /usr/local/bin && chmod +x /usr/local/bin/kubetail"
