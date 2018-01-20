@@ -5,9 +5,9 @@ Open `RecommendationsController.java` in the editor, and make the following modi
 **Note**: The file shold appear in the file explorer in some seconds.
 
 <pre>
-    System.out.println("Big Red Dog v2 " + cnt);
+    System.out.println("Big Red Dog v2 " + hostname.substring(19) + " " + cnt);
      
-    return "Clifford v2 " + cnt;
+    return "Clifford v2 " + hostname.substring(19) + " " + cnt;
 </pre>
 
 **Note**: The file is saved automatically.
@@ -40,7 +40,7 @@ Once that the recommendations pod READY column is 2/2, you can hit `CTRL+C`.
 
 Try the microservice several times by typing `curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com`{{execute}}
 
-You likely see "Clifford v2 1" as by default you get random load-balancing when there is more than one Pod behind a Service.
+You likely see "Clifford v2 {hostname} 1" as by default you get random load-balancing when there is more than one Pod behind a Service.
 
-You likely see "Clifford v1 5", where the 5 is basically the number of times you hit the endpoint.
+You likely see "Clifford v1 {hostname} 5", where the 5 is basically the number of times you hit the endpoint.
 

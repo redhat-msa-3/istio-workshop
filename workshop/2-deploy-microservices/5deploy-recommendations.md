@@ -30,6 +30,6 @@ Try the microservice by typing `curl http://customer-tutorial.[[HOST_SUBDOMAIN]]
 
 It returns:
 
-`C100 *{"P1":"Red", "P2":"Big"} && Clifford v1 1 *`
+`C100 *{"P1":"Red", "P2":"Big"} && Clifford v1 1 {hostname} 1*`
 
 This concludes the deployment of `recommendations` microservice.

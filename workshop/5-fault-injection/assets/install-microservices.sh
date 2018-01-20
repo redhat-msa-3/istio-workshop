@@ -27,10 +27,10 @@ mvn package -f /root/istio-tutorial/preferences/ -DskipTests
 
 
 #Docker build
-docker build -q -t example/customer /root/istio-tutorial/customer/
-docker build -q -t example/preferences /root/istio-tutorial/preferences/
-docker build -q -t example/recommendations:v1 /root/istio-tutorial/recommendations/
-docker build -q -t example/recommendations:v2 /root/istio-tutorial/recommendations-v2/
+docker build -t example/customer /root/istio-tutorial/customer/
+docker build -t example/preferences /root/istio-tutorial/preferences/
+docker build -t example/recommendations:v1 /root/istio-tutorial/recommendations/
+docker build -t example/recommendations:v2 /root/istio-tutorial/recommendations-v2/
 
 #Deploy to OpenShift
 oc apply -f <(/root/istio-0.4.0/bin/istioctl kube-inject -f /root/istio-tutorial/customer/src/main/kubernetes/Deployment.yml) -n tutorial
