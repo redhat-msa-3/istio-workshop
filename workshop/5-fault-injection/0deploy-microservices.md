@@ -13,6 +13,8 @@ Make this script executable `chmod +x install-microservices.sh`{{execute}}
 
 Now you can execute this script: `./install-microservices.sh`{{execute}}
 
+> The script will take between 2-5 minutes to complete.
+
 When the scripts ends, watch the creation of the pods, execute `oc get pods -w`{{execute}}
 
 Once that the microservices pods READY column are 2/2, you can hit `CTRL+C`. 
