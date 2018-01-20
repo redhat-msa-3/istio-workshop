@@ -1,7 +1,7 @@
-diff --git a/recommendations/src/main/java/com/example/recommendations/RecommendationsController.java b
+diff --git a/recommendations/src/main/java/com/example/recommendations-v2/RecommendationsController.java b
 index 8c6bf65..2de27cc 100644
---- a/recommendations/src/main/java/com/example/recommendations/RecommendationsController.java
-+++ b/recommendations/src/main/java/com/example/recommendations/RecommendationsController.java
+--- a/recommendations/src/main/java/com/example/recommendations-v2/RecommendationsController.java
++++ b/recommendations/src/main/java/com/example/recommendations-v2/RecommendationsController.java
 @@ -17,7 +17,7 @@ public class RecommendationsController {
 
          cnt ++;
