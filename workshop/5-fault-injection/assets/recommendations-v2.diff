@@ -1,29 +1,29 @@
-diff --git a/recommendations-v2/src/main/java/com/example/recommendations/RecommendationsController.java b/recommendations-v2/src/main/java/com/example/recommendations/RecommendationsController.java
-index 3d90d32..adeae13 100644
---- a/recommendations-v2/src/main/java/com/example/recommendations/RecommendationsController.java
-+++ b/recommendations-v2/src/main/java/com/example/recommendations/RecommendationsController.java
-@@ -15,7 +15,7 @@ public class RecommendationsController {
-     public String getRecommendations() {
+diff --git a/recommendations/src/main/java/com/example/recommendations/RecommendationsController.java b
+index 8c6bf65..2de27cc 100644
+--- a/recommendations/src/main/java/com/example/recommendations/RecommendationsController.java
++++ b/recommendations/src/main/java/com/example/recommendations/RecommendationsController.java
+@@ -17,7 +17,7 @@ public class RecommendationsController {
 
          cnt ++;
--        System.out.println("Big Red Dog v1 " + cnt);
-+        System.out.println("Big Red Dog v2 " + cnt);
+         // hostname.substring(19) to remove "recommendations-v1-"
+-        System.out.println("Big Red Dog v1 " + hostname.substring(19) + " " + cnt);
++        System.out.println("Big Red Dog v2 " + hostname.substring(19) + " " + cnt);
 
          /* begin timeout and/or circuit-breaker example
          try {
-@@ -32,7 +32,7 @@ public class RecommendationsController {
-             throw new ServiceUnavailableException();
-         }
-         // */
--        return "Clifford v1 " + cnt;
-+        return "Clifford v2 " + cnt;
+         @@ -35,7 +35,7 @@ public class RecommendationsController {
+                      throw new ServiceUnavailableException("D'oh");
+                  }
+                  // */
+-                 return "Clifford v1 " + hostname.substring(19) + " " + cnt;
++                 return "Clifford v2 " + hostname.substring(19) + " " + cnt;
+              }
 
-     }
-
-@@ -48,4 +48,4 @@ public class RecommendationsController {
- @ResponseStatus(HttpStatus.SERVICE_UNAVAILABLE)
- class ServiceUnavailableException extends RuntimeException {
-
+              @RequestMapping("/misbehave")
+         @@ -51,4 +51,4 @@ class ServiceUnavailableException extends RuntimeException {
+              public ServiceUnavailableException(String message) {
+                super(message);
+              }
 -}
 \ No newline at end of file
 +}
