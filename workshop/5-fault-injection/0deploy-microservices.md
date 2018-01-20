@@ -9,7 +9,9 @@ There's a script called `install-microservices.sh` that will
 - Create a docker image
 - Deploy the microservices with the sidecar proxy
 
-Execute this script: `./install-microservices.sh`{{execute}}
+Make this script executable `chmod +x install-microservices.sh`{{execute}}
+
+Now you can execute this script: `./install-microservices.sh`{{execute}}
 
 When the scripts ends, watch the creation of the pods, execute `oc get pods -w`{{execute}}
 
