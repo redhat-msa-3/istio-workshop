@@ -17,7 +17,8 @@
   "details": {
     "assets": {
       "host01": [
-          { "file": "recommendations-v2.diff", "target": "/root/" }
+          { "file": "recommendations-v2.diff", "target": "/root/" },
+          { "file": "install-microservices.sh", "target": "/root/" }
       ]
     },
     "intro": {
@@ -27,6 +28,7 @@
       "code": "set-env.sh"
     },
     "steps": [
+        { "title": "Deploy Microservices", "text": "0deploy-microservices.md" },
         { "title": "HTTP Error 503", "text": "1http-error-503.md" },
         { "title": "Delay", "text": "2delay.md" }
     ]
