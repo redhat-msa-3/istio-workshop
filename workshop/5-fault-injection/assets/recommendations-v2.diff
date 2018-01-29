@@ -18,3 +18,5 @@ index a4f8f3f..55fc599 100644
 -        return ResponseEntity.ok(String.format("Clifford v1 %s %d\n", HOSTNAME, count));
 +        return ResponseEntity.ok(String.format("Clifford v2 %s %d\n", HOSTNAME, count));
      }
+
+     private void timeout() {
