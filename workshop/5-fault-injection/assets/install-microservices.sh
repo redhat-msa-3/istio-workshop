@@ -8,6 +8,17 @@ rm /root/recommendations-v2.diff
 oc new-project tutorial
 oc adm policy add-scc-to-user privileged -z default -n tutorial
 
+## Install Java
+yum install java-1.8.0-openjdk-devel tree -y
+
+#Install Maven
+wget http://www.eu.apache.org/dist/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz -P /usr/src
+tar xzf /usr/src/apache-maven-3.3.9-bin.tar.gz -C /usr/src
+rm -rf /usr/src/apache-maven-3.3.9-bin.tar.gz
+mkdir /usr/local/maven
+mv /usr/src/apache-maven-3.3.9/ /usr/local/maven/
+alternatives --install /usr/bin/mvn mvn /usr/local/maven/apache-maven-3.3.9/bin/mvn 1
+
 #Package Projects
 mvn package -f /root/istio-tutorial/customer/ -DskipTests
 mvn package -f /root/istio-tutorial/recommendations/ -DskipTests
