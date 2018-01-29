@@ -5,9 +5,9 @@ Open `RecommendationsController.java` in the editor, and make the following modi
 **Note**: The file shold appear in the file explorer in some seconds.
 
 <pre>
-    logger.debug(String.format("Big Red Dog v2 %s %d", HOSTNAME, count));
+35    logger.debug(String.format("Big Red Dog v2 %s %d", HOSTNAME, count));
      
-    return ResponseEntity.ok(String.format("Clifford v2 %s %d", HOSTNAME, count));
+43    return ResponseEntity.ok(String.format("Clifford v2 %s %d", HOSTNAME, count));
 </pre>
 
 **Note:** The file is saved automatically.
