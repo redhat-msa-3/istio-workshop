@@ -6,7 +6,9 @@ It specifies an istio rule that invokes the `recommendationsrequestcounthandler`
 
 **TODO** Needs more exaplanation about this file
 
-Go to the `istio-tutorial` folder. `cd ~/istio-tutorial`{{execute}}
+Let's go back to the istio installation folder.
+
+`cd ~/istio-tutorial`{{execute}}
 
 Now, add the custom metric and rule.
 

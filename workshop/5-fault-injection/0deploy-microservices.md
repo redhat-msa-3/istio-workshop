@@ -23,4 +23,4 @@ Try the microservice by typing `curl http://customer-tutorial.[[HOST_SUBDOMAIN]]
 
 It should return:
 
-`C100 *{"P1":"Red", "P2":"Big"} && Clifford v1 1 *`
+`C100 *{"P1":"Red", "P2":"Big"} && Clifford v1 {hostname} 1 *`

@@ -12,7 +12,7 @@ The Servicegraph example is built on top of Prometheus queries.
 
 # Installing Servicegraph
 
-Let's go to the istio installation folder.
+Let's go back to the istio installation folder.
 
 Execute `cd ~/istio-0.4.0/`{{execute}}
 

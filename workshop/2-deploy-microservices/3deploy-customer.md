@@ -15,9 +15,9 @@ This image will be called `example/customer`.
 
 To build a docker image type: `docker build -t example/customer .`{{execute}}
 
-You can check the image that was create by typing `docker images | grep customer`{{execute}}
+**Note:** Your very first docker build will take a bit of time as it downloads all the layers. Subsequent rebuilds of the docker image, updating only the jar/app layer will be very fast.
 
-**Note**: Your very first docker build will take a bit of time as it downloads all the layers. Subsequent rebuilds of the docker image, updating only the jar/app layer will be very fast.
+You can check the image that was create by typing `docker images | grep customer`{{execute}}
 
 ## Injecting the sidecar proxy.
 

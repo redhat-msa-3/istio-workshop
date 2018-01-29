@@ -8,7 +8,7 @@ Let's go to the istio installation folder.
 
 Execute `cd ~/istio-0.4.0/`{{execute}}
 
-**NOTE**: If you see the following message *-bash: cd: /root/istio-0.4.0/: No such file or directory*, wait a little bit and try again. This happens because the files still being prepared in your environment in the background.
+**NOTE:** If you see the following message *-bash: cd: /root/istio-0.4.0/: No such file or directory*, wait a little bit and try again. This happens because the files still being prepared in your environment in the background.
 
 Now we need to apply the following files to the OpenShift instance:
 

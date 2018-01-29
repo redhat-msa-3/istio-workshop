@@ -5,12 +5,12 @@ Open `RecommendationsController.java` in the editor, and make the following modi
 **Note**: The file shold appear in the file explorer in some seconds.
 
 <pre>
-    System.out.println("Big Red Dog v2 " + hostname.substring(19) + " " + cnt);
+    logger.debug(String.format("Big Red Dog v2 %s %d", HOSTNAME, count));
      
-    return "Clifford v2 " + hostname.substring(19) + " " + cnt;
+    return ResponseEntity.ok(String.format("Clifford v2 %s %d", HOSTNAME, count));
 </pre>
 
-**Note**: The file is saved automatically.
+**Note:** The file is saved automatically.
 
 Now go to the recommendations folder `cd ~/istio-tutorial/recommendations/`{{execute}}
 
@@ -18,7 +18,7 @@ Compile the project with the modifications that you did.
 
 `mvn package`{{execute}}
 
-**NOTE**: If you see the following message *-bash: mvn: command not found*, wait a little bit and try again. This happens because `Maven` still being prepared in your environment in the background.
+**NOTE:** If you see the following message *-bash: mvn: command not found*, wait a little bit and try again. This happens because `Maven` still being prepared in your environment in the background.
 
 ## Create the recommendations:v2 docker image.
 

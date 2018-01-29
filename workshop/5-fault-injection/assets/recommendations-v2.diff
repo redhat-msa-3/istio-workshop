@@ -1,22 +1,29 @@
-diff --git a/recommendations-v2/src/main/java/com/example/recommendations/RecommendationsController.java b/recommendations-v2/src/main/java/com/example/recommendations/RecommendationsController.java
-index 8c6bf65..12cfa15 100644
+diff --git a/recommendations-v2/src/main/java/com/example/recommendations/RecommendationsController.jav
+index 15fbe80..870935b 100644
 --- a/recommendations-v2/src/main/java/com/example/recommendations/RecommendationsController.java
 +++ b/recommendations-v2/src/main/java/com/example/recommendations/RecommendationsController.java
-@@ -17,7 +17,7 @@ public class RecommendationsController {
-         
-         cnt ++;        
-         // hostname.substring(19) to remove "recommendations-v1-"
--        System.out.println("Big Red Dog v1 " + hostname.substring(19) + " " + cnt);
-+        System.out.println("Big Red Dog v2 " + hostname.substring(19) + " " + cnt);
-         
-         /* begin timeout and/or circuit-breaker example 
-         try {
-@@ -35,7 +35,7 @@ public class RecommendationsController {
-             throw new ServiceUnavailableException("D'oh");
-         } 
-         // */       
--        return "Clifford v1 " + hostname.substring(19) + " " + cnt;
-+        return "Clifford v2 " + hostname.substring(19) + " " + cnt;
+@@ -32,7 +32,7 @@ public class RecommendationsController {
+     @RequestMapping("/")
+     public ResponseEntity<String> getRecommendations() {
+         count++;
+-        logger.debug(String.format("Big Red Dog v1 %s %d", HOSTNAME, count));
++        logger.debug(String.format("Big Red Dog v2 %s %d", HOSTNAME, count));
+
+         //timeout();
+
+@@ -40,7 +40,7 @@ public class RecommendationsController {
+         if (misbehave) {
+             return doMisbehavior();
+         }
+-        return ResponseEntity.ok(String.format("Clifford v1 %s %d", HOSTNAME, count));
++        return ResponseEntity.ok(String.format("Clifford v2 %s %d", HOSTNAME, count));
      }
- 
-     @RequestMapping("/misbehave")
+
+     private void timeout() {
+@@ -65,4 +65,4 @@ public class RecommendationsController {
+         return ResponseEntity.ok("Next request to / will return a 503");
+     }
+
+-}
+\ No newline at end of file
++}
