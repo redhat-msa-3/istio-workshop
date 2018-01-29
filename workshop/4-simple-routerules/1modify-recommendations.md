@@ -46,7 +46,7 @@ You likely see "Clifford v1 {hostname} 5", where the 5 is basically the number o
 
 Send several requests to see their responses
 
-`while true; do curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; echo; sleep .1; done`{{execute}}
+`while true; do curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .1; done`{{execute}}
 
 Hit CTRL+C when you are satisfied.
 
@@ -60,7 +60,7 @@ Once that the preference pod READY column is 2/2, you can hit `CTRL+C`.
 
 Now, you will see two requests into the v2 and one for v1.
 
-`while true; do curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; echo; sleep .1; done`{{execute}}
+`while true; do curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .1; done`{{execute}}
 
 Hit CTRL+C when you are satisfied.
 
