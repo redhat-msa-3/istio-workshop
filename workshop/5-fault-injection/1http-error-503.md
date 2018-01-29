@@ -4,7 +4,9 @@ If you look for all recommendations pods that contains the label `app=recommenda
 
 Try: `oc get pods -l app=recommendations -n tutorial`{{execute}}
 
-To check this behaviour, try the microservice several times by typing `curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com`{{execute}}
+To check this behaviour, try the microservice several times by typing `while true; do curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; echo; sleep .1; done`{{execute}}
+
+Hit CTRL+C when you are satisfied.
 
 Now check the file [route-rule-recommendations-503.yml](https://github.com/redhat-developer-demos/istio-tutorial/blob/master/istiofiles/route-rule-recommendations-503.yml).
 
@@ -12,7 +14,9 @@ Note that this `RouteRule` provides `httpFault` that will `abort` the request `5
 
 Let's apply this rule: `oc create -f istio-tutorial/istiofiles/route-rule-recommendations-503.yml -n tutorial`{{execute}}
 
-To check the new behaviour, try the microservice several times by typing `curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com`{{execute}}
+To check the new behaviour, try the microservice several times by typing `while true; do curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; echo; sleep .1; done`{{execute}}
+
+Hit CTRL+C when you are satisfied.
 
 ## Cleanup
 
