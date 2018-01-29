@@ -38,9 +38,29 @@ To watch the creation of the pods, execute `oc get pods -w`{{execute}}
 
 Once that the recommendations pod READY column is 2/2, you can hit `CTRL+C`. 
 
-Try the microservice several times by typing `curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com`{{execute}}
+Test the `customer` endpoint: `curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com`{{execute}}
 
 You likely see "Clifford v2 {hostname} 1" as by default you get random load-balancing when there is more than one Pod behind a Service.
 
 You likely see "Clifford v1 {hostname} 5", where the 5 is basically the number of times you hit the endpoint.
+
+Send several requests to see their responses
+
+`while true; do curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; echo; sleep .1; done`{{execute}}
+
+Hit CTRL+C when you are satisfied.
+
+The default Kubernetes/OpenShift behavior is to round-robin load-balance across all available pods behind a single Service. Add another replica of recommendations-v2 Deployment.
+
+`oc scale --replicas=2 deployment/recommendations-v2`{{execute}}
+
+Now, you will see two requests into the v2 and one for v1.
+
+`while true; do curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; echo; sleep .1; done`{{execute}}
+
+Hit CTRL+C when you are satisfied.
+
+Scale back to a single replica of the recommendations-v2 Deployment
+
+`oc scale --replicas=1 deployment/recommendations-v2`{{execute}}
 

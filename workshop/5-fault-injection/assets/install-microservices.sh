@@ -3,7 +3,7 @@ oc login -u system:admin
 
 git clone https://github.com/redhat-developer-demos/istio-tutorial
 cp -Rvf istio-tutorial/recommendations/ istio-tutorial/recommendations-v2
-git apply /root/recommendations-v2.diff --directory=/root/istio-tutorial
+git apply /root/recommendations-v2.diff --directory=/root/istio-tutorial || { echo "Git apply failed. Check file recommendations-v2.diff"; exit 1; }
 rm /root/recommendations-v2.diff
 oc new-project tutorial
 oc adm policy add-scc-to-user privileged -z default -n tutorial

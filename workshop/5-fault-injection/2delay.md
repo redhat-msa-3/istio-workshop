@@ -6,9 +6,12 @@ Note that this `RouteRule` provides `httpFault` that will `delay` the request `5
 
 Let's apply this rule: `oc create -f istio-tutorial/istiofiles/route-rule-recommendations-delay.yml -n tutorial`{{execute}}
 
-To check the new behaviour, try the microservice several times by typing `curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com`{{execute}}
+To check the new behaviour, try the microservice several times by typing `while true; do time curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; echo; sleep .1; done`{{execute}}
 
 You will notice many requets to the customer endpoint now have a delay. If you are monitoring the logs for recommendations v1 and v2, you will also see the delay happens BEFORE the recommendations service is actually called
 
+## Cleanup
 
+To remove the delay behaviour, simply delete this `routerule` by executing `oc delete routerule recommendations-delay -n tutorial`{{execute}}.
 
+To check if you have random load-balance, try the microservice several times by typing `curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com`{{execute}}

@@ -8,8 +8,9 @@ It specifies that `recommendations` with label`version=v1` will have a weight of
 
 Let's create that routerule: `oc create -f ~/istio-tutorial/istiofiles/route-rule-recommendations-v1_and_v2.yml -n tutorial`{{execute}}
 
-Now perform several requests to the microservices: `curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com`{{execute}}
+To check the new behaviour, try the microservice several times by typing `while true; do time curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; echo; sleep .1; done`{{execute}}
 
+Hit CTRL+C when you are satisfied.
 
 ## Recommendations 75/25
 
@@ -18,7 +19,9 @@ Let's change the mixture to be 75/25 by applying the following file https://gith
 
 Let's replace the previously created routerule with: `oc replace -f ~/istio-tutorial/istiofiles/route-rule-recommendations-v1_and_v2_75_25.yml -n tutorial`{{execute}}
 
-Now perform several requests to the microservices: `curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com`{{execute}}
+To check the new behaviour, try the microservice several times by typing `while true; do time curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; echo; sleep .1; done`{{execute}}
+
+Hit CTRL+C when you are satisfied.
 
 ## Cleanup
 
