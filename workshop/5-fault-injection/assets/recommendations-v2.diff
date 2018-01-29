@@ -6,8 +6,8 @@ index 15fbe80..870935b 100644
      @RequestMapping("/")
      public ResponseEntity<String> getRecommendations() {
          count++;
--        logger.debug(String.format("Big Red Dog v1 %s %d", HOSTNAME, count));
-+        logger.debug(String.format("Big Red Dog v2 %s %d", HOSTNAME, count));
+-        logger.debug(String.format("Big Red Dog v1 %s %d\n", HOSTNAME, count));
++        logger.debug(String.format("Big Red Dog v2 %s %d\n", HOSTNAME, count));
 
          //timeout();
 
@@ -15,8 +15,8 @@ index 15fbe80..870935b 100644
          if (misbehave) {
              return doMisbehavior();
          }
--        return ResponseEntity.ok(String.format("Clifford v1 %s %d", HOSTNAME, count));
-+        return ResponseEntity.ok(String.format("Clifford v2 %s %d", HOSTNAME, count));
+-        return ResponseEntity.ok(String.format("Clifford v1 %s %d\n", HOSTNAME, count));
++        return ResponseEntity.ok(String.format("Clifford v2 %s %d\n", HOSTNAME, count));
      }
 
      private void timeout() {
