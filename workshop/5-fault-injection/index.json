@@ -8,7 +8,9 @@
       "icon": "fa-openshift",
       "showdashboard": true,
       "dashboard": "Web Console",
-      "uilayout": "terminal-iframe",
+      "uilayout": "editor-terminal",
+      "uieditorpath": "/root/istio-tutorial/recommendations/src/main/java/com/example/recommendations/",
+      "uisettings": "java",
       "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\u001b[m\r\n"
   },
   "backend": {
@@ -30,7 +32,9 @@
     },
     "steps": [
         { "title": "HTTP Error 503", "text": "1http-error-503.md" },
-        { "title": "Delay", "text": "2delay.md" }
+        { "title": "Delay", "text": "2delay.md" },
+        { "title": "Retry", "text": "3retry.md" },
+        { "title": "Timeout", "text": "4timeout.md" }
     ]
   }
 }
