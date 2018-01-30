@@ -8,23 +8,23 @@ oc new-project tutorial
 oc adm policy add-scc-to-user privileged -z default -n tutorial
 
 #Package Projects
-echo "Building customer with Maven. First Maven build takes a while"
+echo "Building customer microservice with Maven. First Maven build takes a while"
 mvn package -f /root/istio-tutorial/customer/ -DskipTests &> /dev/null || { echo "Error building customer"; exit 1; }
-echo "Building preferences with Maven"
+echo "Building preferences microservice with Maven"
 mvn package -f /root/istio-tutorial/preferences/ -DskipTests &> /dev/null || { echo "Error building preferences"; exit 1; }
-echo "Building recommendations with Maven"
+echo "Building recommendations microservice with Maven"
 mvn package -f /root/istio-tutorial/recommendations/ -DskipTests &> /dev/null || { echo "Error building recommendations"; exit 1; }
-echo "Building recommendations-v2 with Maven"
+echo "Building recommendations-v2 microservice with Maven"
 mvn package -f /root/istio-tutorial/recommendations-v2/ -DskipTests &> /dev/null || { echo "Error building recommendations-v2"; exit 1; }
 
-#Docker build
-echo "Building customer with Docker. First Docker build takes a while"
+#docker build
+echo "Building customer docker image. First docker build takes a while"
 docker build -t example/customer /root/istio-tutorial/customer/ &> /dev/null || { echo "Error building customer docker image"; exit 1; }
-echo "Building preferences with Docker"
+echo "Building preferences docker image"
 docker build -t example/preferences /root/istio-tutorial/preferences/ &> /dev/null || { echo "Error building preferences docker image"; exit 1; }
-echo "Building recommendations with Docker"
+echo "Building recommendations docker image"
 docker build -t example/recommendations:v1 /root/istio-tutorial/recommendations/ &> /dev/null || { echo "Error building recommendations docker image"; exit 1; }
-echo "Building recommendations-v2 with Docker"
+echo "Building recommendations-v2 docker image"
 docker build -t example/recommendations:v2 /root/istio-tutorial/recommendations-v2/ &> /dev/null || { echo "Error building recommendations-v2 docker image"; exit 1; }
 
 #Deploy to OpenShift
