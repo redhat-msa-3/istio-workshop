@@ -1,7 +1,7 @@
 Wait only N seconds before giving up and failing. At this point, no other route rules should be in effect. Perform and 
 `oc get routerules`{{execute}} and maybe and `oc delete routerule {rulename}`{{execute}} if there are some.
 
-First, introduce some wait time in recommendations v2 by uncommenting the line that call the timeout method. Update RecommendationsController.java making it a slow perfomer
+First, introduce some wait time in recommendations v2 by uncommenting the line 37 that call the timeout method. Update RecommendationsController.java making it a slow perfomer
 
 <pre>
       @RequestMapping("/")
@@ -18,6 +18,8 @@ First, introduce some wait time in recommendations v2 by uncommenting the line t
           return ResponseEntity.ok(String.format("Clifford v1 %s %d", HOSTNAME, count));
       }
 </pre>
+
+**Note:** The file is saved automatically.
 
 Rebuild and redeploy the recommendation microservices.
 
@@ -37,9 +39,11 @@ Now let's delete the previous v2 pod to force the creation of a new pod using th
 
 ## Timeout rule
 
-Check the file [route-rule-recommendations-timeout.yml](https://github.com/redhat-developer-demos/istio-tutorial/blob/master/istiofiles/https://github.com/redhat-developer-demos/istio-tutorial/blob/master/istiofiles/route-rule-recommendations-timeout.yml).
+Check the file [route-rule-recommendations-timeout.yml](https://github.com/redhat-developer-demos/istio-tutorial/blob/master/istiofiles/route-rule-recommendations-timeout.yml).
 
 Note that this `RouteRule` provides a `simpleTimeout` of `1 second`.
+
+Return to your root folder `cd ~`{{execute}}
 
 Let's apply this rule: `oc create -f istio-tutorial/istiofiles/route-rule-recommendations-timeout.yml -n tutorial`{{execute}}
 

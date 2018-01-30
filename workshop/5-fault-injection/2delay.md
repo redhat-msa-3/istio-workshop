@@ -8,7 +8,9 @@ Let's apply this rule: `oc create -f istio-tutorial/istiofiles/route-rule-recomm
 
 To check the new behaviour, try the microservice several times by typing `while true; do time curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .1; done`{{execute}}
 
-You will notice many requets to the customer endpoint now have a delay. If you are monitoring the logs for recommendations v1 and v2, you will also see the delay happens BEFORE the recommendations service is actually called
+Hit CTRL+C when you are satisfied.
+
+You will notice many requets to the customer endpoint now have a delay.
 
 ## Cleanup
 
