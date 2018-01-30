@@ -1,3 +1,5 @@
+ssh root@host02 "rm -rf /root/projects/ /root/temp-pom.xml"
+
 ssh root@host02 "oc login -u system:admin"
 ssh root@host02 "oc adm policy add-cluster-role-to-user cluster-admin developer"
 ssh root@host02 "oc adm policy add-scc-to-user anyuid -z istio-ingress-service-account -n istio-system"
@@ -33,3 +35,4 @@ ssh root@host02 "oc create -f /root/istio-tutorial/preferences/src/main/kubernet
 ssh root@host02 "oc create -f /root/istio-tutorial/recommendations/src/main/kubernetes/Service.yml"
 
 ssh root@host02 "oc expose service customer -n tutorial"
+
