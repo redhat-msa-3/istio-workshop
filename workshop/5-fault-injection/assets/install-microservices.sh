@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "Cloning project's git repository"
-git clone https://github.com/redhat-developer-demos/istio-tutorial &> /dev/null || { echo "Error cloning repository"; exit 1; }
+git clone https://github.com/redhat-developer-demos/istio-tutorial /root/tmp &> /dev/null || { echo "Error cloning repository"; exit 1; }
 cp -Rvf tmp/recommendations/ tmp/recommendations-v2 &> /dev/null
 git apply /root/recommendations-v2.diff --directory=/root/tmp || { echo "Git apply failed. Check file recommendations-v2.diff"; exit 1; }
 rm /root/recommendations-v2.diff
