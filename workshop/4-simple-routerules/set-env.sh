@@ -1,9 +1,6 @@
 ~/.launch.sh
 echo "Cloning project's git repository "
-git clone https://github.com/redhat-developer-demos/istio-tutorial /root/tmp &> /dev/null || { echo "Error cloning repository"; exit 1; }
-cp -Rf /root/tmp/* /root/istio-tutorial/
-rm -rf /root/tmp
-
+git clone https://github.com/redhat-developer-demos/istio-tutorial && cp -Rf /root/tmp/* /root/istio-tutorial/ && rm -rf /root/tmp
 echo "Wait while we install Istio in this scenario"
 chmod +x /root/install-istio.sh
 ~/install-istio.sh
