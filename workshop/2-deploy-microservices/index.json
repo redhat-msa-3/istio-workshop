@@ -15,8 +15,12 @@
       "imageid": "openshift-middleware-3-7", "port": 8443
   },
   "details": {
+    "assets": {
+      "host01": [
+          { "file": "install-istio.sh", "target": "/root/" }
+      ]
+    },
     "intro": {
-        "courseData": "env-init.sh",
         "text": "intro.md",
         "credits": "http://developers.redhat.com",
         "code": "set-env.sh"
