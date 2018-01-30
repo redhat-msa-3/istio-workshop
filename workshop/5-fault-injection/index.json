@@ -16,7 +16,7 @@
   },
   "details": {
     "assets": {
-      "host02": [
+      "host01": [
           { "file": "recommendations-v2.diff", "target": "/root/" },
           { "file": "install-microservices.sh", "target": "/root/" }
       ]
