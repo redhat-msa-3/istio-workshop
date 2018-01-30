@@ -2,7 +2,7 @@ We can experiment with Istio routing rules by making a change to Recommendations
 
 Open `RecommendationsController.java` in the editor, and make the following modifications.
 
-**Note**: The file shold appear in the file explorer in some seconds.
+**Note**: The file shold appear in the file explorer when the installation script completes.
 
 <pre>
 35    logger.debug(String.format("Big Red Dog v2 %s %d", HOSTNAME, count));
