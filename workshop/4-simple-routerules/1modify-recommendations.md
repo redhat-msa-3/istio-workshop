@@ -54,7 +54,7 @@ The default Kubernetes/OpenShift behavior is to round-robin load-balance across 
 
 Wait the second `recommendations` pod to become available, execute `oc get pods -w`{{execute}}
 
-Once that the preference pod READY column is 2/2, you can hit `CTRL+C`. 
+Once that the recommendations pod READY column is 2/2, you can hit `CTRL+C`. 
 
 Now, you will see two requests into the v2 and one for v1.
 
