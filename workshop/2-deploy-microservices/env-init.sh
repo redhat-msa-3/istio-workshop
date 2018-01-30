@@ -1,6 +1,4 @@
-ssh root@host01 "rm -rf /root/projects/ /root/temp-pom.xml"
-
-ssh root@host01 "until $(oc status &> /dev/null); do sleep 1; done; oc login -u system:admin"
+ssh root@host01 "oc login -u system:admin"
 ssh root@host01 "oc adm policy add-cluster-role-to-user cluster-admin developer"
 ssh root@host01 "oc adm policy add-scc-to-user anyuid -z istio-ingress-service-account -n istio-system"
 ssh root@host01 "oc adm policy add-scc-to-user anyuid -z istio-egress-service-account -n istio-system"
@@ -17,3 +15,4 @@ ssh root@host01 "oc expose svc istio-ingress"
 ssh root@host01 "oc login -u developer -p developer"
 ssh root@host01 "oc project default"
 
+ssh root@host01 "rm -rf /root/projects/ /root/temp-pom.xml"
