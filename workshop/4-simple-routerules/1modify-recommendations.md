@@ -18,8 +18,6 @@ Compile the project with the modifications that you did.
 
 `mvn package`{{execute}}
 
-**NOTE:** If you see the following message *-bash: mvn: command not found*, wait a little bit and try again. This happens because `Maven` still being prepared in your environment in the background.
-
 ## Create the recommendations:v2 docker image.
 
 We will now create a new image using `v2`. The `v2`tag during the docker build is significant.
