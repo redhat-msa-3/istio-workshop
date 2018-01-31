@@ -14,7 +14,7 @@ The Servicegraph example is built on top of Prometheus queries.
 
 Let's go back to the istio installation folder.
 
-Execute `cd ~/istio-0.4.0/`{{execute}}
+Execute `cd ~/installation/istio-0.4.0/`{{execute}}
 
 Now we need to apply the following file to the OpenShift instance:
 

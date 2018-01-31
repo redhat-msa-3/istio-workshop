@@ -6,7 +6,7 @@ To make it work, we need first to install [`Prometheus`](https://prometheus.io/)
 
 Let's go to the istio installation folder.
 
-Execute `cd ~/istio-0.4.0/`{{execute}}
+Execute `cd ~/installation/istio-0.4.0/`{{execute}}
 
 Now we need to apply the following files to the OpenShift instance:
 
