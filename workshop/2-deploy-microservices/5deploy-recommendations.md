@@ -1,6 +1,6 @@
 Go to the source folder of `recommendations` microservice.
 
-Execute: `cd ~/istio-tutorial/recommendations/`{{execute}}
+Execute: `cd ~/istio-tutorial/projects/recommendations/`{{execute}}
 
 Now execute `mvn package`{{execute}} to create the `recommendations-0.0.1-SNAPSHOT.jar` file.
 

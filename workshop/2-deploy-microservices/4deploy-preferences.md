@@ -1,6 +1,6 @@
 Go to the source folder of `preferences` microservice.
 
-Execute: `cd ~/istio-tutorial/preferences/`{{execute}}
+Execute: `cd ~/istio-tutorial/projects/preferences/`{{execute}}
 
 Now execute `mvn package`{{execute}} to create the `preferences-0.0.1-SNAPSHOT.jar` file.
 
