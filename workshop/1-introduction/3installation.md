@@ -45,7 +45,7 @@ Once that they are all `Running`, you can hit `CTRL+C`. This concludes this scen
 
 Now we need to add `istioctl` to the path.
 
-Execute `export PATH=$PATH:/root/istio-0.4.0/bin/`{{execute}}.
+Execute `export PATH=$PATH:/root/installation/istio-0.4.0/bin/`{{execute}}.
 
 Now try it. Check the version of `istioctl`. 
 
