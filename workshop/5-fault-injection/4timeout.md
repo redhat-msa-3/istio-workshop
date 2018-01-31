@@ -45,7 +45,7 @@ Note that this `RouteRule` provides a `simpleTimeout` of `1 second`.
 
 Return to your root folder `cd ~`{{execute}}
 
-Let's apply this rule: `oc create -f istio-tutorial/istiofiles/route-rule-recommendations-timeout.yml -n tutorial`{{execute}}
+Let's apply this rule: `oc create -f ~/projects/istio-tutorial/istiofiles/route-rule-recommendations-timeout.yml -n tutorial`{{execute}}
 
 You will see it return v1 OR 504 after waiting about 1 second.
 

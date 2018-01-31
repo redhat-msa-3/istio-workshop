@@ -6,7 +6,7 @@ Look at the file https://github.com/redhat-developer-demos/istio-tutorial/blob/m
 
 It specifies that `recommendations` with label`version=v1` will have a weight of `90`, and `recommendations` with label`version=v2` will have a weight of `10`
 
-Let's create that routerule: `oc create -f ~/istio-tutorial/istiofiles/route-rule-recommendations-v1_and_v2.yml -n tutorial`{{execute}}
+Let's create that routerule: `oc create -f ~/projects/istio-tutorial/istiofiles/istiofiles/route-rule-recommendations-v1_and_v2.yml -n tutorial`{{execute}}
 
 To check the new behaviour, try the microservice several times by typing `while true; do curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .1; done`{{execute}}
 

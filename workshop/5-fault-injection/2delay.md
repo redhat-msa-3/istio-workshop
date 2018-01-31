@@ -4,7 +4,7 @@ Now check the file [route-rule-recommendations-delay.yml](https://github.com/red
 
 Note that this `RouteRule` provides `httpFault` that will `delay` the request `50% of the time` with a `fixedDelay=7s`.
 
-Let's apply this rule: `oc create -f istio-tutorial/istiofiles/route-rule-recommendations-delay.yml -n tutorial`{{execute}}
+Let's apply this rule: `oc create -f ~/projects/istio-tutorial/istiofiles/route-rule-recommendations-delay.yml -n tutorial`{{execute}}
 
 To check the new behaviour, try the microservice several times by typing `while true; do time curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .1; done`{{execute}}
 

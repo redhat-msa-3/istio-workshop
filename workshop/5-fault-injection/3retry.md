@@ -2,7 +2,7 @@ Instead of failing immediately, retry the Service N more times
 
 We will use Istio and return 503's about 50% of the time. Send all users to v2 which will throw out some 503's.
 
-`oc create -f istio-tutorial/istiofiles/route-rule-recommendations-v2_503.yml -n tutorial`{{execute}}
+`oc create -f ~/projects/istio-tutorial/istiofiles/route-rule-recommendations-v2_503.yml -n tutorial`{{execute}}
 
 Now, if you hit the customer endpoint several times, you should see some 503's
 
@@ -14,7 +14,7 @@ Now check the file [route-rule-recommendations-v2_retry.yml](https://github.com/
 
 Note that this `RouteRule` provides `simpleRetry` that perform `3 attemps` with a timeout of `2 seconds per try`.
 
-Let's apply this rule: `oc create -f istio-tutorial/istiofiles/route-rule-recommendations-v2_retry.yml -n tutorial`{{execute}}
+Let's apply this rule: `oc create -f ~/projects/istio-tutorial/istiofiles/route-rule-recommendations-v2_retry.yml -n tutorial`{{execute}}
 
 and after a few seconds, things will settle down and you will see it work every time.
 
