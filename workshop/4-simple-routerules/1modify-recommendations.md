@@ -12,7 +12,7 @@ Open `RecommendationsController.java` in the editor, and make the following modi
 
 **Note:** The file is saved automatically.
 
-Now go to the recommendations folder `cd ~/istio-tutorial/projects/recommendations/`{{execute}}
+Now go to the recommendations folder `cd ~/projects/istio-tutorial/recommendations/`{{execute}}
 
 Compile the project with the modifications that you did.
 

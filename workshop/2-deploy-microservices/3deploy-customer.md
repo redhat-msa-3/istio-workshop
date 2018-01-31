@@ -1,6 +1,6 @@
 Go to the source folder of `customer` microservice.
 
-Execute: `cd ~/istio-tutorial/projects/customer/`{{execute}}
+Execute: `cd ~/projects/istio-tutorial/customer/`{{execute}}
 
 Now execute `mvn package`{{execute}} to create the `customer-0.0.1-SNAPSHOT.jar` file.
 

@@ -23,7 +23,7 @@ First, introduce some wait time in recommendations v2 by uncommenting the line 3
 
 Rebuild and redeploy the recommendation microservices.
 
-Go to the recommendations folder `cd ~/istio-tutorial/projects/recommendations/`{{execute}}
+Go to the recommendations folder `cd ~/projects/istio-tutorial/recommendations/`{{execute}}
 
 Compile the project with the modifications that you did.
 
