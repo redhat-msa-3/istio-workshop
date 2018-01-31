@@ -30,6 +30,6 @@ Try the microservice by typing `curl http://customer-tutorial.[[HOST_SUBDOMAIN]]
 
 Preferences returns a value but also an error message based on the missing recommendations service
 
-`C100 *{"P1":"Red", "P2":"Big"} && I/O error on GET request for "http://recommendations:8080/"`
+`C100 * 503 Service Unavailable *`
 
 This concludes the deployment of `preferences` microservice.

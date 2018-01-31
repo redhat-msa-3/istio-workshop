@@ -21,9 +21,9 @@ echo "Building recommendations docker image"
 docker build -t example/recommendations:v1 /root/tmp/recommendations/ &> /dev/null || { echo "Error building recommendations docker image"; exit 1; }
 
 #Deploy to OpenShift
-oc apply -f <(/root/istio-0.4.0/bin/istioctl kube-inject -f /root/tmp/customer/src/main/kubernetes/Deployment.yml) -n tutorial
-oc apply -f <(/root/istio-0.4.0/bin/istioctl kube-inject -f /root/tmp/preferences/src/main/kubernetes/Deployment.yml) -n tutorial
-oc apply -f <(/root/istio-0.4.0/bin/istioctl kube-inject -f /root/tmp/recommendations/src/main/kubernetes/Deployment.yml) -n tutorial
+oc apply -f <(/root/installation/istio-0.4.0/bin/istioctl kube-inject -f /root/tmp/customer/src/main/kubernetes/Deployment.yml) -n tutorial
+oc apply -f <(/root/installation/istio-0.4.0/bin/istioctl kube-inject -f /root/tmp/preferences/src/main/kubernetes/Deployment.yml) -n tutorial
+oc apply -f <(/root/installation/istio-0.4.0/bin/istioctl kube-inject -f /root/tmp/recommendations/src/main/kubernetes/Deployment.yml) -n tutorial
 
 oc create -f /root/tmp/customer/src/main/kubernetes/Service.yml -n tutorial
 oc create -f /root/tmp/preferences/src/main/kubernetes/Service.yml -n tutorial
