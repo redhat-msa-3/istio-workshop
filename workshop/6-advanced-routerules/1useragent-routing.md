@@ -33,14 +33,14 @@ If you don't have these browsers you can customiza the `curl` command `user-agen
 
 For example. Try `curl -A Safari http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com`{{execute}}
 
-Alternatively you can try `curl -A Firefox http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com`{{execute}}
+Alternatively you can try a `Firefox` user-agent with `curl -A Firefox http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com`{{execute}}
 
 You can describe the routerule to see its configuration: `oc describe routerule recommendations-safari -n tutorial`{{execute}} 
 
-## Cleanup
+## Remove 'Safari' rule.
 
 To remove the User-Agent behaviour, simply delete this `routerule` by executing `oc delete routerule recommendations-safari -n tutorial`{{execute}}
 
-To check if you have random load-balance, try the microservice several times by typing `curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com`{{execute}}
+To check if you have all requests using `v1`, try the microservice several times by typing `curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com`{{execute}}
 
-
+You still have the requests going to `v1` because you didn't remove the RouteRule `recommendations-default`.
