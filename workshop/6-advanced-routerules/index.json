@@ -1,8 +1,8 @@
 {
   "pathwayTitle": "Istio Workshop",
-  "title": "Monitoring and Tracing",
-  "description": "Shows out-of-box monitoring and tracing",
-  "difficulty": "Intermediate",
+  "title": "Advanced RouteRules",
+  "description": "Advanced RouteRules with Istio",
+  "difficulty": "Advanced",
   "time": "1 hour",
   "environment": {
       "icon": "fa-openshift",
@@ -19,21 +19,18 @@
   "details": {
     "assets": {
       "host01": [
-          { "file": "install-istio.sh", "target": "/root/" },
-          { "file": "install-microservices.sh", "target": "/root/" }
+          { "file": "recommendations-v2.diff", "target": "/root/" },
+          { "file": "install-microservices.sh", "target": "/root/" },
+          { "file": "install-istio.sh", "target": "/root/" }
       ]
     },
     "intro": {
-      "courseData": "env-init.sh",
       "text": "intro.md",
       "credits": "http://developers.redhat.com",
       "code": "set-env.sh"
     },
     "steps": [
-        { "title": "Monitoring", "text": "1monitoring.md" },
-        { "title": "Custom Metric", "text": "2custom-metric.md" },
-        { "title": "Tracing", "text": "3tracing.md" },
-        { "title": "Service Graph", "text": "4servicegraph.md" }
+        { "title": "Smart routing based on user-agent header (Canary Deployment)", "text": "1useragent-routing.md" }
     ]
   }
 }

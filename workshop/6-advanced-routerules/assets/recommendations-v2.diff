@@ -1,0 +1,22 @@
+diff --git a/recommendations-v2/src/main/java/com/example/recommendations/RecommendationsController.jav
+index a4f8f3f..55fc599 100644
+--- a/recommendations-v2/src/main/java/com/example/recommendations/RecommendationsController.java
++++ b/recommendations-v2/src/main/java/com/example/recommendations/RecommendationsController.java
+@@ -32,7 +32,7 @@ public class RecommendationsController {
+     @RequestMapping("/")
+     public ResponseEntity<String> getRecommendations() {
+         count++;
+-        logger.debug(String.format("Big Red Dog v1 %s %d", HOSTNAME, count));
++        logger.debug(String.format("Big Red Dog v2 %s %d", HOSTNAME, count));
+
+         //timeout();
+
+@@ -40,7 +40,7 @@ public class RecommendationsController {
+         if (misbehave) {
+             return doMisbehavior();
+         }
+-        return ResponseEntity.ok(String.format("Clifford v1 %s %d", HOSTNAME, count));
++        return ResponseEntity.ok(String.format("Clifford v2 %s %d", HOSTNAME, count));
+     }
+
+     private void timeout() {
