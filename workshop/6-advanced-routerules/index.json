@@ -9,7 +9,7 @@
       "showdashboard": true,
       "dashboard": "Web Console",
       "uilayout": "editor-terminal",
-      "uieditorpath": "/root/",
+      "uieditorpath": "/root/istio-tutorial",
       "uisettings": "java",
       "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\u001b[m\r\n"
   },
