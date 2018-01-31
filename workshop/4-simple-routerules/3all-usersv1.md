@@ -2,7 +2,7 @@ The file https://github.com/redhat-developer-demos/istio-tutorial/blob/master/is
 
 Let's replace the RouteRule.
 
-`oc replace -f ~/istio-tutorial/istiofiles/route-rule-recommendations-v1.yml -n tutorial`{{execute}}
+`oc replace -f ~/projects/istio-tutorial/istiofiles/route-rule-recommendations-v1.yml -n tutorial`{{execute}}
 
 **Note**: "replace" instead of "create" since we are overlaying the previous rule
 

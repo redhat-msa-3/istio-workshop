@@ -17,7 +17,7 @@ Hit CTRL+C when you are satisfied.
 Let's change the mixture to be 75/25 by applying the following file https://github.com/redhat-developer-demos/istio-tutorial/blob/master/istiofiles/route-rule-recommendations-v1_and_v2_75_25.yml
 
 
-Let's replace the previously created routerule with: `oc replace -f ~/istio-tutorial/istiofiles/route-rule-recommendations-v1_and_v2_75_25.yml -n tutorial`{{execute}}
+Let's replace the previously created routerule with: `oc replace -f ~/projects/istio-tutorial/istiofiles/route-rule-recommendations-v1_and_v2_75_25.yml -n tutorial`{{execute}}
 
 To check the new behaviour, try the microservice several times by typing `while true; do curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .1; done`{{execute}}
 
