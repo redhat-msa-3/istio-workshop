@@ -2,15 +2,25 @@ What is your user-agent?
 
 <https://www.whoishostingthis.com/tools/user-agent/>
 
-**Note:** the "user-agent" header being forwarded in the Customer and Preferences controllers in order for route rule modications around recommendations
+**Note:** the "user-agent" header being forwarded in the Customer and Preferences controllers in order for route rule modications around recommendations.
 
-Let's create a rule that points all request to v1 using the [route-rule-recommendations-v1.yml](https://github.com/redhat-developer-demos/istio-tutorial/blob/master/istiofiles/route-rule-recommendations-v1.yml) file
+To watch the creation of the pods, execute `oc get pods -w`{{execute}}
 
-`oc create -f istiofiles/route-rule-recommendations-v1.yml -n tutorial`{{execute}}
+Once that the recommendations pods READY column are 2/2, you can hit `CTRL+C`. 
+
+Let's create a rule that points all request to v1 using the [route-rule-recommendations-v1.yml](https://github.com/redhat-developer-demos/istio-tutorial/blob/master/istiofiles/route-rule-recommendations-v1.yml) file.
+
+`oc create -f istio-tutorial/istiofiles/route-rule-recommendations-v1.yml -n tutorial`{{execute}}
 
 Check this behaviour trying the microservice several times by typing `while true; do curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .1; done`{{execute}}
 
 Hit CTRL+C when you are satisfied.
+
+Now check the file [route-rule-safari-recommendations-v2.yml](https://github.com/redhat-developer-demos/istio-tutorial/blob/master/istiofiles/route-rule-safari-recommendations-v2.yml).
+
+Note that this `RouteRule` will only route request to `recommendations` that contains the label `version=v2` when the `request` contains a `header` where the `user-agent` value `matches` the `regex` expression to `".*Safari.*"`.
+
+Let's apply this rule: `oc create -f istio-tutorial/istiofiles/route-rule-safari-recommendations-v2.yml -n tutorial`{{execute}}
 
 Now test the URL http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com with a Safari (or even Chrome on Mac since it includes Safari in the string). Safari only sees v2 responses from recommendations
 
