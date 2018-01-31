@@ -8,7 +8,7 @@ It specifies an istio rule that invokes the `recommendationsrequestcounthandler`
 
 Let's go back to the istio installation folder.
 
-`cd ~/istio-tutorial`{{execute}}
+`cd ~/projects/istio-0.4.0/`{{execute}}
 
 Now, add the custom metric and rule.
 
