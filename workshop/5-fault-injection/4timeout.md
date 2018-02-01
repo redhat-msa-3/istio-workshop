@@ -45,7 +45,7 @@ Note that this `RouteRule` provides a `simpleTimeout` of `1 second`.
 
 Let's apply this rule: `oc create -f ~/projects/istio-tutorial/istiofiles/route-rule-recommendations-timeout.yml -n tutorial`{{execute}}
 
-You will see it return v1 OR 504 after waiting about 1 second.
+You will see it return `v1` OR `503` after waiting about 1 second.
 
 To check the new behaviour, try the microservice several times by typing `while true; do curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .1; done`{{execute}}
 
