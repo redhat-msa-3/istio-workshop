@@ -21,9 +21,9 @@ echo "Building recommendations docker image"
 docker build -t example/recommendations:v1 /root/projects/istio-tutorial/recommendations/ &> /dev/null || { echo "Error building recommendations docker image"; exit 1; }
 
 #Deploy to OpenShift
-oc apply -f <(/root/installation/istio-0.4.0/bin/istioctl kube-inject -f /root/projects/istio-tutorial/customer/src/main/kubernetes/Deployment.yml) -n tutorial
-oc apply -f <(/root/installation/istio-0.4.0/bin/istioctl kube-inject -f /root/projects/istio-tutorial/preferences/src/main/kubernetes/Deployment.yml) -n tutorial
-oc apply -f <(/root/installation/istio-0.4.0/bin/istioctl kube-inject -f /root/projects/istio-tutorial/recommendations/src/main/kubernetes/Deployment.yml) -n tutorial
+oc apply -f <(/root/installation/istio-0.5.0/bin/istioctl kube-inject -f /root/projects/istio-tutorial/customer/src/main/kubernetes/Deployment.yml) -n tutorial
+oc apply -f <(/root/installation/istio-0.5.0/bin/istioctl kube-inject -f /root/projects/istio-tutorial/preferences/src/main/kubernetes/Deployment.yml) -n tutorial
+oc apply -f <(/root/installation/istio-0.5.0/bin/istioctl kube-inject -f /root/projects/istio-tutorial/recommendations/src/main/kubernetes/Deployment.yml) -n tutorial
 
 oc create -f /root/projects/istio-tutorial/customer/src/main/kubernetes/Service.yml -n tutorial
 oc create -f /root/projects/istio-tutorial/preferences/src/main/kubernetes/Service.yml -n tutorial
