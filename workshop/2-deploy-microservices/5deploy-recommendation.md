@@ -6,7 +6,7 @@ Now execute `mvn package`{{execute}} to create the `recommendations.jar` file.
 
 ## Create the recommendations docker image.
 
-We will now use the provided [`Dockerfile`](https://github.com/redhat-developer-demos/istio-tutorial/blob/master/recommendation/Dockerfile) to create a docker image.
+We will now use the provided `istio-tutorial/recommendation/Dockerfile`{{open}}to create a docker image.
 
 This image will be called `example/recommendation:v1`.
 
