@@ -8,7 +8,9 @@
       "icon": "fa-openshift",
       "showdashboard": true,
       "dashboard": "Web Console",
-      "uilayout": "terminal-iframe",
+      "uilayout": "editor-terminal",
+      "uieditorpath": "/root/installation/",
+      "uisettings": "java",
       "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\u001b[m\r\n"
   },
   "backend": {
