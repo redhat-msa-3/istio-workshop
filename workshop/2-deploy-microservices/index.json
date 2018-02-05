@@ -22,7 +22,6 @@
   "details": {
     "assets": {
       "host01": [
-          { "file": "install-istio.sh", "target": "/root/" }
       ]
     },
     "intro": {
