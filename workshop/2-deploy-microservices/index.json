@@ -1,11 +1,11 @@
 {
   "pathwayTitle": "Istio Workshop",
   "title": "Deploy microservices",
+  "icon": "fa-openshift",
   "description": "Deploy microserices on a Kubernetes Cluster",
   "difficulty": "Basic",
   "time": "30 minutes",
   "environment": {
-      "icon": "fa-openshift",
       "showdashboard": true,
       "dashboard": "Web Console",
       "uilayout": "editor-terminal",
