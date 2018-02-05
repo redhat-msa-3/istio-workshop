@@ -8,7 +8,7 @@ Now execute `mvn package`{{execute}} to create the `customer.jar` file.
 
 We will now use the provided [`Dockerfile`](https://github.com/redhat-developer-demos/istio-tutorial/blob/master/customer/Dockerfile) to create a docker image.
 
-`Dockerfile`{{open}}
+`istio-tutorial/customer/Dockerfile`{{open}}
 
 This image will be called `example/customer`.
 
