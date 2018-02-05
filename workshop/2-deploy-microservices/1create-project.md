@@ -1,6 +1,6 @@
-We will deploy three microservices (customer, preferences, recommendations) implemented using Spring Boot.
+We will deploy three microservices (customer, preference, recommendation) implemented using Spring Boot.
 
-The `customer` microservice makes a request to `preferences` that makes a request to `recommendations`.
+The `customer` microservice makes a request to `preference` that makes a request to `recommendation`.
 
 Let's deploy each one of them to a new project called `tutorial`.
 
