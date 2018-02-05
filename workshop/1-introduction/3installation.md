@@ -4,7 +4,7 @@ To log in the OpenShift cluster, type `oc login -u system:admin`{{execute}}
 
 Now that you are logged in, it's time to download `Istio` distribution.
 
-Execute: `wget https://github.com/istio/istio/releases/download/0.4.0/istio-0.5.0-linux.tar.gz `{{execute}}
+Execute: `wget https://github.com/istio/istio/releases/download/0.5.0/istio-0.5.0-linux.tar.gz `{{execute}}
 
 Once that you have downloaded the file, it's time to extract it.
 
