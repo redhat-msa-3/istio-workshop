@@ -4,11 +4,11 @@ To log in the OpenShift cluster, type `oc login -u system:admin`{{execute}}
 
 Now that you are logged in, it's time to download `Istio` distribution.
 
-Execute: `wget https://github.com/istio/istio/releases/download/0.4.0/istio-0.4.0-linux.tar.gz `{{execute}}
+Execute: `wget https://github.com/istio/istio/releases/download/0.4.0/istio-0.5.0-linux.tar.gz `{{execute}}
 
 Once that you have downloaded the file, it's time to extract it.
 
-To extract Istio distribution execute `tar -zxvf istio-0.4.0-linux.tar.gz`{{execute}}
+To extract Istio distribution execute `tar -zxvf istio-0.5.0-linux.tar.gz`{{execute}}
 
 ## Before the installation
 
@@ -33,7 +33,7 @@ To understand more about SCC, we recommend you to read [Understanding Service Ac
 
 Istio provides a file `install/kubernetes/istio.yaml` that contains the definition of all objects that needs to be created in the Kubernetes cluster.
 
-Let's apply these defintions to the cluster by executing `oc apply -f istio-0.4.0/install/kubernetes/istio.yaml`{{execute}}
+Let's apply these defintions to the cluster by executing `oc apply -f istio-0.5.0/install/kubernetes/istio.yaml`{{execute}}
 
 After the execution, Istio objects will be created.
 
@@ -45,7 +45,7 @@ Once that they are all `Running`, you can hit `CTRL+C`. This concludes this scen
 
 Now we need to add `istioctl` to the path.
 
-Execute `export PATH=$PATH:/root/installation/istio-0.4.0/bin/`{{execute}}.
+Execute `export PATH=$PATH:/root/installation/istio-0.5.0/bin/`{{execute}}.
 
 Now try it. Check the version of `istioctl`. 
 
