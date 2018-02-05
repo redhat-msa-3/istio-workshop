@@ -1,4 +1,5 @@
 #!/bin/bash
+rm -rf /root/projects/rhoar-getting-started/ /root/temp-pom.xml
 mkdir -p /root/installation
 echo "Downloading Istio installation"
 wget https://github.com/istio/istio/releases/download/0.5.0/istio-0.5.0-linux.tar.gz -P /root/installation &> /dev/null || { echo "Failed to Download Istio installation"; exit 1; }
