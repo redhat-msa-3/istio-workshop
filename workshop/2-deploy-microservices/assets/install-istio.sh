@@ -1,6 +1,5 @@
 #!/bin/bash
 mkdir -p /root/installation
-rm -rf /root/projects/* /root/temp-pom.xml
 echo "Downloading Istio installation"
 wget https://github.com/istio/istio/releases/download/0.5.0/istio-0.5.0-linux.tar.gz -P /root/installation &> /dev/null || { echo "Failed to Download Istio installation"; exit 1; }
 echo "Uncompressing Istio installation"
