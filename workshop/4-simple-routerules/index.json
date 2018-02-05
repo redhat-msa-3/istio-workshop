@@ -1,11 +1,11 @@
 {
   "pathwayTitle": "Istio Workshop",
   "title": "Simple RouteRules",
+  "icon": "fa-openshift",
   "description": "Shows how Istio can be used to control route based on some simple rules",
   "difficulty": "Intermediate",
   "time": "1 hour",
   "environment": {
-      "icon": "fa-openshift",
       "showdashboard": true,
       "dashboard": "Web Console",
       "uilayout": "editor-terminal",

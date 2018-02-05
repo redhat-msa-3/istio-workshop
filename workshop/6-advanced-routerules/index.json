@@ -1,11 +1,11 @@
 {
   "pathwayTitle": "Istio Workshop",
   "title": "Advanced RouteRules",
+  "icon": "fa-openshift",
   "description": "Advanced RouteRules with Istio",
   "difficulty": "Advanced",
   "time": "1 hour",
   "environment": {
-      "icon": "fa-openshift",
       "showdashboard": true,
       "dashboard": "Web Console",
       "uilayout": "editor-terminal",

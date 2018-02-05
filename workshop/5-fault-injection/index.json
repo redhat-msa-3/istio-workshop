@@ -1,11 +1,11 @@
 {
   "pathwayTitle": "Istio Workshop",
   "title": "Fault Injection",
+  "icon": "fa-openshift",
   "description": "Apply some chaos engineering by throwing in some HTTP errors or network delays",
   "difficulty": "Advanced",
   "time": "1 hour",
   "environment": {
-      "icon": "fa-openshift",
       "showdashboard": true,
       "dashboard": "Web Console",
       "uilayout": "editor-terminal",

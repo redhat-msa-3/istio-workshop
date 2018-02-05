@@ -1,11 +1,11 @@
 {
   "pathwayTitle": "Istio Workshop",
   "title": "Monitoring and Tracing",
+  "icon": "fa-openshift",
   "description": "Shows out-of-box monitoring and tracing",
   "difficulty": "Intermediate",
   "time": "1 hour",
   "environment": {
-      "icon": "fa-openshift",
       "showdashboard": true,
       "dashboard": "Web Console",
       "uilayout": "editor-terminal",
