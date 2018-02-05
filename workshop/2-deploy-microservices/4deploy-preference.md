@@ -8,7 +8,7 @@ Now execute `mvn package`{{execute}} to create the `preference.jar` file.
 
 We will now use the provided [`Dockerfile`](https://github.com/redhat-developer-demos/istio-tutorial/blob/master/preference/Dockerfile) to create a docker image.
 
-This image will be called `example/preferences`.
+This image will be called `example/preference`.
 
 To build a docker image type: `docker build -t example/preference .`{{execute}}
 
@@ -30,6 +30,6 @@ Try the microservice by typing `curl http://customer-tutorial.[[HOST_SUBDOMAIN]]
 
 Preferences returns a value but also an error message based on the missing recommendations service
 
-`C100 * 503 Service Unavailable *`
+`customer => 503 preference => I/O error on GET request for "http://recommendation:8080": recommendation; nested exception is java.net.UnknownHostException: recommendation`
 
 This concludes the deployment of `preference` microservice.
