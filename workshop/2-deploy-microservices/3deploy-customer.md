@@ -42,6 +42,6 @@ Try the microservice by typing `curl http://customer-tutorial.[[HOST_SUBDOMAIN]]
 
 You should see the following error because `preference` is not yet deployed, so you only get a partial response of "C100" plus the error message
 
-`C100 * I/O error on GET request for "http://preferences:8080": preference; nested exception is java.net.UnknownHostException: preferences *`
+`customer => I/O error on GET request for "http://preference:8080": preference; nested exception is java.net.UnknownHostException: preference`
 
 This concludes the deployment of `customer` microservice.
