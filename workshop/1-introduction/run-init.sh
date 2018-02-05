@@ -1,0 +1,1 @@
+ssh root@host01 "rm -rf /root/projects/rhoar-getting-started/ /root/temp-pom.xml"
