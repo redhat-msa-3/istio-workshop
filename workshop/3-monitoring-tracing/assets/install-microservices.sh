@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "Cloning project's git repository"
-git clone https://github.com/redhat-developer-demos/istio-tutorial /root/projects/istio-tutorial &> /dev/null || { echo "Error cloning repository"; exit 1; }
+git --git-dir=/root/projects/istio-tutorial/.git pull || { echo "Error running git pull"; exit 1; }
 oc new-project tutorial
 oc adm policy add-scc-to-user privileged -z default -n tutorial
 
