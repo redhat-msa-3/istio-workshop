@@ -8,4 +8,3 @@
 +    private static final String RESPONSE_STRING_FORMAT = "recommendation v2 from '%s': %d\n";
 
      private final Logger logger = LoggerFactory.getLogger(getClass());
-     
