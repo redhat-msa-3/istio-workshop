@@ -24,6 +24,6 @@ oc apply -f <(/root/installation/istio-0.5.0/bin/istioctl kube-inject -f /root/p
 
 oc create -f /root/projects/istio-tutorial/customer/src/main/kubernetes/Service.yml -n tutorial
 oc create -f /root/projects/istio-tutorial/preference/src/main/kubernetes/Service.yml -n tutorial
-oc create -f /root/projects/istio-tutorial/recommendation-v1/src/main/kubernetes/Service.yml -n tutorial
+oc create -f /root/projects/istio-tutorial/recommendation/src/main/kubernetes/Service.yml -n tutorial
 
 oc expose service customer -n tutorial
