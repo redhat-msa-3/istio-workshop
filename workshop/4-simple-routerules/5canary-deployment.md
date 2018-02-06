@@ -2,7 +2,7 @@ Think about the following scenario: *Push v2 into the cluster but slowing send e
 
 Let's now create a `routerule` that will send 90% of requests to v1 and 10% to v2
 
-Look at the file `/istio-tutorial/istiofiles/route-rule-recommendation-v1_and_v2.yml`{{open}}
+Look at the file `/istiofiles/route-rule-recommendation-v1_and_v2.yml`{{open}}
 
 It specifies that `recommendation` with label`version=v1` will have a weight of `90`, and `recommendations` with label`version=v2` will have a weight of `10`
 
@@ -14,7 +14,7 @@ Hit CTRL+C when you are satisfied.
 
 ## Recommendations 75/25
 
-Let's change the mixture to be 75/25 by applying the following file `/istio-tutorial/istiofiles/route-rule-recommendation-v1_and_v2_75_25.yml`{{open}}
+Let's change the mixture to be 75/25 by applying the following file `/istiofiles/route-rule-recommendation-v1_and_v2_75_25.yml`{{open}}
 
 
 Let's replace the previously created routerule with: `oc replace -f ~/projects/istio-tutorial/istiofiles/route-rule-recommendation-v1_and_v2_75_25.yml -n tutorial`{{execute}}

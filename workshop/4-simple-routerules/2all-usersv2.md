@@ -1,4 +1,4 @@
-Open the file `/istio-tutorial/istiofiles/route-rule-recommendation-v2.yml`{{open}}.
+Open the file `istiofiles/route-rule-recommendation-v2.yml`{{open}}.
 
 Note that the `RouteRule` specifies that the destination will be the recommendation that contains the label `version=v2`.
 

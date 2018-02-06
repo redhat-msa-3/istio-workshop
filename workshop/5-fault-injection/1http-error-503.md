@@ -12,7 +12,7 @@ To check this behaviour, try the microservice several times by typing `while tru
 
 Hit CTRL+C when you are satisfied.
 
-Now check the file `/istio-tutorial/istiofiles/route-rule-recommendation-503.yml`{{open}}.
+Now check the file `/istiofiles/route-rule-recommendation-503.yml`{{open}}.
 
 Note that this `RouteRule` provides `httpFault` that will `abort` the request `50% of the time` with a `httpStatus=503`.
 
