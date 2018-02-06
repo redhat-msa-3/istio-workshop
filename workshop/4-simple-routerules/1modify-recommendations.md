@@ -4,8 +4,9 @@ Open `istio-tutorial/recommendation/src/main/java/com/redhat/developer/demos/rec
 
 **Note**: The file shold appear in the file explorer when the installation script completes.
 
-<pre>
+```java
     private static final String RESPONSE_STRING_FORMAT = "recommendation v2 from '%s': %d\n";
+```    
 </pre>
 
 **Note:** The file is saved automatically.
@@ -36,9 +37,9 @@ Once that the recommendation pod READY column is 2/2, you can hit `CTRL+C`.
 
 Test the `customer` endpoint: `curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com`{{execute}}
 
-You likely see "customer => preference => recommendation v1 from '99634814-d2z2t': 3", where '99634814-d2z2t' is the pod running v1 and the 3 is basically the number of times you hit the endpoint.
-
 you likely see "customer => preference => recommendation v2 from '2819441432-5v22s': 1" as by default you get round-robin load-balancing when there is more than one Pod behind a Service.
+
+You likely see "customer => preference => recommendation v1 from '99634814-d2z2t': 3", where '99634814-d2z2t' is the pod running v1 and the 3 is basically the number of times you hit the endpoint.
 
 Send several requests to see their responses
 
