@@ -1,6 +1,6 @@
 Istio also allows you to specify custom metrics which can be seen inside of the Prometheus dashboard
 
-Look at the file https://github.com/redhat-developer-demos/istio-tutorial/blob/master/istiofiles/recommendations_requestcount.yml
+Look at the file `istio-tutorial/blob/master/istiofiles/recommendations_requestcount.yml`{{open}}
 
 It specifies an istio rule that invokes the `recommendationsrequestcounthandler` for every invocation to `recommendations.tutorial.svc.cluster.local`
 
@@ -8,11 +8,11 @@ It specifies an istio rule that invokes the `recommendationsrequestcounthandler`
 
 Let's go back to the istio installation folder.
 
-`cd ~/projects/istio-0.5.0/`{{execute}}
+`cd ~/projects/istio-tutorial/`{{execute}}
 
 Now, add the custom metric and rule.
 
-Execute `oc apply -f istiofiles/recommendations_requestcount.yml -n istio-system`{{execute}}
+Execute `oc apply -f istiofiles/recommendation_requestcount.yml -n istio-system`{{execute}}
 
 Run several requests through the system: `curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com`{{execute}}
 
@@ -24,7 +24,7 @@ http://prometheus-istio-system.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environme
 
 and add the following metric
 
-`round(increase(istio_recommendations_request_count{destination="recommendations.tutorial.svc.cluster.local" }[60m]))`
+`round(increase(istio_recommendation_request_count{destination="recommendation.tutorial.svc.cluster.local" }[60m]))`
 
 and select `Execute`.
 
