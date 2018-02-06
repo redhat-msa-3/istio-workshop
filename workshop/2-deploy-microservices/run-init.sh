@@ -1,7 +1,6 @@
 ssh root@host01 "rm -rf /root/projects/* /root/temp-pom.xml"
 
-ssh root@host01 "oc login -u system:admim"
-ssh root@host01 "oc adm policy add-cluster-role-to-user cluster-admin developer"
+ssh root@host01 "sleep 20; oc login -u system:admin; oc adm policy add-cluster-role-to-user cluster-admin admin"
 
 ssh root@host01 "mkdir -p /root/installation"
 ssh root@host01 "wget https://github.com/istio/istio/releases/download/0.5.0/istio-0.5.0-linux.tar.gz -P /root/installation"
