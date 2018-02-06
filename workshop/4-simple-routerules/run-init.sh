@@ -1,4 +1,7 @@
 #!/bin/bash
+ssh root@host01 "git --git-dir=/root/projects/istio-tutorial/.git pull"
+
+#Install Istio
 ssh root@host01 "rm -rf /root/projects/rhoar-getting-started /root/temp-pom.xml"
 
 ssh root@host01 "mkdir -p /root/installation"
@@ -16,9 +19,7 @@ ssh root@host01 "oc apply -f /root/installation/istio-0.5.0/install/kubernetes/i
 
 ssh root@host01 "oc expose svc istio-ingress -n istio-system"
 
-
 #Install Microservices
-ssh root@host01 "git --git-dir=/root/projects/istio-tutorial/.git pull"
 ssh root@host01 "oc new-project tutorial ; oc adm policy add-scc-to-user privileged -z default -n tutorial"
 ssh root@host01 "mvn package -f /root/projects/istio-tutorial/customer/ -DskipTests"
 ssh root@host01 "mvn package -f /root/projects/istio-tutorial/preference/ -DskipTests"
