@@ -1,6 +1,6 @@
 We can experiment with Istio routing rules by making a change to RecommendationsController.java.
 
-`RecommendationsController.java` is already opened in the editor. Now make the following modification.
+Open `istio-tutorial/recommendation/src/main/java/com/redhat/developer/demos/recommendation/RecommendationController.java`{{open}} in the editor. Now make the following modification.
 
 **Note**: The file shold appear in the file explorer when the installation script completes.
 
