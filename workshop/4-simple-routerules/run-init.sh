@@ -1,7 +1,6 @@
 #!/bin/bash
 ssh root@host01 "rm -rf /root/projects/rhoar-getting-started /root/temp-pom.xml"
 
-
 ssh root@host01 "mkdir -p /root/installation"
 ssh root@host01 "wget https://github.com/istio/istio/releases/download/0.5.0/istio-0.5.0-linux.tar.gz -P /root/installation"
 ssh root@host01 "tar -zxvf /root/installation/istio-0.5.0-linux.tar.gz -C /root/installation"
