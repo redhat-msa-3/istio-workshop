@@ -1,4 +1,4 @@
-Before we start this scenario, we need to deploy all microservices (customer, preferences, recommendations[v1:v2]).
+Before we start this scenario, we need to deploy all microservices (customer, preference, recommendation[v1:v2]).
 
 There's a script called `install-microservices.sh` that will
 
