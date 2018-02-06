@@ -25,6 +25,7 @@
       ]
     },
     "intro": {
+      "courseData": "run-init.sh",
       "text": "intro.md",
       "credits": "http://developers.redhat.com",
       "code": "set-env.sh"
