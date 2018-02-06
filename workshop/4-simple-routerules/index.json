@@ -9,7 +9,7 @@
       "showdashboard": true,
       "dashboard": "Web Console",
       "uilayout": "editor-terminal",
-      "uieditorpath": "/root/projects/istio-tutorial/recommendations/src/main/java/com/example/recommendations/",
+      "uieditorpath": "/root/projects/istio-tutorial/recommendation/src/main/java/com/redhat/developer/demos/recommendation/RecommendationController.java",
       "uisettings": "java",
       "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\u001b[m\r\n"
   },
@@ -19,12 +19,10 @@
   "details": {
     "assets": {
       "host01": [
-          { "file": "install-istio.sh", "target": "/root/" },
-          { "file": "install-microservices.sh", "target": "/root/" }
       ]
     },
     "intro": {
-      "courseData": "env-init.sh",
+      "courseData": "run-init.sh",
       "text": "intro.md",
       "credits": "http://developers.redhat.com",
       "code": "set-env.sh"

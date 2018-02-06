@@ -1,46 +1,44 @@
 We can experiment with Istio routing rules by making a change to RecommendationsController.java.
 
-Open `RecommendationsController.java` in the editor, and make the following modifications.
+`RecommendationsController.java` is already opened in the editor. Now make the following modification.
 
 **Note**: The file shold appear in the file explorer when the installation script completes.
 
 <pre>
-35    logger.debug(String.format("Big Red Dog v2 %s %d", HOSTNAME, count));
-     
-43    return ResponseEntity.ok(String.format("Clifford v2 %s %d", HOSTNAME, count));
+    private static final String RESPONSE_STRING_FORMAT = "recommendation v2 from '%s': %d\n";
 </pre>
 
 **Note:** The file is saved automatically.
 
-Now go to the recommendations folder `cd ~/projects/istio-tutorial/recommendations/`{{execute}}
+Now go to the recommendations folder `cd ~/projects/istio-tutorial/recommendation/`{{execute}}
 
 Compile the project with the modifications that you did.
 
 `mvn package`{{execute}}
 
-## Create the recommendations:v2 docker image.
+## Create the recommendation:v2 docker image.
 
 We will now create a new image using `v2`. The `v2`tag during the docker build is significant.
 
-Execute `docker build -t example/recommendations:v2 .`{{execute}}
+Execute `docker build -t example/recommendation:v2 .`{{execute}}
 
-You can check the image that was create by typing `docker images | grep recommendations`{{execute}}
+You can check the image that was create by typing `docker images | grep recommendation`{{execute}}
 
 ## Create a second deployment with sidecar proxy
 
 There is also a 2nd deployment.yml file to label things correctly
 
-Execute: `oc apply -f <(istioctl kube-inject -f ../kubernetesfiles/recommendations_v2_deployment.yml) -n tutorial`{{execute}}
+Execute: `oc apply -f <(istioctl kube-inject -f ../kubernetesfiles/recommendation_v2_deployment.yml) -n tutorial`{{execute}}
 
 To watch the creation of the pods, execute `oc get pods -w`{{execute}}
 
-Once that the recommendations pod READY column is 2/2, you can hit `CTRL+C`. 
+Once that the recommendation pod READY column is 2/2, you can hit `CTRL+C`. 
 
 Test the `customer` endpoint: `curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com`{{execute}}
 
-You likely see "Clifford v2 {hostname} 1" as by default you get random load-balancing when there is more than one Pod behind a Service.
+You likely see "customer => preference => recommendation v1 from '99634814-d2z2t': 3", where '99634814-d2z2t' is the pod running v1 and the 3 is basically the number of times you hit the endpoint.
 
-You likely see "Clifford v1 {hostname} 5", where the 5 is basically the number of times you hit the endpoint.
+you likely see "customer => preference => recommendation v2 from '2819441432-5v22s': 1" as by default you get round-robin load-balancing when there is more than one Pod behind a Service.
 
 Send several requests to see their responses
 
@@ -50,11 +48,11 @@ Hit CTRL+C when you are satisfied.
 
 The default Kubernetes/OpenShift behavior is to round-robin load-balance across all available pods behind a single Service. Add another replica of recommendations-v2 Deployment.
 
-`oc scale --replicas=2 deployment/recommendations-v2`{{execute}}
+`oc scale --replicas=2 deployment/recommendation-v2`{{execute}}
 
-Wait the second `recommendations` pod to become available, execute `oc get pods -w`{{execute}}
+Wait the second `recommendation` pod to become available, execute `oc get pods -w`{{execute}}
 
-Once that the recommendations pod READY column is 2/2, you can hit `CTRL+C`. 
+Once that the recommendation pod READY column is 2/2, you can hit `CTRL+C`. 
 
 Now, you will see two requests into the v2 and one for v1.
 
@@ -62,7 +60,7 @@ Now, you will see two requests into the v2 and one for v1.
 
 Hit CTRL+C when you are satisfied.
 
-Scale back to a single replica of the recommendations-v2 Deployment
+Scale back to a single replica of the recommendation-v2 Deployment
 
-`oc scale --replicas=1 deployment/recommendations-v2`{{execute}}
+`oc scale --replicas=1 deployment/recommendation-v2`{{execute}}
 
