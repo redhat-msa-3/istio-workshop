@@ -19,9 +19,7 @@
   "details": {
     "assets": {
       "host01": [
-          { "file": "recommendations-v2.diff", "target": "/root/" },
-          { "file": "install-microservices.sh", "target": "/root/" },
-          { "file": "install-istio.sh", "target": "/root/" }
+          { "file": "recommendation-v2.diff", "target": "/root/" }
       ]
     },
     "intro": {
