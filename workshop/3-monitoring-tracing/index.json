@@ -19,12 +19,10 @@
   "details": {
     "assets": {
       "host01": [
-          { "file": "install-istio.sh", "target": "/root/" },
-          { "file": "install-microservices.sh", "target": "/root/" }
       ]
     },
     "intro": {
-      "courseData": "env-init.sh",
+      "courseData": "run-init.sh",
       "text": "intro.md",
       "credits": "http://developers.redhat.com",
       "code": "set-env.sh"
