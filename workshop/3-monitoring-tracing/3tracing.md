@@ -1,10 +1,10 @@
 Tracing requires a bit of work on the Java side. Each microservice needs to pass on the headers which are used to enable the traces.
 
-Look at `istio-tutorial/customer/src/main/java/com/redhat/developer/demos/customer/tracing/HttpHeaderForwarderHandlerInterceptor.java`{{open}}
+Look at `/customer/src/main/java/com/redhat/developer/demos/customer/tracing/HttpHeaderForwarderHandlerInterceptor.java`{{open}}
 
 and 
 
-`istio-tutorial/customer/src/main/java/com/redhat/developer/demos/customer/CustomerApplication.java`{{open}} on lines 21 to 31.
+`/customer/src/main/java/com/redhat/developer/demos/customer/CustomerApplication.java`{{open}} on lines 21 to 31.
 
 ## Install Jaeger console
 

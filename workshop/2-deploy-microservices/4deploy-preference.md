@@ -6,7 +6,7 @@ Now execute `mvn package`{{execute}} to create the `preference.jar` file.
 
 ## Create the preference docker image.
 
-We will now use the provided `istio-tutorial/preference/Dockerfile`{{open}} to create a docker image.
+We will now use the provided `/preference/Dockerfile`{{open}} to create a docker image.
 
 This image will be called `example/preference`.
 
