@@ -1,7 +1,4 @@
 #!/bin/bash
-ssh root@host01 "git --git-dir=/root/projects/istio-tutorial/.git pull"
-ssh root@host01 "cp -Rvf /root/projects/istio-tutorial/recommendation/ /root/projects/istio-tutorial/recommendation-v2"
-ssh root@host01 "git apply /root/recommendation-v2.diff --directory=/root/projects/istio-tutorial/"
 
 #Install Istio
 ssh root@host01 "rm -rf /root/projects/rhoar-getting-started /root/temp-pom.xml"
@@ -21,25 +18,3 @@ ssh root@host01 "oc apply -f /root/installation/istio-0.5.0/install/kubernetes/i
 
 ssh root@host01 "oc expose svc istio-ingress -n istio-system"
 
-#Install Microservices
-ssh root@host01 "oc new-project tutorial ; oc adm policy add-scc-to-user privileged -z default -n tutorial"
-ssh root@host01 "mvn package -f /root/projects/istio-tutorial/customer/ -DskipTests"
-ssh root@host01 "mvn package -f /root/projects/istio-tutorial/preference/ -DskipTests"
-ssh root@host01 "mvn package -f /root/projects/istio-tutorial/recommendation/ -DskipTests"
-ssh root@host01 "mvn package -f /root/projects/istio-tutorial/recommendation-v2/ -DskipTests"
-
-ssh root@host01 "docker build -t example/customer /root/projects/istio-tutorial/customer/"
-ssh root@host01 "docker build -t example/preference /root/projects/istio-tutorial/preference/"
-ssh root@host01 "docker build -t example/recommendation:v1 /root/projects/istio-tutorial/recommendation/"
-ssh root@host01 "docker build -t example/recommendation:v2 /root/projects/istio-tutorial/recommendation-v2/"
-
-ssh root@host01 "oc apply -f <(/root/installation/istio-0.5.0/bin/istioctl kube-inject -f /root/projects/istio-tutorial/customer/src/main/kubernetes/Deployment.yml) -n tutorial"
-ssh root@host01 "oc apply -f <(/root/installation/istio-0.5.0/bin/istioctl kube-inject -f /root/projects/istio-tutorial/preference/src/main/kubernetes/Deployment.yml) -n tutorial"
-ssh root@host01 "oc apply -f <(/root/installation/istio-0.5.0/bin/istioctl kube-inject -f /root/projects/istio-tutorial/recommendation/src/main/kubernetes/Deployment.yml) -n tutorial"
-ssh root@host01 "oc apply -f <(/root/installation/istio-0.5.0/bin/istioctl kube-inject -f /root/projects/istio-tutorial//kubernetesfiles/recommendation_v2_deployment.yml) -n tutorial"
-
-ssh root@host01 "oc create -f /root/projects/istio-tutorial/customer/src/main/kubernetes/Service.yml -n tutorial"
-ssh root@host01 "oc create -f /root/projects/istio-tutorial/preference/src/main/kubernetes/Service.yml -n tutorial"
-ssh root@host01 "oc create -f /root/projects/istio-tutorial/recommendation-v1/src/main/kubernetes/Service.yml -n tutorial"
-
-ssh root@host01 "oc expose service customer -n tutorial"
