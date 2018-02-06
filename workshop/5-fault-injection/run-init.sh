@@ -1,6 +1,7 @@
 #!/bin/bash
 ssh root@host01 "git --git-dir=/root/projects/istio-tutorial/.git pull"
 ssh root@host01 "cp -Rvf /root/projects/istio-tutorial/recommendation/ /root/projects/istio-tutorial/recommendation-v2"
+ssh root@host01 "git apply /root/recommendation-v2.diff --directory=/root/projects/istio-tutorial/"
 
 #Install Istio
 ssh root@host01 "rm -rf /root/projects/rhoar-getting-started /root/temp-pom.xml"

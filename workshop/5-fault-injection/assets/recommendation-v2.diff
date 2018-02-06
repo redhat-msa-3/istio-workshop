@@ -1,7 +1,5 @@
-diff --git a/recommendation-v2/src/main/java/com/redhat/developer/demos/recommendation/RecommendationCo
-index 2bfd7c5..b121b1f 100644
---- a/recommendation-v2/src/main/java/com/redhat/developer/demos/recommendation/RecommendationControlle
-+++ b/recommendation-v2/src/main/java/com/redhat/developer/demos/recommendation/RecommendationControlle
+--- a/recommendation-v2/src/main/java/com/redhat/developer/demos/recommendation/RecommendationController.java
++++ b/recommendation-v2/src/main/java/com/redhat/developer/demos/recommendation/RecommendationController.java
 @@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
  @RestController
  public class RecommendationController {
@@ -10,3 +8,4 @@ index 2bfd7c5..b121b1f 100644
 +    private static final String RESPONSE_STRING_FORMAT = "recommendation v2 from '%s': %d\n";
 
      private final Logger logger = LoggerFactory.getLogger(getClass());
+     
