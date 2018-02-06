@@ -1,8 +1,8 @@
 Istio also allows you to specify custom metrics which can be seen inside of the Prometheus dashboard
 
-Look at the file `istio-tutorial/blob/master/istiofiles/recommendations_requestcount.yml`{{open}}
+Look at the file `istio-tutorial/istiofiles/recommendation_requestcount.yml`{{open}}
 
-It specifies an istio rule that invokes the `recommendationsrequestcounthandler` for every invocation to `recommendations.tutorial.svc.cluster.local`
+It specifies an istio rule that invokes the `recommendationrequestcounthandler` for every invocation to `recommendation.tutorial.svc.cluster.local`
 
 **TODO** Needs more exaplanation about this file
 
