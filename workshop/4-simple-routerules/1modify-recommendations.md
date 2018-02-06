@@ -2,8 +2,6 @@ We can experiment with Istio routing rules by making a change to Recommendations
 
 Open `istio-tutorial/recommendation/src/main/java/com/redhat/developer/demos/recommendation/RecommendationController.java`{{open}} in the editor. Now make the following modification.
 
-**Note**: The file shold appear in the file explorer when the installation script completes.
-
 ```java
     private static final String RESPONSE_STRING_FORMAT = "recommendation v2 from '%s': %d\n";
 ```    
@@ -37,7 +35,7 @@ Once that the recommendation pod READY column is 2/2, you can hit `CTRL+C`.
 
 Test the `customer` endpoint: `curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com`{{execute}}
 
-you likely see "customer => preference => recommendation v2 from '2819441432-5v22s': 1" as by default you get round-robin load-balancing when there is more than one Pod behind a Service.
+You likely see "customer => preference => recommendation v2 from '2819441432-5v22s': 1" as by default you get round-robin load-balancing when there is more than one Pod behind a Service.
 
 You likely see "customer => preference => recommendation v1 from '99634814-d2z2t': 3", where '99634814-d2z2t' is the pod running v1 and the 3 is basically the number of times you hit the endpoint.
 
