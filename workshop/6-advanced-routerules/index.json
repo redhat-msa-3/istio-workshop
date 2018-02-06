@@ -30,6 +30,7 @@
       "code": "set-env.sh"
     },
     "steps": [
+        { "title": "Install Microservices", "text": "0install-microservices.md" },
         { "title": "Smart routing based on user-agent header (Canary Deployment)", "text": "1useragent-routing.md" }
     ]
   }
