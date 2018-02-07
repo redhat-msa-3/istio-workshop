@@ -4,10 +4,6 @@ What is your user-agent?
 
 **Note:** the "user-agent" header being forwarded in the Customer and Preferences controllers in order for route rule modications around recommendations.
 
-To watch the creation of the pods, execute `oc get pods -w`{{execute}}
-
-Once that the recommendations pods READY column are 2/2, you can hit `CTRL+C`. 
-
 Let's create a rule that points all request to v1 using the file `/istiofiles/route-rule-recommendation-v1.yml`{{open}}.
 
 `oc create -f ~/projects/istio-tutorial/istiofiles/route-rule-recommendation-v1.yml -n tutorial`{{execute}}

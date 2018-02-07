@@ -4,15 +4,17 @@ Add another v2 pod to the mix `oc scale deployment recommendation-v2 --replicas=
 
 Watch the creation of the pods executing `oc get pods -w`{{execute}}
 
-Once that the microservices pods READY column are 2/2, you can hit `CTRL+C`. 
+Once that the recommendation pods READY column are 2/2, you can hit `CTRL+C`. 
 
 Try the microservices many times by typing `while true; do curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .1; done`{{execute}}
+
+Hit CTRL+C when you are satisfied.
 
 Add a 3rd v2 pod to the mix `oc scale deployment recommendation-v2 --replicas=3 -n tutorial`{{execute}}
 
 Watch the creation of the pods executing `oc get pods -w`{{execute}}
 
-Once that the microservices pods READY column are 2/2, you can hit `CTRL+C`. 
+Once that the recommendation pods READY column are 2/2, you can hit `CTRL+C`. 
 
 Try the microservices many times by typing `while true; do curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .1; done`{{execute}}
 
@@ -28,6 +30,7 @@ customer => preference => recommendation v2 from '2819441432-rg45q': 3
 customer => preference => recommendation v2 from '2819441432-rg45q': 4
 customer => preference => recommendation v2 from '2819441432-bs5ck': 182
 ```
+Hit CTRL+C when you are satisfied.
 
 Now, explore the file `istiofiles/recommendation_lb_policy_app.yml`{{open}}, and add the Random LB DestinationPolicy:
 
@@ -35,7 +38,7 @@ Now, explore the file `istiofiles/recommendation_lb_policy_app.yml`{{open}}, and
 
 Execute `while true; do curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .1; done`{{execute}}`
 
-And you should see a different pattern of which pod is being selected where `v1` and `v2` receives the same amount of requests.
+After a while you should see a different pattern of which pod is being selected where `v1` and `v2` tend to receive the same amount of requests.
 
 Hit CTRL+C when you are satisfied.
 
