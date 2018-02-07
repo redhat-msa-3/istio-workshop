@@ -19,7 +19,7 @@ We'll create a blacklist making the customer service blacklist to the preference
 
 Inspect the file `/istiofiles/acl-blacklist.yml`{{open}}.
 
-Now lest's use apply this file through `istioctl create -f ~/projects/istio-tutorial/istiofiles/aacl-blacklist.yml -n tutorial`{{execute}}
+Now lest's use apply this file through `istioctl create -f ~/projects/istio-tutorial/istiofiles/acl-blacklist.yml -n tutorial`{{execute}}
 
 Check the new behaviour trying the microservice by typing `curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com`{{execute}}
 

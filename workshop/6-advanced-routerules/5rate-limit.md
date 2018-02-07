@@ -34,9 +34,9 @@ Hit CTRL+C when you are satisfied.
 
 ## Clean up
 
-Execute `istioctl delete -f ~/projects/istio-tutorial/istiofiles/rate_limit_rule.yml -n tutorial`
+Execute `istioctl delete -f ~/projects/istio-tutorial/istiofiles/rate_limit_rule.yml -n tutorial`{{execute}}
 
 and 
 
-`istioctl delete -f ~/projects/istio-tutorial/istiofiles/recommendation_rate_limit_handler.yml -n tutorial`
+`istioctl delete -f ~/projects/istio-tutorial/istiofiles/recommendation_rate_limit_handler.yml -n tutorial`{{execute}}
 
