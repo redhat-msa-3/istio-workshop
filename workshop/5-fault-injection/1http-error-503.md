@@ -4,10 +4,6 @@ If you look for all recommendations pods that contains the label `app=recommenda
 
 Try: `oc get pods -l app=recommendation -n tutorial`{{execute}}
 
-To watch the creation of the pods, execute `oc get pods -w`{{execute}}
-
-Once that the recommendation pods READY column are 2/2, you can hit `CTRL+C`. 
-
 To check this behaviour, try the microservice several times by typing `while true; do curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .1; done`{{execute}}
 
 Hit CTRL+C when you are satisfied.

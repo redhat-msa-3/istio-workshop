@@ -40,3 +40,7 @@ To remove the User-Agent behaviour, simply delete this `routerule` by executing 
 To check if you have all requests using `v1`, try the microservice several times by typing `curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com`{{execute}}
 
 You still have the requests going to `v1` because you didn't remove the RouteRule `recommendation-default`.
+
+#Clean up
+
+Don't forget to remove the RouteRule `recommendation-default` executing `oc delete routerule recommendation-default`{{execute}}

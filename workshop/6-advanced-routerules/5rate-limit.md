@@ -4,11 +4,11 @@ Examine the file that contains the rate limit handler `istiofiles/recommendation
 
 `istioctl create -f ~/projects/istio-tutorial/istiofiles/recommendation_rate_limit_handler.yml`{{execute}}
 
-Now examine the file that contains the requestcount quota istiofiles/rate_limit_rule.yml`{{open}} and apply it
+Now examine the file that contains the requestcount quota `istiofiles/rate_limit_rule.yml`{{open}} and apply it
 
 `istioctl create -f ~/projects/istio-tutorial/istiofiles/rate_limit_rule.yml`{{execute}}
 
-To check the new behaviour, try the microservice several times by typing `while true; do time curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .1; done`{{execute}}
+To check the new behaviour, try the microservice several times by typing `while true; do curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .1; done`{{execute}}
 
 You should see some 429 errors:
 
@@ -34,9 +34,9 @@ Hit CTRL+C when you are satisfied.
 
 ## Clean up
 
-Execute `istioctl delete -f ~/projects/istio-tutorial/istiofiles/rate_limit_rule.yml -n tutorial`{{execute}}
+Execute `istioctl delete -f ~/projects/istio-tutorial/istiofiles/rate_limit_rule.yml`{{execute}}
 
 and 
 
-`istioctl delete -f ~/projects/istio-tutorial/istiofiles/recommendation_rate_limit_handler.yml -n tutorial`{{execute}}
+`istioctl delete -f ~/projects/istio-tutorial/istiofiles/recommendation_rate_limit_handler.yml`{{execute}}
 

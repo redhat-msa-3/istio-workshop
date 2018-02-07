@@ -38,7 +38,7 @@ Now, explore the file `istiofiles/recommendation_lb_policy_app.yml`{{open}}, and
 
 Execute `while true; do curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .1; done`{{execute}}`
 
-After a while you should see a different pattern of which pod is being selected where `v1` and `v2` tend to receive the same amount of requests.
+After a while you should see a different pattern.
 
 Hit CTRL+C when you are satisfied.
 

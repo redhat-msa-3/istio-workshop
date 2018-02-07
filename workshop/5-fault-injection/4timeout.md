@@ -37,6 +37,10 @@ Now let's delete the previous v2 pod to force the creation of a new pod using th
 
 `oc delete pod -l app=recommendation,version=v2 -n tutorial`{{execute}}
 
+To watch the creation of the pods, execute `oc get pods -w`{{execute}}
+
+Once that the recommendation pods READY column are 2/2, you can hit `CTRL+C`. 
+
 ## Timeout rule
 
 Check the file `/istiofiles/route-rule-recommendation-timeout.yml`{{open}}.
