@@ -41,6 +41,6 @@ To check if you have all requests using `v1`, try the microservice several times
 
 You still have the requests going to `v1` because you didn't remove the RouteRule `recommendation-default`.
 
-#Clean up
+## Clean up
 
 Don't forget to remove the RouteRule `recommendation-default` executing `oc delete routerule recommendation-default`{{execute}}

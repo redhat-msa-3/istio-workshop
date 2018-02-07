@@ -33,9 +33,6 @@ Hit CTRL+C when you are satisfied.
 Now, delete the 503 rule and back to random load-balancing between v1 and v2
 
 `oc delete routerule recommendation-v2-503 -n tutorial`{{execute}}
+`while true; do curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .1; done`{{execute}}
 
-To check if you have random load-balance, try the microservice several times by typing `curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com`{{execute}}
-
-
-
-
+Hit CTRL+C when you are satisfied.
