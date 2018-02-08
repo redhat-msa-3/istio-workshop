@@ -59,6 +59,6 @@ Hit CTRL+C when you are satisfied.
 
 To remove the Timeout behaviour, simply delete this `routerule` by executing `oc delete routerule recommendation-timeout -n tutorial`{{execute}}
 
-To check if you have random load-balance, try the microservice several times by typing ``while true; do curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .1; done`{{execute}}
+To check if you have random load-balance, try the microservice several times by typing `while true; do curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .1; done`{{execute}}
 
 Hit CTRL+C when you are satisfied.

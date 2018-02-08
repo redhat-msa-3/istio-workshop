@@ -30,9 +30,12 @@ To check the old 503 error behaviour, try the microservice several times by typi
 
 Hit CTRL+C when you are satisfied.
 
-Now, delete the 503 rule and back to random load-balancing between v1 and v2
+Now, delete the 503 rule.
 
 `oc delete routerule recommendation-v2-503 -n tutorial`{{execute}}
+
+It should be back to random load-balancing between `v1` and `v2`
+
 `while true; do curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .1; done`{{execute}}
 
 Hit CTRL+C when you are satisfied.

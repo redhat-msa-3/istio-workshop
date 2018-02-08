@@ -4,8 +4,6 @@ Look at the file `/istiofiles/recommendation_requestcount.yml`{{open}}
 
 It specifies an istio rule that invokes the `recommendationrequestcounthandler` for every invocation to `recommendation.tutorial.svc.cluster.local`
 
-**TODO** Needs more exaplanation about this file
-
 Let's go back to the istio installation folder.
 
 `cd ~/projects/istio-tutorial/`{{execute}}
