@@ -45,7 +45,7 @@ recommendation-v2-2036617847-spdrb   2/2       Running   0          7m
 
 Now we'll get into one the pods and add some erratic behavior on it. 
 
-`oc exec -it ``oc get pods|grep recommendation-v2|awk '{ print $1 }'|head -1`` -c recommendation  /bin/bash`{{execute}}
+`oc exec -it \`oc get pods|grep recommendation-v2|awk '{ print $1 }'|head -1\` -c recommendation  /bin/bash`{{execute}}
 
 You will be inside the application container of your pod. Now execute:
 
