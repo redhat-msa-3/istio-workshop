@@ -18,7 +18,7 @@ But suppose that in a production system this 3s delay was caused by too many con
 
 Check the file `/istiofiles/recommendation_cb_policy_version_v2.yml`{{open}}.
 
-Let's apply this `DestinationPolicy`: `istioctl create -f ~/projects/istio-tutorial/istiofiles/recommendation_cb_policy_version_v2.yml -n tutorial`
+Let's apply this `DestinationPolicy`: `istioctl create -f ~/projects/istio-tutorial/istiofiles/recommendation_cb_policy_version_v2.yml -n tutorial`{{execute}}
 
 More information on the fields for the simple circuit-breaker <https://istio.io/docs/reference/config/istio.routing.v1alpha1.html#CircuitBreaker.SimpleCircuitBreakerPolicy>
 
@@ -38,4 +38,4 @@ You can run siege multiple times, but in all of the executions you should see so
 
 Remove the `RouteRule`:  `oc delete routerule recommendation-v1-v2 -n tutorial`{{execute}}
 
-Now remove the `DestinationPolicy`: `istioctl delete -f istiofiles/recommendation_cb_policy_version_v2.yml`{{execute}}
+Now remove the `DestinationPolicy`: `istioctl delete -f ~/projects/istio-tutorial/istiofiles/recommendation_cb_policy_version_v2.yml`{{execute}}
