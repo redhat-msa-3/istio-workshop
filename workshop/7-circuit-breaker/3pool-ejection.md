@@ -27,6 +27,9 @@ customer => preference => recommendation v1 from '2039379827-jmm6x': 449
 customer => preference => recommendation v1 from '2039379827-jmm6x': 450
 ```
 
+Hit CTRL+C when you are satisfied.
+
+
 ## Test behavior with failing instance and without pool ejection
 
 Let's get the name of the pods from recommendation v2:
@@ -42,7 +45,7 @@ recommendation-v2-2036617847-spdrb   2/2       Running   0          7m
 
 Now we'll get into one the pods and add some erratic behavior on it. 
 
-`oc exec -it `oc get pods|grep recommendation-v2|awk '{ print $1 }'|head -1` -c recommendation  /bin/bash`{{execute}}
+`oc exec -it ``oc get pods|grep recommendation-v2|awk '{ print $1 }'|head -1`` -c recommendation  /bin/bash`{{execute}}
 
 You will be inside the application container of your pod. Now execute:
 
@@ -64,6 +67,8 @@ customer => preference => recommendation v1 from '2039379827-jmm6x': 498
 customer => 503 preference => 503 recommendation misbehavior from '2036617847-spdrb'
 customer => preference => recommendation v2 from '2036617847-hdjv2': 250
 ```
+
+Hit CTRL+C when you are satisfied.
 
 ## Test behavior with failing instance and with pool ejection
 
