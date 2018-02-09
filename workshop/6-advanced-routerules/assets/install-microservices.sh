@@ -25,6 +25,6 @@ oc create -f /root/projects/istio-tutorial/recommendation/src/main/kubernetes/Se
 
 mvn package -f /root/projects/istio-tutorial/recommendation-v2/ -DskipTests
 docker build -t example/recommendation:v2 /root/projects/istio-tutorial/recommendation-v2/
-oc apply -f <(/root/installation/istio-0.5.0/bin/istioctl kube-inject -f /root/projects/istio-tutorial//kubernetesfiles/recommendation_v2_deployment.yml) -n tutorial
+oc apply -f <(/root/installation/istio-0.5.0/bin/istioctl kube-inject -f /root/projects/istio-tutorial/recommendation/src/main/kubernetes/Deployment-v2.yml) -n tutorial
 
 oc expose service customer -n tutorial

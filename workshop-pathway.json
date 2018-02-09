@@ -30,6 +30,11 @@
       "external_link": "https://www.katacoda.com/rafabene/courses/workshop/6-advanced-routerules",
       "course_id": "6-advanced-routerules",
       "title": "Advanced RouteRules"
+    },
+    {
+      "external_link": "https://www.katacoda.com/rafabene/courses/workshop/7-circuit-breaker",
+      "course_id": "7-circuit-breaker",
+      "title": "Circuit Breaker"
     }
   ]
 }

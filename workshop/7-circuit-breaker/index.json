@@ -1,8 +1,8 @@
 {
   "pathwayTitle": "Istio Workshop",
-  "title": "Advanced RouteRules",
+  "title": "Circuit Breaker",
   "icon": "fa-openshift",
-  "description": "Advanced RouteRules with Istio",
+  "description": "Fail Fast with Max Connections & Max Pending Requests",
   "difficulty": "Advanced",
   "time": "1 hour",
   "environment": {
@@ -31,9 +31,8 @@
     },
     "steps": [
         { "title": "Install Microservices", "text": "0install-microservices.md" },
-        { "title": "Smart routing based on user-agent header (Canary Deployment)", "text": "1useragent-routing.md" },
-        { "title": "Access Control", "text": "3access-control.md" },
-        { "title": "Load Balancer", "text": "4load-balancer.md" }
+        { "title": "Install Microservices", "text": "1install-siege.md" },
+        { "title": "Fail Fast with Max Connections & Max Pending Requests", "text": "2fail-fast.md" }
     ]
   }
 }

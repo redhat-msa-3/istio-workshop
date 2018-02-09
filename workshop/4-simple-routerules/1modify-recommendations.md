@@ -27,7 +27,7 @@ You can check the image that was create by typing `docker images | grep recommen
 
 There is also a 2nd deployment.yml file to label things correctly
 
-Execute: `oc apply -f <(istioctl kube-inject -f ../kubernetesfiles/recommendation_v2_deployment.yml) -n tutorial`{{execute}}
+Execute: `oc apply -f <(istioctl kube-inject -f src/main/kubernetes/Deployment-v2.yml) -n tutorial`{{execute}}
 
 To watch the creation of the pods, execute `oc get pods -w`{{execute}}
 
