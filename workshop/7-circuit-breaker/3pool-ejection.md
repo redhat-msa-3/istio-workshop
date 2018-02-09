@@ -74,6 +74,10 @@ Hit CTRL+C when you are satisfied.
 
 Now let's add the pool ejection behavior:
 
+Check the file `/istiofiles/recommendation_cb_policy_pool_ejection.yml`{{open}}.
+
+Now execute:
+
 `istioctl create -f ~/projects/istio-tutorial/istiofiles/recommendation_cb_policy_pool_ejection.yml -n tutorial`{{execute}}
 
 Throw some requests at the customer endpoint:
@@ -101,25 +105,6 @@ customer => preference => recommendation v1 from '2039379827-jmm6x': 517
 customer => preference => recommendation v1 from '2039379827-jmm6x': 518
 customer => 503 preference => 503 recommendation misbehavior from '2036617847-spdrb'
 customer => preference => recommendation v1 from '2039379827-jmm6x': 519
-customer => preference => recommendation v1 from '2039379827-jmm6x': 520
-customer => preference => recommendation v1 from '2039379827-jmm6x': 521
-customer => preference => recommendation v2 from '2036617847-hdjv2': 261
-customer => preference => recommendation v2 from '2036617847-hdjv2': 262
-customer => preference => recommendation v2 from '2036617847-hdjv2': 263
-customer => preference => recommendation v1 from '2039379827-jmm6x': 522
-customer => preference => recommendation v1 from '2039379827-jmm6x': 523
-customer => preference => recommendation v2 from '2036617847-hdjv2': 264
-customer => preference => recommendation v1 from '2039379827-jmm6x': 524
-customer => preference => recommendation v1 from '2039379827-jmm6x': 525
-customer => preference => recommendation v1 from '2039379827-jmm6x': 526
-customer => preference => recommendation v1 from '2039379827-jmm6x': 527
-customer => preference => recommendation v2 from '2036617847-hdjv2': 265
-customer => preference => recommendation v2 from '2036617847-hdjv2': 266
-customer => preference => recommendation v1 from '2039379827-jmm6x': 528
-customer => preference => recommendation v2 from '2036617847-hdjv2': 267
-customer => preference => recommendation v2 from '2036617847-hdjv2': 268
-customer => preference => recommendation v2 from '2036617847-hdjv2': 269
-customer => 503 preference => 503 recommendation misbehavior from '2036617847-spdrb'
-customer => preference => recommendation v1 from '2039379827-jmm6x': 529
-customer => preference => recommendation v2 from '2036617847-hdjv2': 270
 ```
+
+Hit CTRL+C when you are satisfied.

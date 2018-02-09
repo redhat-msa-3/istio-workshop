@@ -6,19 +6,24 @@ Even with pool ejection your application doesn't look that resilient. That's pro
 
 By simply adding a **retry** configuration to our current `routerule`, we'll be able to get rid completely of our `503`s requests. This means that whenever we receive a failed request from an ejected instance, Istio will forward the request to another supposably healthy instance.
 
+Check the file `/istiofiles/route-rule-recommendation-v1_and_v2_retry.yml`{{open}}.
+
+Execute:
+
 `istioctl replace -f ~/projects/istio-tutorial/istiofiles/route-rule-recommendation-v1_and_v2_retry.yml`{{execute}}
 
 Throw some requests at the customer endpoint:
 
 Execute `while true; do curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .1; done`{{execute}}`
 
-You won't receive 503s anymore. But the requests from recommendation v2 are still taking more time to get a response:
-
-Our misbehaving pod recommendation-v2-2036617847-spdrb never shows up in the console, thanks to pool ejection and retry.
+You won't receive 503s anymore. But the requests from recommendation v2 are still taking more time to get a response. Our misbehaving podnever shows up in the console, thanks to pool ejection and retry.
 
 ## Clean up
 
 Reduce the number of `v2` replicas to 1: `oc scale deployment recommendation-v2 --replicas=1 -n tutorial`{{execute}}
+
 Delete the failing pod: `oc delete pod -l app=recommendation,version=v2`{{execute}}
+
 Delete the routerule: `oc delete routerule recommendation-v1-v2 -n tutorial`{{execute}}
+
 Delete the pool ejection policy: `istioctl delete -f ~/projects/istio-tutorial/istiofiles/recommendation_cb_policy_pool_ejection.yml -n tutorial`{{execute}}
