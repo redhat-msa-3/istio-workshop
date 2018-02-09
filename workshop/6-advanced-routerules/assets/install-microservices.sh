@@ -1,5 +1,5 @@
 #!/bin/bash
-git --git-dir=/root/projects/istio-tutorial/.git pull
+git --work-tree=/root/projects/istio-tutorial/ --git-dir=/root/projects/istio-tutorial/.git pull
 cp -Rvf /root/projects/istio-tutorial/recommendation/ /root/projects/istio-tutorial/recommendation-v2
 git apply /root/recommendation-v2.diff --directory=/root/projects/istio-tutorial/
 

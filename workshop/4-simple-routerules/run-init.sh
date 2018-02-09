@@ -1,5 +1,5 @@
 #!/bin/bash
-ssh root@host01 "git --git-dir=/root/projects/istio-tutorial/.git pull"
+ssh root@host01 "git --work-tree=/root/projects/istio-tutorial/ --git-dir=/root/projects/istio-tutorial/.git pull"
 ssh root@host01 "cp -Rvf /root/projects/istio-tutorial/recommendation/ /root/projects/istio-tutorial/recommendation-v1"
 
 #Install Istio
