@@ -2,13 +2,7 @@ To install Istio in the cluster, we need first to make sure that we are logged i
 
 To log in the OpenShift cluster, type `oc login -u system:admin`{{execute}}
 
-Now that you are logged in, it's time to download `Istio` distribution.
-
-Execute: `wget https://github.com/istio/istio/releases/download/0.5.0/istio-0.5.0-linux.tar.gz `{{execute}}
-
-Once that you have downloaded the file, it's time to extract it.
-
-To extract Istio distribution execute `tar -zxvf istio-0.5.0-linux.tar.gz`{{execute}}
+Now that you are logged in, it's time to extract the existing istio installation: `tar -zxvf istio-0.5.0-linux.tar.gz`{{execute}}
 
 ## Before the installation
 
