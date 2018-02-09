@@ -1,4 +1,5 @@
 #!/bin/bash
+ssh root@host01 "git --work-tree=/root/projects/istio-tutorial/ --git-dir=/root/projects/istio-tutorial/.git pull"
 ssh root@host01 "rm -rf /root/projects/rhoar-getting-started /root/temp-pom.xml"
 
 ssh root@host01 "tar -zxvf /root/installation/istio-0.5.0-linux.tar.gz -C /root/installation"
@@ -16,7 +17,6 @@ ssh root@host01 "oc expose svc istio-ingress -n istio-system"
 
 
 #Install Microservices
-ssh root@host01 "git --work-tree=/root/projects/istio-tutorial/ --git-dir=/root/projects/istio-tutorial/.git pull"
 ssh root@host01 "oc new-project tutorial ; oc adm policy add-scc-to-user privileged -z default -n tutorial"
 
 ssh root@host01 "mvn package -f /root/projects/istio-tutorial/customer/ -DskipTests"

@@ -1,4 +1,5 @@
 #!/bin/bash
+ssh root@host01 "git --work-tree=/root/projects/istio-tutorial/ --git-dir=/root/projects/istio-tutorial/.git pull"
 ssh root@host01 "rm -rf /root/projects/rhoar-getting-started /root/temp-pom.xml"
 
 ssh root@host01 "tar -zxvf /root/installation/istio-0.5.0-linux.tar.gz -C /root/installation"
