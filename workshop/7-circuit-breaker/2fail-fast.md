@@ -7,3 +7,35 @@ Execute `oc create -f ~/projects/istio-tutorial/istiofiles/route-rule-recommenda
 Let's perform a load test in our system with siege. We'll have 20 clients sending 2 concurrent requests each:
 
 `siege -r 2 -c 20 -v http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com`{{execute}}
+
+You should see an output similar to this:
+
+![](../../assets/circuitbreaker/siege_ok.png)
+
+All of the requests to our system were successful, but it took some time to run the test, as the v2 deployment was a slow performer.
+
+But suppose that in a production system this 3s delay was caused by too many concurrent requests to the same deployment. We don't want multiple requests getting queued or making the deployment even slower. So we'll add a circuit breaker that will open whenever we have more than 1 request being handled by any deployment.
+
+Check the file `/istiofiles/recommendation_cb_policy_version_v2.yml`{{open}}.
+
+Let's apply this `DestinationPolicy`: `istioctl create -f ~/projects/istio-tutorial/istiofiles/recommendation_cb_policy_version_v2.yml -n tutorial`
+
+More information on the fields for the simple circuit-breaker <https://istio.io/docs/reference/config/istio.routing.v1alpha1.html#CircuitBreaker.SimpleCircuitBreakerPolicy>
+
+## Load test with circuit breaker
+
+Now let's see what is the behavior of the system running `siege` again:
+
+`siege -r 2 -c 20 -v http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com`{{execute}}
+
+You should see an output similar to this:
+
+![](../../assets/circuitbreaker/siege_ok.png)
+
+You can run siege multiple times, but in all of the executions you should see some 503 errors being displayed in the results. That's the circuit breaker being opened whenever Istio detects more than 1 pending request being handled by the deployment.
+
+## Clean up
+
+Remove the `RouteRule`:  `oc delete routerule recommendation-v1-v2 -n tutorial`{{execute}}
+
+Now remove the `DestinationPolicy`: `istioctl delete -f istiofiles/recommendation_cb_policy_version_v2.yml`{{execute}}

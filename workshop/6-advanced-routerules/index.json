@@ -30,8 +30,8 @@
       "code": "set-env.sh"
     },
     "Not WORKING": [
-      { "title": "NOT WORKING - Mirroring Traffic (Dark Launch)", "text": "2dark-launch.md" },
-      { "title": "NOT WORKING - Rate Limiting", "text": "5rate-limit.md" }
+      { "title": "Mirroring Traffic (Dark Launch)", "text": "2dark-launch.md" },
+      { "title": "Rate Limiting", "text": "5rate-limit.md" }
     ],
     "steps": [
         { "title": "Install Microservices", "text": "0install-microservices.md" },
