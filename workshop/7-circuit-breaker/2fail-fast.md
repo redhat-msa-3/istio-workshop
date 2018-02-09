@@ -30,7 +30,7 @@ Now let's see what is the behavior of the system running `siege` again:
 
 You should see an output similar to this:
 
-![](../../assets/circuitbreaker/siege_ok.png)
+![](../../assets/circuitbreaker/siege_cb_503.png)
 
 You can run siege multiple times, but in all of the executions you should see some 503 errors being displayed in the results. That's the circuit breaker being opened whenever Istio detects more than 1 pending request being handled by the deployment.
 
