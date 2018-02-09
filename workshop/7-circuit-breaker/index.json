@@ -4,7 +4,7 @@
   "icon": "fa-openshift",
   "description": "Fail Fast with Max Connections & Max Pending Requests",
   "difficulty": "Advanced",
-  "time": "1 hour",
+  "time": "30 minutes",
   "environment": {
       "showdashboard": true,
       "dashboard": "Web Console",

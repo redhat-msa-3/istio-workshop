@@ -3,7 +3,7 @@ Before we start this scenario, we need to deploy all microservices (customer, pr
 There's a script called `install-microservices.sh` that will
 
 - Checkout the source code from https://github.com/redhat-developer-demos/istio-tutorial
-- Create recommendations:v2
+- Create recommendation:v2 with a bad performance (replies in 3 seconds).
 - Run `mvn package` on all projects
 - Create a docker image
 - Deploy the microservices with the sidecar proxy
