@@ -24,6 +24,8 @@ Exit from the pod: `exit`{{execute}}
 
 ## Istio-ize egressgithub
 
+You can create YAML files from command lines by passing it to `istioctl` via `cat <<EOF |`
+
 Execute:
 
 ```
@@ -49,12 +51,13 @@ Exit from the pod: `exit`{{execute}}
 
 Open the file `istiofiles/egress_github.yml`{{open}}.
 
-Now, apply the egressrule for github and execute the Java code that hits api.github.com/users
+Note that it allows access to `api.github.com` on the port `443`
 
+Now, apply the egressrule for github:
 
 `oc create -f ~/projects/istio-tutorial/istiofiles/egress_github.yml -n istioegress`{{execute}}
 
-Try the microservice by typing `curl http://egressgithub-istioegress.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com`{{execute}}
+And execute the Java code that hits api.github.com/users `curl http://egressgithub-istioegress.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com`{{execute}}
 
 ## Clean up
 
