@@ -8,11 +8,15 @@ Note that it routes `100%` of the requests to `v1` and `0%` to `v2`. However it 
 
 Let's apply this rule: `oc create -f ~/projects/istio-tutorial/istiofiles/route-rule-recommendation-v1-mirror-v2.yml -n tutorial`{{execute}}
 
-Access the microservice by typing `curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com`{{execute}}
+Access the microservice several times by typing `while true; do curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .1; done`{{execute}}
+
+Note that it only replies from `v1`.
+
+Hit CTRL+C when you are satisfied.
 
 Check the logs of `recommendation:v2` to make sure that it received the request although we saw only `v1` response.
 
-`oc logs -f $(oc get pods|grep recommendation-v2|awk '{ print $1 }') -c recommendation`
+`oc logs -f $(oc get pods|grep recommendation-v2|awk '{ print $1 }') -c recommendation`{{execute}}
 
 ## Clean up
 
