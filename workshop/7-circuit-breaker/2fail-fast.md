@@ -12,9 +12,9 @@ You should see an output similar to this:
 
 ![](../../assets/circuitbreaker/siege_ok.png)
 
-All of the requests to our system were successful, but it took some time to run the test, as the v2 deployment was a slow performer.
+All of the requests to our system were successful, but it took some time to run the test, as the v2 instance/pod was a slow performer.
 
-But suppose that in a production system this 3s delay was caused by too many concurrent requests to the same deployment. We don't want multiple requests getting queued or making the deployment even slower. So we'll add a circuit breaker that will open whenever we have more than 1 request being handled by any deployment.
+But suppose that in a production system this 3s delay was caused by too many concurrent requests to the same instance/pod. We don't want multiple requests getting queued or making the instance/pod even slower. So we'll add a circuit breaker that will **open** whenever we have more than 1 request being handled by any instance/pod.
 
 Check the file `/istiofiles/recommendation_cb_policy_version_v2.yml`{{open}}.
 
@@ -32,7 +32,7 @@ You should see an output similar to this:
 
 ![](../../assets/circuitbreaker/siege_cb_503.png)
 
-You can run siege multiple times, but in all of the executions you should see some 503 errors being displayed in the results. That's the circuit breaker being opened whenever Istio detects more than 1 pending request being handled by the deployment.
+You can run siege multiple times, but in all of the executions you should see some `503` errors being displayed in the results. That's the circuit breaker being opened whenever Istio detects more than 1 pending request being handled by the instance/pod.
 
 ## Clean up
 

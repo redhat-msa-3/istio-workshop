@@ -35,6 +35,11 @@
       "external_link": "https://www.katacoda.com/rafabene/courses/workshop/7-circuit-breaker",
       "course_id": "7-circuit-breaker",
       "title": "Circuit Breaker"
+    },
+    {
+      "external_link": "https://www.katacoda.com/rafabene/courses/workshop/8-egress",
+      "course_id": "8-egress",
+      "title": "Egress"
     }
   ]
 }

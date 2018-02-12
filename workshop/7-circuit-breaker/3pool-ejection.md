@@ -1,4 +1,4 @@
-Pool ejection or *outlier detection* is a resilience strategy that takes place whenever we have a pool of instances to serve a client request. If the request is forwarded to a certain instance and it fails (e.g. returns a 50x error code), then Istio will eject this instance from the pool for a certain sleep window. In our example the sleep window is configured to be 15s. This increases the overall availability by making sure that only healthy requests participate in the pool of instances.
+Pool ejection or *outlier detection* is a resilience strategy that takes place whenever we have a pool of instances/pods to serve a client request. If the request is forwarded to a certain instance and it fails (e.g. returns a 50x error code), then Istio will eject this instance from the pool for a certain *sleep window*. In our example the sleep window is configured to be 15s. This increases the overall availability by making sure that only healthy pods participate in the pool of instances.
 
 First, you need to insure you have a routerule in place. Let's use a 50/50 split of traffic:
 
