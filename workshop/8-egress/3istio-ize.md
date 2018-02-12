@@ -24,7 +24,7 @@ Exit from the pod: `exit`{{execute}}
 
 Execute:
 
-`
+```
 cat <<EOF | istioctl create -f -
 apiVersion: config.istio.io/v1alpha2
 kind: EgressRule
@@ -37,7 +37,7 @@ spec:
     - port: 443
       protocol: https
 EOF
-`{{execute}}
+```{{execute}}
 
 and shell into the github pod for testing google access: `oc exec -it $(oc get pods -o jsonpath="{.items[*].metadata.name}" -l app=egressgithub,version=v1) -c egressgithub /bin/bash`{{execute}}
 
