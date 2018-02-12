@@ -55,7 +55,7 @@ To check the new behaviour, try the microservice several times by typing `while 
 
 Hit CTRL+C when you are satisfied.
 
-## Cleanup
+## Clean up
 
 To remove the Timeout behaviour, simply delete this `routerule` by executing `oc delete routerule recommendation-timeout -n tutorial`{{execute}}
 

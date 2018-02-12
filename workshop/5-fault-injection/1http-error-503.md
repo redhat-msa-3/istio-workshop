@@ -18,7 +18,7 @@ To check the new behaviour, try the microservice several times by typing `while 
 
 Hit CTRL+C when you are satisfied.
 
-## Cleanup
+## Clean up
 
 To remove the HTTP Error 503 behaviour, simply delete this `routerule` by executing `oc delete routerule recommendation-503 -n tutorial`{{execute}}
 

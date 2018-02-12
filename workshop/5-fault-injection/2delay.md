@@ -12,7 +12,7 @@ Hit CTRL+C when you are satisfied.
 
 You will notice many requets to the customer endpoint now have a delay.
 
-## Cleanup
+## Clean up
 
 To remove the delay behaviour, simply delete this `routerule` by executing `oc delete routerule recommendation-delay -n tutorial`{{execute}}
 

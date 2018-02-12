@@ -23,7 +23,7 @@ To check the new behaviour, try the microservice several times by typing `while 
 
 Hit CTRL+C when you are satisfied.
 
-## Cleanup
+## Clean up
 
 You can now remove the routerule called `recommendation-v1-v2` to have the load balacing behaviour back.
 
