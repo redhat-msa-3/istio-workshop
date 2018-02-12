@@ -47,4 +47,4 @@ Once that the customer pod READY column is 2/2, you can hit `CTRL+C`.
 
 Try the microservice by typing `curl http://egresshttpbin-istioegress.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com`{{execute}}
 
-**Note:** It does not work...yet, more to come.
+**Note:** It does not work...yet. Envoy blocks egress due to security concerns, but later we will add a Egress rule to allow this access.
