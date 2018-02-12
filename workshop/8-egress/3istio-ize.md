@@ -1,10 +1,12 @@
 Open the file `istiofiles/egress_httpbin.yml`{{open}}.
 
+Note that it allows access to `httpbin.org` on the port `80`
+
 Let's apply this file.
 
 `oc create -f ~/projects/istio-tutorial/istiofiles/egress_httpbin.yml -n istioegress`{{execute}}
 
-`istioctl get egressrules`{{execute}}
+Check the existing `egressrules`: `istioctl get egressrules`{{execute}}
 
 Try the microservice by typing `curl http://egresshttpbin-istioegress.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com`{{execute}}
 
@@ -29,13 +31,13 @@ cat <<EOF | istioctl create -f -
 apiVersion: config.istio.io/v1alpha2
 kind: EgressRule
 metadata:
-  name: google-egress-rule
+    name: google-egress-rule
 spec:
-  destination:
-    service: www.google.com
-  ports:
-    - port: 443
-      protocol: https
+    destination:
+        service: www.google.com
+    ports:
+      - port: 443
+        protocol: https
 EOF
 ```{{execute}}
 
