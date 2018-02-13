@@ -1,6 +1,6 @@
 We can experiment with Istio routing rules by making a change to RecommendationsController.java.
 
-Open `/recommendation/src/main/java/com/redhat/developer/demos/recommendation/RecommendationVerticle`{{open}} in the editor. Now make the following modification.
+Open `/recommendation/src/main/java/com/redhat/developer/demos/recommendation/RecommendationVerticle.java`{{open}} in the editor. Now make the following modification.
 
 ```java
     private static final String RESPONSE_STRING_FORMAT = "recommendation v2 from '%s': %d\n";
