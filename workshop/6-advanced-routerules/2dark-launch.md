@@ -18,6 +18,8 @@ Check the logs of `recommendation:v2` to make sure that it received the request 
 
 `oc logs -f $(oc get pods|grep recommendation-v2|awk '{ print $1 }') -c recommendation`{{execute}}
 
+Hit CTRL+C when you are satisfied.
+
 ## Clean up
 
 To remove the `mirror` behaviour, delete the `routerule`.

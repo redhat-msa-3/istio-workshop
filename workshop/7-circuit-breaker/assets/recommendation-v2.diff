@@ -6,9 +6,13 @@
 
 -    private static final String RESPONSE_STRING_FORMAT = "recommendation v1 from '%s': %d\n";
 +    private static final String RESPONSE_STRING_FORMAT = "recommendation v2 from '%s': %d\n";
-@@ -37,5 +37,5 @@ public class RecommendationVerticle extends AbstractVerticle {
+
+@@ -37,7 +37,7 @@ public class RecommendationVerticle extends AbstractVerticle {
      public void start() throws Exception {
          Router router = Router.router(vertx);
          router.get("/").handler(this::logging);
 -//        router.get("/").handler(this::timeout);
 +        router.get("/").handler(this::timeout);
+         router.get("/").handler(this::getRecommendations);
+         router.get("/misbehave").handler(this::misbehave);
+         router.get("/behave").handler(this::behave);
