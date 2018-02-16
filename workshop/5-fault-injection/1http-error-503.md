@@ -4,9 +4,8 @@ If you look for all recommendations pods that contains the label `app=recommenda
 
 Try: `oc get pods -l app=recommendation -n tutorial`{{execute T1}}
 
-To check this behaviour, try the microservice several times by typing `while true; do curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .1; done`{{execute T1}}
-
-Hit CTRL+C when you are satisfied.
+To check this behaviour, send several requests on `Terminal 2` to see their responses
+`while true; do curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .5; done`{{execute T2}}
 
 Now check the file `/istiofiles/route-rule-recommendation-503.yml`{{open}}.
 

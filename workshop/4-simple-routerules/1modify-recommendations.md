@@ -43,13 +43,13 @@ You likely see "customer => preference => recommendation v1 from '99634814-d2z2t
 
 Send several requests on `Terminal 2` to see their responses
 
-`while true; do curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .4; done`{{execute T2}}
+`while true; do curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .5; done`{{execute T2}}
 
 The default Kubernetes/OpenShift behavior is to round-robin load-balance across all available pods behind a single Service. Add another replica of recommendations-v2 Deployment.
 
 `oc scale --replicas=2 deployment/recommendation-v2`{{execute T1}}
 
-Wait the second `recommendation` pod to become available, execute `oc get pods -w`{{execute T1}}
+Wait the second `recommendation:v2` pod to become available, execute `oc get pods -w`{{execute T1}}
 
 Once that the recommendation pod READY column is 2/2, you can hit `CTRL+C`. 
 

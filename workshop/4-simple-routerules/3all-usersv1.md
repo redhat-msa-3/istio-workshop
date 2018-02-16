@@ -8,7 +8,7 @@ Let's replace the RouteRule.
 
 **Note**: "replace" instead of "create" since we are overlaying the previous rule
 
-Try the microservice several times by typing `curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com`{{execute T1}}
+Make sure that the following command is running on `Terminal 2` `while true; do curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .2; done`{{execute T2}}
 
 you should only see v1 being returned.
 

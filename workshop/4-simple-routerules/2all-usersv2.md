@@ -6,6 +6,6 @@ Let's apply this file.
 
 `oc create -f ~/projects/istio-tutorial/istiofiles/route-rule-recommendation-v2.yml -n tutorial`{{execute T1}}
 
-Try the microservice several times by typing `curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com`{{execute T1}}
+Make sure that the following command is running on `Terminal 2` `while true; do curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .2; done`{{execute T2}}
 
 you should only see v2 being returned.

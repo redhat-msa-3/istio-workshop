@@ -4,6 +4,6 @@ To send a file to `v1` and `v2` by simply removing the rule
 
 Then you should see the default behavior of load-balancing between v1 and v2
 
-Try the microservice several times by typing `while true; do curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .1; done`{{execute T1}}
+Make sure that the following command is running on `Terminal 2` `while true; do curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .2; done`{{execute T2}}
 
-Hit CTRL+C when you are satisfied.
+you should see v1 and v2 being returned.
