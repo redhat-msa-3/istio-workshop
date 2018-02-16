@@ -2,42 +2,42 @@
   "title": "Istio Workshop",
   "courses": [
     {
-      "external_link": "https://www.katacoda.com/rafabene/courses/devnexus/1-introduction",
+      "external_link": "https://www.katacoda.com/rafabene/courses/workshop/1-introduction",
       "course_id": "1-introduction",
       "title": "Istio Introduction"
     },
     {
-      "external_link": "https://www.katacoda.com/rafabene/courses/devnexus/2-deploy-microservices",
+      "external_link": "https://www.katacoda.com/rafabene/courses/workshop/2-deploy-microservices",
       "course_id": "2-deploy-microservices",
       "title": "Deploy microservices"
     },
     {
-      "external_link": "https://www.katacoda.com/rafabene/courses/devnexus/3-monitoring-tracing",
+      "external_link": "https://www.katacoda.com/rafabene/courses/workshop/3-monitoring-tracing",
       "course_id": "3-monitoring-tracing",
       "title": "Monitoring and Tracing"
     },
     {
-      "external_link": "https://www.katacoda.com/rafabene/courses/devnexus/4-simple-routerules",
+      "external_link": "https://www.katacoda.com/rafabene/courses/workshop/4-simple-routerules",
       "course_id": "4-simple-routerules",
       "title": "Simple RouteRules"
     },
     {
-      "external_link": "https://www.katacoda.com/rafabene/courses/devnexus/5-fault-injection",
+      "external_link": "https://www.katacoda.com/rafabene/courses/workshop/5-fault-injection",
       "course_id": "5-fault-injection",
       "title": "Fault Injection"
     },
     {
-      "external_link": "https://www.katacoda.com/rafabene/courses/devnexus/6-advanced-routerules",
+      "external_link": "https://www.katacoda.com/rafabene/courses/workshop/6-advanced-routerules",
       "course_id": "6-advanced-routerules",
       "title": "Advanced RouteRules"
     },
     {
-      "external_link": "https://www.katacoda.com/rafabene/courses/devnexus/7-circuit-breaker",
+      "external_link": "https://www.katacoda.com/rafabene/courses/workshop/7-circuit-breaker",
       "course_id": "7-circuit-breaker",
       "title": "Circuit Breaker"
     },
     {
-      "external_link": "https://www.katacoda.com/rafabene/courses/devnexus/8-egress",
+      "external_link": "https://www.katacoda.com/rafabene/courses/workshop/8-egress",
       "course_id": "8-egress",
       "title": "Extra scenario: Egress"
     }
