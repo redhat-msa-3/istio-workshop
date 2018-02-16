@@ -4,7 +4,7 @@ If you look for all recommendations pods that contains the label `app=recommenda
 
 Try: `oc get pods -l app=recommendation -n tutorial`{{execute T1}}
 
-To check this behaviour, send several requests on `Terminal 2` to see their responses
+To check this behaviour, send several requests to the microservices on `Terminal 2` to see their responses
 `while true; do curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .5; done`{{execute T2}}
 
 Now check the file `/istiofiles/route-rule-recommendation-503.yml`{{open}}.
@@ -13,14 +13,12 @@ Note that this `RouteRule` provides `httpFault` that will `abort` the request `5
 
 Let's apply this rule: `oc create -f ~/projects/istio-tutorial/istiofiles/route-rule-recommendation-503.yml -n tutorial`{{execute T1}}
 
-To check the new behaviour, try the microservice several times by typing `while true; do curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .1; done`{{execute T1}}
-
-Hit CTRL+C when you are satisfied.
+To check the new behaviour, make sure that the following command is running on `Terminal 2`:
+`while true; do curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .5; done`{{execute T2}}
 
 ## Clean up
 
 To remove the HTTP Error 503 behaviour, simply delete this `routerule` by executing `oc delete routerule recommendation-503 -n tutorial`{{execute T1}}
 
-To check if you have random load-balance, try the microservice several times by typing `while true; do curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .1; done`{{execute T1}}
+To check if you have random load-balance, try the microservice on `Terminal 2`: `while true; do curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .5; done`{{execute T2}}
 
-Hit CTRL+C when you are satisfied.

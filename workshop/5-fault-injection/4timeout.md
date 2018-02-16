@@ -53,14 +53,11 @@ Let's apply this rule: `oc create -f ~/projects/istio-tutorial/istiofiles/route-
 
 You will see it return `v1` OR `upstream request timeout` after waiting about 1 second, although v2 takes 3 seconds to complete.
 
-To check the new behaviour, try the microservice several times by typing `while true; do curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .1; done`{{execute T1}}
-
-Hit CTRL+C when you are satisfied.
+To check this behaviour, send several requests to the microservices on `Terminal 2` to see their responses
+`while true; do curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .5; done`{{execute T2}}
 
 ## Clean up
 
 To remove the Timeout behaviour, simply delete this `routerule` by executing `oc delete routerule recommendation-timeout -n tutorial`{{execute T1}}
 
-To check if you have random load-balance, try the microservice several times by typing `while true; do curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .1; done`{{execute T1}}
-
-Hit CTRL+C when you are satisfied.
+To check if you have random load-balance, try the microservice on `Terminal 2`: `while true; do curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .5; done`{{execute T2}}
