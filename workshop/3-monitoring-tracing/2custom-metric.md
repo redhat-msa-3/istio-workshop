@@ -12,7 +12,7 @@ Now, add the custom metric and rule.
 
 Execute `oc apply -f istiofiles/recommendation_requestcount.yml -n istio-system`{{execute T1}}
 
-Try the microservice several times by typing: `while true; do curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .2; done`{{execute T2}}
+Make sure that the following command is running on `Terminal 2` `while true; do curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .2; done`{{execute T2}}
 
 Check `Prometheus` route by typing `oc get routes -n istio-system`{{execute T1}}
 
@@ -27,5 +27,3 @@ and add the following metric
 and select `Execute`.
 
 ![](../../assets/monitoring/prometheus_custom_metric.png)
-
-Run more requests through the system: `curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com`{{execute T1}} and hit `Execute` again in the Prometheus Dashboard
