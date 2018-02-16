@@ -6,7 +6,7 @@ The *control plane* is responsible for managing and configuring proxies to route
 
 The following diagram shows the different components that make up each plane:
 
-![](../../assets/introcution/arch.png)
+![](../../assets/introduction/arch.png)
 
 ## Istio Components
 
