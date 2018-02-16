@@ -20,7 +20,7 @@
     "assets": {
       "host01": [
           { "file": "recommendation-v2.diff", "target": "/root/" },
-          { "file": "install-microservices.sh", "target": "/root/" }
+          { "file": "install-microservices.sh", "target": "/root/", "chmod": "+x"}
       ]
     },
     "intro": {

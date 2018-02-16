@@ -8,9 +8,7 @@ There's a script called `install-microservices.sh` that will
 - Create a docker image
 - Deploy the microservices with the sidecar proxy
 
-Make this script executable `chmod +x install-microservices.sh`{{execute}}
-
-Now you can execute this script: `./install-microservices.sh`{{execute}}
+Execute this script: `./install-microservices.sh`{{execute}}
 
 > The script will take between 2-5 minutes to complete.
 
