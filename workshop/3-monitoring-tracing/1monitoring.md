@@ -44,7 +44,7 @@ Execute: `oc get pods -w -n tutorial`{{execute}}.
 
 Wait until all microservices READY column show 2/2. Then click `CTRL+C` and perform some calls to the `customer` microservice.
 
-Try the microservice several times by typing: `while true; do curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .1; done`{{execute T1}}
+Try the microservice several times by typing: `while true; do curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .2; done`{{execute T2}}
 
 Return to http://grafana-istio-system.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com and refresh the screen.
 
