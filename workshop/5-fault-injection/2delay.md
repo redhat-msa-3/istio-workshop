@@ -15,4 +15,4 @@ You will notice many requets to the customer endpoint now have a delay.
 
 To remove the delay behaviour, simply delete this `routerule` by executing `oc delete routerule recommendation-delay -n tutorial`{{execute T1}}
 
-To check if you have random load-balance, try the microservice on `Terminal 2`: `while true; do curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .5; done`{{execute T2}}
+To check if you have random load-balance without delays, try the microservice on `Terminal 2`: `while true; do curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .5; done`{{execute T2}}
