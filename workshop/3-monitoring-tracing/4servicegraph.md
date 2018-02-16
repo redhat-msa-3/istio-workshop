@@ -14,23 +14,23 @@ The Servicegraph example is built on top of Prometheus queries.
 
 Let's go back to the istio installation folder.
 
-Execute `cd ~/installation/istio-0.5.0/`{{execute}}
+Execute `cd ~/installation/istio-0.5.0/`{{execute T1}}
 
 Now we need to apply the following file to the OpenShift instance:
 
-`oc apply -f install/kubernetes/addons/servicegraph.yaml -n istio-system`{{execute}}
+`oc apply -f install/kubernetes/addons/servicegraph.yaml -n istio-system`{{execute T1}}
 
-**Note:** There's a [bug](https://github.com/istio/istio/issues/3015) in servicegraph 0.5.0, thus we will need to downgrade it to 0.4.0 using the following command: `oc set image deploy/servicegraph servicegraph="docker.io/istio/servicegraph:0.4.0" -n istio-system`{{execute}}
+**Note:** There's a [bug](https://github.com/istio/istio/issues/3015) in servicegraph 0.5.0, thus we will need to downgrade it to 0.4.0 using the following command: `oc set image deploy/servicegraph servicegraph="docker.io/istio/servicegraph:0.4.0" -n istio-system`{{execute T1}}
 
 after the installation of `servicegraph` Istio add-ons we need to expose the services.
 
-Execute: `oc expose svc servicegraph -n istio-system`{{execute}}
+Execute: `oc expose svc servicegraph -n istio-system`{{execute T1}}
 
 Now, let's wait until `servicegraph` pod is up and running.
 
-Execute `oc get pods -w -n istio-system`{{execute}} and wait until `servicegraph` pod STATUS is `Running`.
+Execute `oc get pods -w -n istio-system`{{execute T1}} and wait until `servicegraph` pod STATUS is `Running`.
 
-Check `Servicegraph` route by typing `oc get routes -n istio-system`{{execute}}
+Check `Servicegraph` route by typing `oc get routes -n istio-system`{{execute T1}}
 
 Now that you know the URL of `Servicegraph`, access it at  
 

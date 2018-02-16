@@ -10,20 +10,20 @@ Check the file `/istiofiles/route-rule-recommendation-v1_and_v2_retry.yml`{{open
 
 Execute:
 
-`istioctl replace -f ~/projects/istio-tutorial/istiofiles/route-rule-recommendation-v1_and_v2_retry.yml`{{execute}}
+`istioctl replace -f ~/projects/istio-tutorial/istiofiles/route-rule-recommendation-v1_and_v2_retry.yml`{{execute T1}}
 
 Throw some requests at the customer endpoint:
 
-Execute `while true; do curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .1; done`{{execute}}`
+Execute `while true; do curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .1; done`{{execute T1}}`
 
 You won't receive 503s anymore. But the requests from recommendation v2 are still taking more time to get a response. Our misbehaving podnever shows up in the console, thanks to pool ejection and retry.
 
 ## Clean up
 
-Reduce the number of `v2` replicas to 1: `oc scale deployment recommendation-v2 --replicas=1 -n tutorial`{{execute}}
+Reduce the number of `v2` replicas to 1: `oc scale deployment recommendation-v2 --replicas=1 -n tutorial`{{execute T1}}
 
-Delete the failing pod: `oc delete pod -l app=recommendation,version=v2`{{execute}}
+Delete the failing pod: `oc delete pod -l app=recommendation,version=v2`{{execute T1}}
 
-Delete the routerule: `oc delete routerule recommendation-v1-v2 -n tutorial`{{execute}}
+Delete the routerule: `oc delete routerule recommendation-v1-v2 -n tutorial`{{execute T1}}
 
-Delete the pool ejection policy: `istioctl delete -f ~/projects/istio-tutorial/istiofiles/recommendation_cb_policy_pool_ejection.yml -n tutorial`{{execute}}
+Delete the pool ejection policy: `istioctl delete -f ~/projects/istio-tutorial/istiofiles/recommendation_cb_policy_pool_ejection.yml -n tutorial`{{execute T1}}

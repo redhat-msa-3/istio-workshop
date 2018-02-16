@@ -6,15 +6,15 @@ It specifies an istio rule that invokes the `recommendationrequestcounthandler` 
 
 Let's go back to the istio installation folder.
 
-`cd ~/projects/istio-tutorial/`{{execute}}
+`cd ~/projects/istio-tutorial/`{{execute T1}}
 
 Now, add the custom metric and rule.
 
-Execute `oc apply -f istiofiles/recommendation_requestcount.yml -n istio-system`{{execute}}
+Execute `oc apply -f istiofiles/recommendation_requestcount.yml -n istio-system`{{execute T1}}
 
 Try the microservice several times by typing: `while true; do curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .2; done`{{execute T2}}
 
-Check `Prometheus` route by typing `oc get routes -n istio-system`{{execute}}
+Check `Prometheus` route by typing `oc get routes -n istio-system`{{execute T1}}
 
 Now that you know the URL of `Prometheus`, access it at  
 
@@ -28,4 +28,4 @@ and select `Execute`.
 
 ![](../../assets/monitoring/prometheus_custom_metric.png)
 
-Run more requests through the system: `curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com`{{execute}} and hit `Execute` again in the Prometheus Dashboard
+Run more requests through the system: `curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com`{{execute T1}} and hit `Execute` again in the Prometheus Dashboard

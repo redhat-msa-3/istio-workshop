@@ -4,8 +4,8 @@ Note that the `RouteRule` specifies that the destination will be the recommendat
 
 Let's apply this file.
 
-`oc create -f ~/projects/istio-tutorial/istiofiles/route-rule-recommendation-v2.yml -n tutorial`{{execute}}
+`oc create -f ~/projects/istio-tutorial/istiofiles/route-rule-recommendation-v2.yml -n tutorial`{{execute T1}}
 
-Try the microservice several times by typing `curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com`{{execute}}
+Try the microservice several times by typing `curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com`{{execute T1}}
 
 you should only see v2 being returned.

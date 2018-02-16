@@ -8,15 +8,15 @@ There's a script called `install-microservices.sh` that will
 - Create a docker image
 - Deploy the microservices with the sidecar proxy
 
-Execute this script: `./install-microservices.sh`{{execute}}
+Execute this script: `./install-microservices.sh`{{execute T1}}
 
 > The script will take between 2-5 minutes to complete.
 
-When the scripts ends, watch the creation of the pods, execute `oc get pods -w`{{execute}}
+When the scripts ends, watch the creation of the pods, execute `oc get pods -w`{{execute T1}}
 
 Once that the microservices pods READY column are 2/2, you can hit `CTRL+C`. 
 
-Try the microservice by typing `curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com`{{execute}}
+Try the microservice by typing `curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com`{{execute T1}}
 
 It should return:
 

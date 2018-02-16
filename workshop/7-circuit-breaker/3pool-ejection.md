@@ -2,19 +2,19 @@ Pool ejection or *outlier detection* is a resilience strategy that takes place w
 
 First, you need to insure you have a routerule in place. Let's use a 50/50 split of traffic:
 
-`oc create -f ~/projects/istio-tutorial/istiofiles/route-rule-recommendation-v1_and_v2_50_50.yml -n tutorial`{{execute}}
+`oc create -f ~/projects/istio-tutorial/istiofiles/route-rule-recommendation-v1_and_v2_50_50.yml -n tutorial`{{execute T1}}
 
 Scale number of instances of v2 deployment
 
-`oc scale deployment recommendation-v2 --replicas=2 -n tutorial`{{execute}}
+`oc scale deployment recommendation-v2 --replicas=2 -n tutorial`{{execute T1}}
 
-Execute `oc get pods -w`{{execute}}
+Execute `oc get pods -w`{{execute T1}}
 
 Once that the microservices pods READY column are 2/2, you can hit `CTRL+C`. 
 
 ## Test behavior without failing instances
 
-Execute `while true; do curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .1; done`{{execute}}`
+Execute `while true; do curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .1; done`{{execute T1}}`
 
 You will see the load balancing 50/50 between the two different versions of the `recommendation` service. And within version `v2`, you will also see that some requests are handled by one pod and some requests are handled by the other pod.
 
@@ -34,7 +34,7 @@ Hit CTRL+C when you are satisfied.
 
 Let's get the name of the pods from recommendation v2:
 
-`oc get pods -l app=recommendation,version=v2`{{execute}}
+`oc get pods -l app=recommendation,version=v2`{{execute T1}}
 
 You should see something like this:
 
@@ -45,15 +45,15 @@ recommendation-v2-2036617847-spdrb   2/2       Running   0          7m
 
 Now we'll get into one the pods and add some erratic behavior on it. 
 
-`oc exec -it $(oc get pods|grep recommendation-v2|awk '{ print $1 }'|head -1) -c recommendation  /bin/bash`{{execute}}
+`oc exec -it $(oc get pods|grep recommendation-v2|awk '{ print $1 }'|head -1) -c recommendation  /bin/bash`{{execute T1}}
 
 You will be inside the application container of your pod. Now execute:
 
-`curl localhost:8080/misbehave && exit`{{execute}}
+`curl localhost:8080/misbehave && exit`{{execute T1}}
 
 This is a special endpoint that will make our application return only `503`s.
 
-Execute `while true; do curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .1; done`{{execute}}`
+Execute `while true; do curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .1; done`{{execute T1}}`
 
 You'll see that whenever the pod that you ran the command `curl localhost:8080/misbehave` receives a request, you get a 503 error:
 
@@ -78,11 +78,11 @@ Check the file `/istiofiles/recommendation_cb_policy_pool_ejection.yml`{{open}}.
 
 Now execute:
 
-`istioctl create -f ~/projects/istio-tutorial/istiofiles/recommendation_cb_policy_pool_ejection.yml -n tutorial`{{execute}}
+`istioctl create -f ~/projects/istio-tutorial/istiofiles/recommendation_cb_policy_pool_ejection.yml -n tutorial`{{execute T1}}
 
 Throw some requests at the customer endpoint:
 
-Execute `while true; do curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .1; done`{{execute}}`
+Execute `while true; do curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .1; done`{{execute T1}}`
 
 You will see that whenever you get a failing request with 503 from the pod, it gets ejected from the pool, and it doesn't receive any more requests until the sleep window expires - which takes at least 15s.
 
