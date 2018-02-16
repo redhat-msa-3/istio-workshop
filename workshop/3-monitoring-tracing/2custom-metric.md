@@ -26,4 +26,4 @@ and add the following metric
 
 and select `Execute`.
 
-![](../../assets/monitoring/prometheus_custom_metric.png)
+![](../../assets/monitoring/prometheus_metric.png)

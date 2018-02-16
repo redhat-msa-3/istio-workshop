@@ -7,9 +7,11 @@ Open `/recommendation/src/main/java/com/redhat/developer/demos/recommendation/Re
 ```    
 </pre>
 
-**Note:** The file is saved automatically.
+**Note:** The file is saved automatically. 
 
 Now go to the recommendations folder `cd ~/projects/istio-tutorial/recommendation/`{{execute T1}}
+
+Make sure that the file has changed: `git diff`{{execute T1}}
 
 Compile the project with the modifications that you did.
 
@@ -39,11 +41,9 @@ You likely see "customer => preference => recommendation v2 from '2819441432-5v2
 
 You likely see "customer => preference => recommendation v1 from '99634814-d2z2t': 3", where '99634814-d2z2t' is the pod running v1 and the 3 is basically the number of times you hit the endpoint.
 
-Send several requests to see their responses
+Send several requests on `Terminal 2` to see their responses
 
-`while true; do curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .1; done`{{execute T1}}
-
-Hit CTRL+C when you are satisfied.
+`while true; do curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .4; done`{{execute T2}}
 
 The default Kubernetes/OpenShift behavior is to round-robin load-balance across all available pods behind a single Service. Add another replica of recommendations-v2 Deployment.
 
@@ -53,13 +53,10 @@ Wait the second `recommendation` pod to become available, execute `oc get pods -
 
 Once that the recommendation pod READY column is 2/2, you can hit `CTRL+C`. 
 
-Now, you will see two requests into the v2 and one for v1.
-
-`while true; do curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .1; done`{{execute T1}}
-
-Hit CTRL+C when you are satisfied.
+Now check the `Terminal 2`, you will see two requests into the v2 and one for v1.
 
 Scale back to a single replica of the recommendation-v2 Deployment
 
 `oc scale --replicas=1 deployment/recommendation-v2`{{execute T1}}
 
+On `Terminal 2`, you will see one requests into the v2 and one for v1.
