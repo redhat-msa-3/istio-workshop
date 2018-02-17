@@ -43,9 +43,9 @@ To watch the creation of the pods, execute `oc get pods -w`{{execute T1}}
 
 Once that the recommendation pods READY column are 2/2, you can hit `CTRL+C`. 
 
-Check `Terminal 2` and make sure that you can see `v2` responding in 3 seconds: `while true; do time curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .5; done`{{execute T2}}
+Apply a `RouteRule` that splits the traffic 50% between `v1` and `v2`: `oc create -f ~/projects/istio-tutorial/istiofiles/route-rule-recommendation-v1_and_v2_50_50.yml -n tutorial`{{execute T1}}
 
-**NOTE:** At any moment, if `v2` pod doesn't appear in the `Terminal 2` you should delete the `v2` pod again to force the new one to be placed in the pool: `oc delete pod -l app=recommendation,version=v2 -n tutorial --force=true --now=true`{{execute T1}}. Don't forget to watch the creation of the pods with `oc get pods -w`{{execute T1}}
+Check `Terminal 2` and make sure that you can see `v2` responding in 3 seconds: `while true; do time curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .5; done`{{execute T2}}
 
 
 ## Timeout rule
