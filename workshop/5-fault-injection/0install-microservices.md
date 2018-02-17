@@ -20,4 +20,4 @@ Try the microservice by typing `curl http://customer-tutorial.[[HOST_SUBDOMAIN]]
 
 It should return:
 
-`customer => preference => recommendation v1 from {hostname}: 1`
+`customer => preference => recommendation v{1:2} from {hostname}: 1`
