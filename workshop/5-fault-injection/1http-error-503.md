@@ -20,5 +20,5 @@ To check the new behaviour, make sure that the following command is running on `
 
 To remove the HTTP Error 503 behaviour, simply delete this `routerule` by executing `oc delete routerule recommendation-503 -n tutorial`{{execute T1}}
 
-To check if you have random load-balance, try the microservice on `Terminal 2`: `while true; do time curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .5; done`{{execute T2}}
+To check if you have random load-balance without `503`'s, try the microservice on `Terminal 2`: `while true; do time curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .5; done`{{execute T2}}
 
