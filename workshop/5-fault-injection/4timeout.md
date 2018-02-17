@@ -37,7 +37,7 @@ You can check the image that was create by typing `docker images | grep recommen
 
 Now let's delete the previous v2 pod to force the creation of a new pod using the new image.
 
-`oc delete pod -l app=recommendation,version=v2 -n tutorial --force=true --now=true`{{execute T1}}
+`oc delete pod -l app=recommendation -n tutorial --force=true --now=true`{{execute T1}}
 
 To watch the creation of the pods, execute `oc get pods -w`{{execute T1}}
 
@@ -59,7 +59,6 @@ You should see it return `v1` OR `upstream request timeout` after waiting about 
 To check this behaviour, send several requests to the microservices on `Terminal 2` to see their responses
 `while true; do time curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .5; done`{{execute T2}}
 
-**NOTE:** If `v2` pods don't appear in the `Terminal 2` you should delete the `v2` pods again to force them to be placed in the pool: `oc delete pod -l app=recommendation,version=v2 -n tutorial --force=true --now=true`{{execute T1}}
 
 
 
