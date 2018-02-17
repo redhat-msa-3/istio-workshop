@@ -1,5 +1,4 @@
-Wait only N seconds before giving up and failing. At this point, no other route rules should be in effect. Perform and 
-`oc get routerules`{{execute T1}} and maybe and `oc delete routerule {rulename}`{{execute T1}} if there are some.
+Wait only N seconds before giving up and failing. 
 
 First, introduce some wait time in recommendations v2 by uncommenting the line 40 that call the timeout method. This method, will cause a wait time of 3 seconds. Update `/recommendation-v2/src/main/java/com/redhat/developer/demos/recommendation/RecommendationVerticle.java`{{open}} making it a slow perfomer. 
 
