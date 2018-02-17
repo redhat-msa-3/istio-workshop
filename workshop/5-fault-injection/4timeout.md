@@ -45,7 +45,6 @@ Once that the recommendation pods READY column are 2/2, you can hit `CTRL+C`.
 
 Check `Terminal 2` and make sure that you can see `v2` responding in 3 seconds: `while true; do time curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .5; done`{{execute T2}}
 
-If `v2` pods don't appear in the `Terminal 2` you should delete the pods again to force them to be placed in the pool again: `oc delete pod -l app=recommendation,version=v2 -n tutorial --force=true --now=true`{{execute T1}}
 
 ## Timeout rule
 
@@ -59,6 +58,9 @@ You should see it return `v1` OR `upstream request timeout` after waiting about 
 
 To check this behaviour, send several requests to the microservices on `Terminal 2` to see their responses
 `while true; do time curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .5; done`{{execute T2}}
+
+**NOTE:** If `v2` pods don't appear in the `Terminal 2` you should delete the `v2` pods again to force them to be placed in the pool: `oc delete pod -l app=recommendation,version=v2 -n tutorial --force=true --now=true`{{execute T1}}
+
 
 
 ## Clean up
