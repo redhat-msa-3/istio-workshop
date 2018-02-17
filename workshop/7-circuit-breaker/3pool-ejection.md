@@ -14,7 +14,7 @@ Once that the microservices pods READY column are 2/2, you can hit `CTRL+C`.
 
 ## Test behavior without failing instances
 
-Execute `while true; do curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .1; done`{{execute T1}}`
+Execute on `Terminal 2` `while true; do curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .1; done`{{execute T2}}
 
 You will see the load balancing 50/50 between the two different versions of the `recommendation` service. And within version `v2`, you will also see that some requests are handled by one pod and some requests are handled by the other pod.
 
@@ -26,9 +26,6 @@ customer => preference => recommendation v2 from '2036617847-spdrb': 27
 customer => preference => recommendation v1 from '2039379827-jmm6x': 449
 customer => preference => recommendation v1 from '2039379827-jmm6x': 450
 ```
-
-Hit CTRL+C when you are satisfied.
-
 
 ## Test behavior with failing instance and without pool ejection
 
@@ -53,7 +50,7 @@ You will be inside the application container of your pod. Now execute:
 
 This is a special endpoint that will make our application return only `503`s.
 
-Execute `while true; do curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .1; done`{{execute T1}}`
+Make sure that the following command is running on `Terminal 2` `while true; do curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .1; done`{{execute T2}}
 
 You'll see that whenever the pod that you ran the command `curl localhost:8080/misbehave` receives a request, you get a 503 error:
 
@@ -68,8 +65,6 @@ customer => 503 preference => 503 recommendation misbehavior from '2036617847-sp
 customer => preference => recommendation v2 from '2036617847-hdjv2': 250
 ```
 
-Hit CTRL+C when you are satisfied.
-
 ## Test behavior with failing instance and with pool ejection
 
 Now let's add the pool ejection behavior:
@@ -80,9 +75,7 @@ Now execute:
 
 `istioctl create -f ~/projects/istio-tutorial/istiofiles/recommendation_cb_policy_pool_ejection.yml -n tutorial`{{execute T1}}
 
-Throw some requests at the customer endpoint:
-
-Execute `while true; do curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .1; done`{{execute T1}}`
+Make sure that the following command is running on `Terminal 2` `while true; do curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .1; done`{{execute T2}}
 
 You will see that whenever you get a failing request with 503 from the pod, it gets ejected from the pool, and it doesn't receive any more requests until the sleep window expires - which takes at least 15s.
 

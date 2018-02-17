@@ -6,7 +6,7 @@ Inspect the file `/istiofiles/acl-whitelist.yml`{{open}}.
 
 Now lest's use apply this file through `istioctl create -f ~/projects/istio-tutorial/istiofiles/acl-whitelist.yml -n tutorial`{{execute T1}}
 
-Check the new behaviour trying the microservice by typing `curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com`{{execute T1}}
+Make sure that the following command is running on `Terminal 2` `while true; do curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .2; done`{{execute T2}}
 
 You should see `customer => 404 NOT_FOUND:preferencewhitelist.listchecker.tutorial:customer is not whitelisted`
 
@@ -21,7 +21,7 @@ Inspect the file `/istiofiles/acl-blacklist.yml`{{open}}.
 
 Now lest's use apply this file through `istioctl create -f ~/projects/istio-tutorial/istiofiles/acl-blacklist.yml -n tutorial`{{execute T1}}
 
-Check the new behaviour trying the microservice by typing `curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com`{{execute T1}}
+Make sure that the following command is running on `Terminal 2` `while true; do curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .2; done`{{execute T2}}
 
 You should see `customer => 403 PERMISSION_DENIED:denycustomerhandler.denier.tutorial:Not allowed`
 
