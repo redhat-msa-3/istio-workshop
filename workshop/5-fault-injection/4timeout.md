@@ -3,8 +3,8 @@ Wait only N seconds before giving up and failing. At this point, no other route 
 
 First, introduce some wait time in recommendations v2 by uncommenting the line 40 that call the timeout method. This method, will cause a wait time of 3 seconds. Update `/recommendation-v2/src/main/java/com/redhat/developer/demos/recommendation/RecommendationVerticle.java`{{open}} making it a slow perfomer. 
 
-```java
-@Override
+<pre class="file">
+    @Override
     public void start() throws Exception {
         Router router = Router.router(vertx);
         router.get("/").handler(this::logging);
@@ -19,7 +19,7 @@ First, introduce some wait time in recommendations v2 by uncommenting the line 4
 
         vertx.createHttpServer().requestHandler(router::accept).listen(8080);
     }
-```
+</pre>
 
 **Note:** The file is saved automatically.
 
@@ -51,13 +51,14 @@ Note that this `RouteRule` provides a `simpleTimeout` of `1 second`.
 
 Let's apply this rule: `oc create -f ~/projects/istio-tutorial/istiofiles/route-rule-recommendation-timeout.yml -n tutorial`{{execute T1}}
 
-You will see it return `v1` OR `upstream request timeout` after waiting about 1 second, although v2 takes 3 seconds to complete.
+You should see it return `v1` OR `upstream request timeout` after waiting about 1 second, although v2 takes 3 seconds to complete.
 
 To check this behaviour, send several requests to the microservices on `Terminal 2` to see their responses
-`while true; do curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .5; done`{{execute T2}}
+`while true; do time curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .1; done`{{execute T2}}
+
 
 ## Clean up
 
 To remove the Timeout behaviour, simply delete this `routerule` by executing `oc delete routerule recommendation-timeout -n tutorial`{{execute T1}}
 
-To check if you have random load-balance with `v2` replying in 3 seconds, try the microservice on `Terminal 2`: `while true; do curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .5; done`{{execute T2}}
+To check if you have random load-balance with `v2` replying in 3 seconds, try the microservice on `Terminal 2`: `while true; do time curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .1; done`{{execute T2}}
