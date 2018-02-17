@@ -27,6 +27,8 @@ Rebuild and redeploy the recommendation microservices.
 
 Go to the recommendation folder `cd ~/projects/istio-tutorial/recommendation-v2/`{{execute T1}}
 
+Make sure that the file has changed: `git diff`{{execute T1}}. To exit, hit `q`{{execute T1}}
+
 Compile the project with the modifications that you did.
 
 `mvn package`{{execute T1}}
@@ -42,6 +44,9 @@ Now let's delete the previous v2 pod to force the creation of a new pod using th
 To watch the creation of the pods, execute `oc get pods -w`{{execute T1}}
 
 Once that the recommendation pods READY column are 2/2, you can hit `CTRL+C`. 
+
+Check `Terminal 2` and make sure that you can see `v2` responding in 3 seconds: `while true; do time curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .5; done`{{execute T2}}
+
 
 ## Timeout rule
 
