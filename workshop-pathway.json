@@ -22,14 +22,14 @@
       "title": "Simple RouteRules"
     },
     {
-      "external_link": "https://www.katacoda.com/rafabene/courses/workshop/5-fault-injection",
-      "course_id": "5-fault-injection",
-      "title": "Fault Injection"
+      "external_link": "https://www.katacoda.com/rafabene/courses/workshop/5-advanced-routerules",
+      "course_id": "5-advanced-routerules",
+      "title": "Advanced RouteRules"
     },
     {
-      "external_link": "https://www.katacoda.com/rafabene/courses/workshop/6-advanced-routerules",
-      "course_id": "6-advanced-routerules",
-      "title": "Advanced RouteRules"
+      "external_link": "https://www.katacoda.com/rafabene/courses/workshop/6-fault-injection",
+      "course_id": "6-fault-injection",
+      "title": "Fault Injection"
     },
     {
       "external_link": "https://www.katacoda.com/rafabene/courses/workshop/7-circuit-breaker",
