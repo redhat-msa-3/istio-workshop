@@ -7,7 +7,7 @@ Note that this `RouteRule` provides `httpFault` that will `delay` the request `5
 Let's apply this rule: `oc create -f ~/projects/istio-tutorial/istiofiles/route-rule-recommendation-delay.yml -n tutorial`{{execute T1}}
 
 To check the new behaviour, send several requests to the microservices on `Terminal 2` to see their responses
-`while true; do time curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .5; done`{{execute T2}}
+`while true; do time curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .5; done`{{execute T2 interrupt}}
 
 You will notice many requets to the customer endpoint now have a delay of seven seconds.
 
@@ -15,4 +15,4 @@ You will notice many requets to the customer endpoint now have a delay of seven 
 
 To remove the delay behaviour, simply delete this `routerule` by executing `oc delete routerule recommendation-delay -n tutorial`{{execute T1}}
 
-To check if you have random load-balance without delays, try the microservice on `Terminal 2`: `while true; do curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .5; done`{{execute T2}}
+To check if you have random load-balance without delays, try the microservice on `Terminal 2`: `while true; do curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .5; done`{{execute T2 interrupt}}
