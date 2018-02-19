@@ -24,7 +24,6 @@
       ]
     },
     "intro": {
-      "courseData": "run-init.sh",
       "text": "intro.md",
       "credits": "http://developers.redhat.com",
       "code": "set-env.sh"
@@ -33,7 +32,6 @@
       { "title": "Rate Limiting", "text": "5rate-limit.md" }
     ],
     "steps": [
-        { "title": "Install Microservices", "text": "0install-microservices.md" },
         { "title": "Smart routing based on user-agent header (Canary Deployment)", "text": "1useragent-routing.md" },
         { "title": "Mirroring Traffic (Dark Launch)", "text": "2dark-launch.md" },
         { "title": "Access Control", "text": "3access-control.md" },

@@ -27,8 +27,7 @@
     "intro": {
         "text": "intro.md",
         "credits": "http://developers.redhat.com",
-        "code": "set-env.sh",
-        "courseData": "run-init.sh"
+        "code": "set-env.sh"
     },
     "steps": [
         { "title": "Create the Exemple project", "text": "1create-project.md" },

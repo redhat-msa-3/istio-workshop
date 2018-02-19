@@ -24,13 +24,11 @@
       ]
     },
     "intro": {
-      "courseData": "run-init.sh",
       "text": "intro.md",
       "credits": "http://developers.redhat.com",
       "code": "set-env.sh"
     },
     "steps": [
-        { "title": "Install Microservices", "text": "0install-microservices.md" },
         { "title": "HTTP Error 503", "text": "1http-error-503.md" },
         { "title": "Delay", "text": "2delay.md" },
         { "title": "Retry", "text": "3retry.md" },

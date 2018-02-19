@@ -33,7 +33,7 @@ After the execution, Istio objects will be created.
 
 To watch the creation of the pods, execute `oc get pods -w -n istio-system`{{execute T1}}
 
-Once that they are all `Running`, you can hit `CTRL+C`{{execute T1 interrupt}}. This concludes this scenario.
+Once that they are all `Running`, you can hit `CTRL+C`. This concludes this scenario.
 
 ## Add Istio to the path
 

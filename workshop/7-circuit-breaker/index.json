@@ -24,13 +24,11 @@
       ]
     },
     "intro": {
-      "courseData": "run-init.sh",
       "text": "intro.md",
       "credits": "http://developers.redhat.com",
       "code": "set-env.sh"
     },
     "steps": [
-        { "title": "Install Microservices", "text": "0install-microservices.md" },
         { "title": "Install Siege", "text": "1install-siege.md" },
         { "title": "Fail Fast with Max Connections & Max Pending Requests", "text": "2fail-fast.md" },
         { "title": "Pool Ejection", "text": "3pool-ejection.md" },

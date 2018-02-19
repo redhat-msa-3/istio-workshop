@@ -1,6 +1,6 @@
 Wait only N seconds before giving up and failing. 
 
-First, introduce some wait time in recommendations v2 by uncommenting the line 40 that call the timeout method. This method, will cause a wait time of 3 seconds. Update `/recommendation-v2/src/main/java/com/redhat/developer/demos/recommendation/RecommendationVerticle.java`{{open}} making it a slow perfomer. 
+First, introduce some wait time in recommendations v2 by uncommenting the line 40 that call the timeout method. This method, will cause a wait time of 3 seconds. Update `/recommendation/src/main/java/com/redhat/developer/demos/recommendation/RecommendationVerticle.java`{{open}} making it a slow perfomer. 
 
 <pre class="file">
     @Override
@@ -24,7 +24,7 @@ First, introduce some wait time in recommendations v2 by uncommenting the line 4
 
 Rebuild and redeploy the recommendation microservices.
 
-Go to the recommendation folder `cd ~/projects/istio-tutorial/recommendation-v2/`{{execute T1}}
+Go to the recommendation folder `cd ~/projects/istio-tutorial/recommendation/`{{execute T1}}
 
 Compile the project with the modifications that you did.
 
