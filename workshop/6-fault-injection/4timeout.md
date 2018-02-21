@@ -53,7 +53,7 @@ Note that this `RouteRule` provides a `simpleTimeout` of `1 second`.
 
 Let's apply this rule: `oc create -f ~/projects/istio-tutorial/istiofiles/route-rule-recommendation-timeout.yml -n tutorial`{{execute T1}}
 
-You should see it return `v1` OR `upstream request timeout` after waiting about 1 second, although v2 takes 3 seconds to complete.
+You should see it return `v1` OR `504 upstream request timeout` after waiting about 1 second, although v2 takes 3 seconds to complete.
 
 To check this behaviour, send several requests to the microservices on `Terminal 2` to see their responses
 `while true; do time curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .5; done`{{execute T2 }}

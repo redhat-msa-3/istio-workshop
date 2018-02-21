@@ -1,4 +1,4 @@
-We will deploy three microservices (customer, preference, recommendation) implemented using Spring Boot.
+We will deploy three microservices (customer, preference, recommendation) implemented using Spring Boot and Vert.x.
 
 The `customer` microservice makes a request to `preference` that makes a request to `recommendation`.
 
