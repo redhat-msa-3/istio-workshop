@@ -27,15 +27,15 @@
     },
     {
       "pathway_id": "rafabene/workshop",
-      "id": "5-fault-injection",
-      "course_id": "5-fault-injection",
-      "title": "Fault Injection"
+      "id": "5-advanced-routerules",
+      "course_id": "5-advanced-routerules",
+      "title": "Advanced RouteRules"
     },
     {
       "pathway_id": "rafabene/workshop",
-      "id": "6-advanced-routerules",
-      "course_id": "6-advanced-routerules",
-      "title": "Advanced RouteRules"
+      "id": "6-fault-injection",
+      "course_id": "6-fault-injection",
+      "title": "Fault Injection"
     },
     {
       "pathway_id": "rafabene/workshop",
