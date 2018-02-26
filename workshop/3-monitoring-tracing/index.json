@@ -24,7 +24,8 @@
     "intro": {
       "text": "intro.md",
       "credits": "http://developers.redhat.com",
-      "code": "set-env.sh"
+      "code": "set-env.sh",
+      "courseData": "run-init.sh"
     },
     "steps": [
         { "title": "Monitoring", "text": "1monitoring.md" },

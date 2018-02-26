@@ -1,4 +1,7 @@
 #!/bin/bash
+echo "Waiting istio installation to complete for this scenario"
+until $(oc get project istio-system &> /dev/null); do sleep 1; done
+
 cp -Rvf /root/projects/istio-tutorial/recommendation/ /root/projects/istio-tutorial/recommendation-v2
 git apply /root/recommendation-v2.diff --directory=/root/projects/istio-tutorial/
 
