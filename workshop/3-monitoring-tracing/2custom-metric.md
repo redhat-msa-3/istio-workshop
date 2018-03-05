@@ -10,7 +10,7 @@ Let's go back to the istio installation folder.
 
 Now, add the custom metric and rule.
 
-Execute `oc apply -f istiofiles/recommendation_requestcount.yml -n istio-system`{{execute T1}}
+Execute `istioctl create -f istiofiles/recommendation_requestcount.yml -n istio-system`{{execute T1}}
 
 Make sure that the following command is running on `Terminal 2` `while true; do curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .2; done`{{execute T2}}
 

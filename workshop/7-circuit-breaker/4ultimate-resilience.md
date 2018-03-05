@@ -10,7 +10,7 @@ Check the file `/istiofiles/route-rule-recommendation-v1_and_v2_retry.yml`{{open
 
 Execute:
 
-`istioctl replace -f ~/projects/istio-tutorial/istiofiles/route-rule-recommendation-v1_and_v2_retry.yml`{{execute T1}}
+`istioctl replace -f ~/projects/istio-tutorial/istiofiles/route-rule-recommendation-v1_and_v2_retry.yml -n tutorial`{{execute T1}}
 
 Make sure that the following command is running on `Terminal 2` `while true; do curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .2; done`{{execute T2}}
 
@@ -22,6 +22,6 @@ Reduce the number of `v2` replicas to 1: `oc scale deployment recommendation-v2 
 
 Delete the failing pod: `oc delete pod -l app=recommendation,version=v2`{{execute T1}}
 
-Delete the routerule: `oc delete routerule recommendation-v1-v2 -n tutorial`{{execute T1}}
+Delete the routerule: `istioctl delete routerule recommendation-v1-v2 -n tutorial`{{execute T1}}
 
 Delete the pool ejection policy: `istioctl delete -f ~/projects/istio-tutorial/istiofiles/recommendation_cb_policy_pool_ejection.yml -n tutorial`{{execute T1}}

@@ -1,6 +1,6 @@
 To send a file to `v1` and `v2` by simply removing the rule
 
-`oc delete routerules/recommendation-default -n tutorial`{{execute T1}}
+`istioctl delete routerule recommendation-default -n tutorial`{{execute T1}}
 
 Then you should see the default behavior of load-balancing between v1 and v2
 

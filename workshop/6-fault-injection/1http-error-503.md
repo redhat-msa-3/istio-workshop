@@ -11,14 +11,14 @@ Now check the file `/istiofiles/route-rule-recommendation-503.yml`{{open}}.
 
 Note that this `RouteRule` provides `httpFault` that will `abort` the request `50% of the time` with a `httpStatus=503`.
 
-Let's apply this rule: `oc create -f ~/projects/istio-tutorial/istiofiles/route-rule-recommendation-503.yml -n tutorial`{{execute T1}}
+Let's apply this rule: `istioctl create -f ~/projects/istio-tutorial/istiofiles/route-rule-recommendation-503.yml -n tutorial`{{execute T1}}
 
 To check the new behaviour, make sure that the following command is running on `Terminal 2`:
 `while true; do time curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .5; done`{{execute T2}}
 
 ## Clean up
 
-To remove the HTTP Error 503 behaviour, simply delete this `routerule` by executing `oc delete routerule recommendation-503 -n tutorial`{{execute T1}}
+To remove the HTTP Error 503 behaviour, simply delete this `routerule` by executing `istioctl delete routerule recommendation-503 -n tutorial`{{execute T1}}
 
 To check if you have random load-balance without `503`'s, try the microservice on `Terminal 2`: `while true; do time curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .5; done`{{execute T2}}
 

@@ -4,7 +4,7 @@ Note that it allows access to `httpbin.org` on the port `80`
 
 Let's apply this file.
 
-`oc create -f ~/projects/istio-tutorial/istiofiles/egress_httpbin.yml -n istioegress`{{execute T1}}
+`istioctl create -f ~/projects/istio-tutorial/istiofiles/egress_httpbin.yml -n istioegress`{{execute T1}}
 
 Check the existing `egressrules`: `istioctl get egressrules`{{execute T1}}
 
@@ -34,6 +34,7 @@ apiVersion: config.istio.io/v1alpha2
 kind: EgressRule
 metadata:
     name: google-egress-rule
+    namespace: istioegress
 spec:
     destination:
         service: www.google.com
@@ -55,7 +56,7 @@ Note that it allows access to `api.github.com` on the port `443`
 
 Now, apply the egressrule for github:
 
-`oc create -f ~/projects/istio-tutorial/istiofiles/egress_github.yml -n istioegress`{{execute T1}}
+`istioctl create -f ~/projects/istio-tutorial/istiofiles/egress_github.yml -n istioegress`{{execute T1}}
 
 And execute the Java code that hits api.github.com/users `curl http://egressgithub-istioegress.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com`{{execute T1}}
 
@@ -63,4 +64,4 @@ And execute the Java code that hits api.github.com/users `curl http://egressgith
 
 Remove the egress rules
 
-`oc delete egressrule httpbin-egress-rule google-egress-rule github-egress-rule`{{execute T1}}
+`istioctl delete egressrule httpbin-egress-rule google-egress-rule github-egress-rule -n istioegress`{{execute T1}}

@@ -2,7 +2,7 @@ To install Istio in the cluster, we need first to make sure that we are logged i
 
 To log in the OpenShift cluster, type `oc login -u system:admin`{{execute T1}}
 
-Now that you are logged in, it's time to extract the existing istio installation: `tar -zxvf istio-0.5.0-linux.tar.gz`{{execute T1}}
+Now that you are logged in, it's time to extract the existing istio installation: `tar -zxvf istio-0.6.0-linux.tar.gz`{{execute T1}}
 
 ## Before the installation
 
@@ -17,8 +17,6 @@ Execute the following commands
 
 `oc adm policy add-scc-to-user anyuid -z istio-ingress-service-account -n istio-system`{{execute T1}}
 
-`oc adm policy add-scc-to-user anyuid -z istio-egress-service-account -n istio-system`{{execute T1}}
-
 `oc adm policy add-scc-to-user anyuid -z default -n istio-system`{{execute T1}}
 
 To understand more about SCC, we recommend you to read [Understanding Service Accounts and SCCs](https://blog.openshift.com/understanding-service-accounts-sccs/)
@@ -27,7 +25,7 @@ To understand more about SCC, we recommend you to read [Understanding Service Ac
 
 Istio provides a file `install/kubernetes/istio.yaml` that contains the definition of all objects that needs to be created in the Kubernetes cluster.
 
-Let's apply these defintions to the cluster by executing `oc apply -f istio-0.5.0/install/kubernetes/istio.yaml`{{execute T1}}
+Let's apply these defintions to the cluster by executing `oc apply -f istio-0.6.0/install/kubernetes/istio.yaml`{{execute T1}}
 
 After the execution, Istio objects will be created.
 
@@ -39,7 +37,7 @@ Once that they are all `Running`, you can hit `CTRL+C`. This concludes this scen
 
 Now we need to add `istioctl` to the path.
 
-Execute `export PATH=$PATH:/root/installation/istio-0.5.0/bin/`{{execute T1}}.
+Execute `export PATH=$PATH:/root/installation/istio-0.6.0/bin/`{{execute T1}}.
 
 Now try it. Check the version of `istioctl`. 
 

@@ -1,6 +1,6 @@
 First, you need to insure you have a routerule in place. Let's use a 50/50 split of traffic:
 
-Execute `oc create -f ~/projects/istio-tutorial/istiofiles/route-rule-recommendation-v1_and_v2_50_50.yml -n tutorial`{{execute T1}}
+Execute `istioctl create -f ~/projects/istio-tutorial/istiofiles/route-rule-recommendation-v1_and_v2_50_50.yml -n tutorial`{{execute T1}}
 
 ## Load test without circuit breaker
 
@@ -36,6 +36,6 @@ You can run siege multiple times, but in all of the executions you should see so
 
 ## Clean up
 
-Remove the `RouteRule`:  `oc delete routerule recommendation-v1-v2 -n tutorial`{{execute T1}}
+Remove the `RouteRule`:  `istioctl delete routerule recommendation-v1-v2 -n tutorial`{{execute T1}}
 
-Now remove the `DestinationPolicy`: `istioctl delete -f ~/projects/istio-tutorial/istiofiles/recommendation_cb_policy_version_v2.yml`{{execute T1}}
+Now remove the `DestinationPolicy`: `istioctl delete -f ~/projects/istio-tutorial/istiofiles/recommendation_cb_policy_version_v2.yml -n tutorial`{{execute T1}}

@@ -4,9 +4,15 @@ For monitoring, Istio offers out of the box monitoring via Prometheus and Grafan
 
 To make it work, we need first to install [`Prometheus`](https://prometheus.io/) and [`Grafana`](https://grafana.com/). 
 
+Add the proper SCC permissions for grafafna and prometheus service accounts:
+
+`oc adm policy add-scc-to-user anyuid -z grafana -n istio-system`{{execute T1}}
+
+`oc adm policy add-scc-to-user anyuid -z prometheus -n istio-system`{{execute T1}}
+
 Let's go to the istio installation folder.
 
-Execute `cd ~/installation/istio-0.5.0/`{{execute T1}}
+Execute `cd ~/installation/istio-0.6.0/`{{execute T1}}
 
 Now we need to apply the following files to the OpenShift instance:
 
@@ -40,11 +46,7 @@ Try the microservice several times by typing on a `Terminal 2`: `while true; do 
 
 Check `Grafana` route by typing `oc get routes -n istio-system`{{execute T1}}
 
-Now that you know the URL of `Grafana`, access it at  http://grafana-istio-system.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com
-
-At Grafana console, select the Istio Dashboard.
-
-![](../../assets/monitoring/grafana.png)
+Now that you know the URL of `Grafana`, access it at  http://grafana-istio-system.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com/d/1/istio-dashboard?refresh=5s&orgId=1
 
 Note that you can now visualize request information for each microservice
 

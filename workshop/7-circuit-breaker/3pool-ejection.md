@@ -2,7 +2,7 @@ Pool ejection or *outlier detection* is a resilience strategy that takes place w
 
 First, you need to insure you have a routerule in place. Let's use a 50/50 split of traffic:
 
-`oc create -f ~/projects/istio-tutorial/istiofiles/route-rule-recommendation-v1_and_v2_50_50.yml -n tutorial`{{execute T1}}
+`istioctl create -f ~/projects/istio-tutorial/istiofiles/route-rule-recommendation-v1_and_v2_50_50.yml -n tutorial`{{execute T1}}
 
 Scale number of instances of v2 deployment
 

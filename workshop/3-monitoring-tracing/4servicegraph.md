@@ -14,13 +14,11 @@ The Servicegraph example is built on top of Prometheus queries.
 
 Let's go back to the istio installation folder.
 
-Execute `cd ~/installation/istio-0.5.0/`{{execute T1}}
+Execute `cd ~/installation/istio-0.6.0/`{{execute T1}}
 
 Now we need to apply the following file to the OpenShift instance:
 
 `oc apply -f install/kubernetes/addons/servicegraph.yaml -n istio-system`{{execute T1}}
-
-**Note:** There's a [bug](https://github.com/istio/istio/issues/3015) in servicegraph 0.5.0, thus we will need to downgrade it to 0.4.0 using the following command: `oc set image deploy/servicegraph servicegraph="docker.io/istio/servicegraph:0.4.0" -n istio-system`{{execute T1}}
 
 after the installation of `servicegraph` Istio add-ons we need to expose the services.
 

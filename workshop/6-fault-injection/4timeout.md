@@ -1,6 +1,6 @@
 Wait only N seconds before giving up and failing. 
 
-First, introduce some wait time in recommendations v2 by uncommenting the line 39 that call the timeout method. This method, will cause a wait time of 3 seconds. Update `/recommendation/src/main/java/com/redhat/developer/demos/recommendation/RecommendationVerticle.java`{{open}} making it a slow perfomer. 
+First, introduce some wait time in recommendations v2 by uncommenting the line 39 that call the timeout method. This method, will cause a wait time of 3 seconds. Update `/recommendation-v2/src/main/java/com/redhat/developer/demos/recommendation/RecommendationVerticle.java`{{open}} making it a slow perfomer. 
 
 <pre class="file">
     @Override
@@ -24,7 +24,7 @@ First, introduce some wait time in recommendations v2 by uncommenting the line 3
 
 Rebuild and redeploy the recommendation microservices.
 
-Go to the recommendation folder `cd ~/projects/istio-tutorial/recommendation/`{{execute T1}}
+Go to the recommendation folder `cd ~/projects/istio-tutorial/recommendation-v2/`{{execute T1}}
 
 Compile the project with the modifications that you did.
 
@@ -51,7 +51,7 @@ Check the file `/istiofiles/route-rule-recommendation-timeout.yml`{{open}}.
 
 Note that this `RouteRule` provides a `simpleTimeout` of `1 second`.
 
-Let's apply this rule: `oc create -f ~/projects/istio-tutorial/istiofiles/route-rule-recommendation-timeout.yml -n tutorial`{{execute T1}}
+Let's apply this rule: `istioctl create -f ~/projects/istio-tutorial/istiofiles/route-rule-recommendation-timeout.yml -n tutorial`{{execute T1}}
 
 You should see it return `v1` OR `504 upstream request timeout` after waiting about 1 second, although v2 takes 3 seconds to complete.
 
@@ -60,6 +60,6 @@ To check this behaviour, send several requests to the microservices on `Terminal
 
 ## Clean up
 
-To remove the Timeout behaviour, simply delete this `routerule` by executing `oc delete routerule recommendation-timeout -n tutorial`{{execute T1}}
+To remove the Timeout behaviour, simply delete this `routerule` by executing `istioctl delete routerule recommendation-timeout -n tutorial`{{execute T1}}
 
 To check if you have random load-balance with `v2` replying in 3 seconds, try the microservice on `Terminal 2`: `while true; do time curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .5; done`{{execute T2 }}
