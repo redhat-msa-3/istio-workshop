@@ -24,7 +24,7 @@ You should see a rate of 75/25 between v1 and v2.
 
 ## Clean up
 
-You can now remove the routerule called `recommendation-v1-v2` to have the load balacing behaviour back.
+You can now remove the routerule called `recommendation-v1-v2` to have the load balacing behavior back.
 
 `istioctl delete routerule recommendation-v1-v2 -n tutorial`{{execute T1}}
 

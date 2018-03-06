@@ -55,11 +55,11 @@ Let's apply this rule: `istioctl create -f ~/projects/istio-tutorial/istiofiles/
 
 You should see it return `v1` OR `504 upstream request timeout` after waiting about 1 second, although v2 takes 3 seconds to complete.
 
-To check this behaviour, send several requests to the microservices on `Terminal 2` to see their responses
+To check this behavior, send several requests to the microservices on `Terminal 2` to see their responses
 `while true; do time curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .5; done`{{execute T2 }}
 
 ## Clean up
 
-To remove the Timeout behaviour, simply delete this `routerule` by executing `istioctl delete routerule recommendation-timeout -n tutorial`{{execute T1}}
+To remove the Timeout behavior, simply delete this `routerule` by executing `istioctl delete routerule recommendation-timeout -n tutorial`{{execute T1}}
 
 To check if you have random load-balance with `v2` replying in 3 seconds, try the microservice on `Terminal 2`: `while true; do time curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .5; done`{{execute T2 }}

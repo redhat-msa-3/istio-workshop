@@ -8,7 +8,7 @@ Let's create a rule that points all request to v1 using the file `/istiofiles/ro
 
 `istioctl create -f ~/projects/istio-tutorial/istiofiles/route-rule-recommendation-v1.yml -n tutorial`{{execute T1}}
 
-Check this behaviour trying the microservice several times by typing `while true; do curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .1; done`{{execute T1}}
+Check this behavior trying the microservice several times by typing `while true; do curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com; sleep .1; done`{{execute T1}}
 
 Hit CTRL+C when you are satisfied.
 
@@ -35,7 +35,7 @@ You can describe the routerule to see its configuration: `oc describe routerule 
 
 ## Remove 'Safari' rule.
 
-To remove the User-Agent behaviour, simply delete this `routerule` by executing `istioctl delete routerule recommendation-safari -n tutorial`{{execute T1}}
+To remove the User-Agent behavior, simply delete this `routerule` by executing `istioctl delete routerule recommendation-safari -n tutorial`{{execute T1}}
 
 To check if you have all requests using `v1`, try the microservice several times by typing `curl http://customer-tutorial.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com`{{execute T1}}
 

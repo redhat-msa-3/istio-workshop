@@ -21,6 +21,6 @@ Hit CTRL+C when you are satisfied.
 
 ## Clean up
 
-To remove the `mirror` behaviour, delete the `routerule`.
+To remove the `mirror` behavior, delete the `routerule`.
 
 `istioctl delete routerule recommendation-mirror -n tutorial`{{execute T1}}
